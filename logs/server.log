@@ -1,0 +1,124 @@
+2018-07-06 16:08:08,418 [Dummy-1:84624] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-06 16:08:08,420 [Dummy-1:84624] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-06 16:08:08,548 [Dummy-1:84624] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-06 16:08:08,552 [Dummy-1:84624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-06 16:29:53,036 [Dummy-1:86308] [django.db.backends:91] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-06 16:29:53,038 [Dummy-1:86308] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-06 16:29:53,167 [Dummy-1:86308] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-06 16:29:53,173 [Dummy-1:86308] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:21:56,641 [Dummy-1:248892] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:21:56,641 [Dummy-1:248892] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:21:57,878 [Dummy-1:248892] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:21:57,944 [Dummy-1:248892] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:39:47,907 [Dummy-1:243292] [django.db.backends:91] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:39:47,908 [Dummy-1:243292] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:39:47,969 [Dummy-1:243292] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:39:47,973 [Dummy-1:243292] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:40:05,926 [Dummy-1:74996] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:40:05,927 [Dummy-1:74996] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:40:05,983 [Dummy-1:74996] [django.db.backends:91] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2018-07-13 16:40:05,986 [Dummy-1:74996] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:43:50,595 [Dummy-1:248632] [django.db.backends:91] [DEBUG]- (0.002) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:43:50,595 [Dummy-1:248632] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:43:50,799 [Dummy-1:248632] [django.db.backends:91] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2018-07-13 16:43:50,802 [Dummy-1:248632] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:43:50,901 [Dummy-1:245588] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:43:50,903 [Dummy-1:245588] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:43:50,936 [Dummy-1:88164] [django.db.backends:91] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:43:50,937 [Dummy-1:88164] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:43:51,000 [Dummy-1:245588] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:43:51,000 [Dummy-1:88164] [django.db.backends:91] [DEBUG]- (0.001) SHOW FULL TABLES; args=None
+2018-07-13 16:43:51,003 [Dummy-1:245588] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:43:51,005 [Dummy-1:88164] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:45:28,233 [Dummy-1:241860] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:45:28,234 [Dummy-1:241860] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:45:28,289 [Dummy-1:241860] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:45:28,292 [Dummy-1:241860] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:48:41,588 [Dummy-1:86784] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:48:41,588 [Dummy-1:86784] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:48:41,655 [Dummy-1:86784] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:48:41,660 [Dummy-1:86784] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:52:05,654 [Dummy-1:249776] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:52:05,655 [Dummy-1:249776] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:52:05,730 [Dummy-1:249776] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:52:05,733 [Dummy-1:249776] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:52:34,424 [Dummy-1:249468] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:52:34,424 [Dummy-1:249468] [django.db.backends:91] [DEBUG]- (0.001) SELECT VERSION(); args=None
+2018-07-13 16:52:34,505 [Dummy-1:249468] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:52:34,561 [Dummy-1:249468] [django.db.backends:91] [DEBUG]- (0.054) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:52:39,220 [Dummy-1:248704] [django.db.backends:91] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:52:39,220 [Dummy-1:248704] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:52:58,480 [Dummy-1:249136] [django.db.backends:91] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:52:58,480 [Dummy-1:249136] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:52:58,601 [Dummy-1:249136] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:52:58,604 [Dummy-1:249136] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:53:54,048 [Dummy-1:247236] [django.db.backends:91] [DEBUG]- (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+2018-07-13 16:53:54,048 [Dummy-1:247236] [django.db.backends:91] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2018-07-13 16:53:54,095 [Dummy-1:247236] [django.db.backends:91] [DEBUG]- (0.000) SHOW FULL TABLES; args=None
+2018-07-13 16:53:54,130 [Dummy-1:247236] [django.db.backends:91] [DEBUG]- (0.030) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2018-07-13 16:53:59,757 [Thread-2:235836] [django.template:925] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [name] in u'<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+2018-07-13 16:53:59,788 [Thread-2:235836] [django.request:152] [WARNING]- Not Found: /
+2018-07-13 16:53:59,789 [Thread-2:235836] [django.server:124] [WARNING]- "GET / HTTP/1.1" 404 2157
+2018-07-13 16:53:59,914 [Thread-3:248700] [django.template:925] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [name] in u'<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+2018-07-13 16:53:59,915 [Thread-3:248700] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-13 16:53:59,917 [Thread-3:248700] [django.server:124] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2208
+2018-07-13 16:54:06,747 [Thread-4:249172] [django.server:124] [INFO]- "GET /index2 HTTP/1.1" 301 0
+2018-07-13 16:54:06,913 [Thread-5:78172] [django.server:124] [INFO]- "GET /index2/ HTTP/1.1" 200 11704
+2018-07-13 16:54:08,581 [Thread-7:243424] [django.server:124] [INFO]- "GET /static/js/iCheck/skins/square/square.css HTTP/1.1" 200 1489
+2018-07-13 16:54:08,582 [Thread-8:83048] [django.server:124] [INFO]- "GET /static/js/iCheck/skins/square/red.css HTTP/1.1" 200 1537
+2018-07-13 16:54:08,582 [Thread-11:81300] [django.server:124] [INFO]- "GET /static/js/morris-chart/morris.css HTTP/1.1" 200 489
+2018-07-13 16:54:08,582 [Thread-10:35140] [django.server:124] [INFO]- "GET /static/css/clndr.css HTTP/1.1" 200 6146
+2018-07-13 16:54:08,582 [Thread-9:79264] [django.server:124] [INFO]- "GET /static/js/iCheck/skins/square/blue.css HTTP/1.1" 200 1554
+2018-07-13 16:54:08,584 [Thread-6:247344] [django.server:124] [INFO]- "GET /static/js/iCheck/skins/minimal/minimal.css HTTP/1.1" 200 1506
+2018-07-13 16:54:08,611 [Thread-13:86480] [django.server:124] [INFO]- "GET /static/css/style-responsive.css HTTP/1.1" 200 5033
+2018-07-13 16:54:08,618 [Thread-12:77556] [django.server:124] [INFO]- "GET /static/css/style.css HTTP/1.1" 200 85487
+2018-07-13 16:54:08,621 [Thread-14:85932] [django.server:124] [INFO]- "GET /static/js/jquery-1.10.2.min.js HTTP/1.1" 200 93107
+2018-07-13 16:54:08,686 [Thread-16:247224] [django.server:124] [INFO]- "GET /static/css/bootstrap-reset.css HTTP/1.1" 200 3578
+2018-07-13 16:54:08,688 [Thread-15:85720] [django.server:124] [INFO]- "GET /static/css/bootstrap.min.css HTTP/1.1" 200 99961
+2018-07-13 16:54:08,713 [Thread-17:84156] [django.server:124] [INFO]- "GET /static/css/jquery-ui-1.10.3.css HTTP/1.1" 200 18922
+2018-07-13 16:54:08,721 [Thread-20:249320] [django.server:124] [INFO]- "GET /static/js/jquery-migrate-1.2.1.min.js HTTP/1.1" 200 7199
+2018-07-13 16:54:08,726 [Thread-18:247992] [django.server:124] [INFO]- "GET /static/fonts/css/font-awesome.min.css HTTP/1.1" 200 17780
+2018-07-13 16:54:08,743 [Thread-22:79228] [django.server:124] [INFO]- "GET /static/js/modernizr.min.js HTTP/1.1" 200 15153
+2018-07-13 16:54:08,757 [Thread-21:248248] [django.server:124] [INFO]- "GET /static/js/bootstrap.min.js HTTP/1.1" 200 29110
+2018-07-13 16:54:08,763 [Thread-23:84256] [django.server:124] [INFO]- "GET /static/js/jquery.nicescroll.js HTTP/1.1" 200 59364
+2018-07-13 16:54:08,782 [Thread-25:87704] [django.server:124] [INFO]- "GET /static/js/easypiechart/easypiechart-init.js HTTP/1.1" 200 97
+2018-07-13 16:54:08,782 [Thread-24:249484] [django.server:124] [INFO]- "GET /static/js/easypiechart/jquery.easypiechart.js HTTP/1.1" 200 10654
+2018-07-13 16:54:08,815 [Thread-26:88596] [django.server:124] [INFO]- "GET /static/fonts/fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+2018-07-13 16:54:08,819 [Thread-19:246484] [django.server:124] [INFO]- "GET /static/js/jquery-ui-1.9.2.custom.min.js HTTP/1.1" 200 237802
+2018-07-13 16:54:08,845 [Thread-27:87772] [django.server:124] [INFO]- "GET /static/js/sparkline/jquery.sparkline.js HTTP/1.1" 200 123627
+2018-07-13 16:54:08,849 [Thread-28:244212] [django.server:124] [INFO]- "GET /static/js/sparkline/sparkline-init.js HTTP/1.1" 200 2136
+2018-07-13 16:54:08,855 [Thread-30:239180] [django.server:124] [INFO]- "GET /static/js/icheck-init.js HTTP/1.1" 200 3291
+2018-07-13 16:54:08,855 [Thread-29:249632] [django.server:124] [INFO]- "GET /static/js/iCheck/jquery.icheck.js HTTP/1.1" 200 12901
+2018-07-13 16:54:08,865 [Thread-32:246328] [django.server:124] [INFO]- "GET /static/images/logo.png HTTP/1.1" 200 2703
+2018-07-13 16:54:08,871 [Thread-31:246500] [django.server:124] [INFO]- "GET /static/images/photos/user-avatar.png HTTP/1.1" 200 15649
+2018-07-13 16:54:08,904 [Thread-33:85228] [django.server:124] [INFO]- "GET /static/images/plus-white.png HTTP/1.1" 200 135
+2018-07-13 16:54:08,921 [Thread-34:36564] [django.server:124] [INFO]- "GET /static/js/flot-chart/jquery.flot.js HTTP/1.1" 200 119052
+2018-07-13 16:54:08,933 [Thread-35:74032] [django.server:124] [INFO]- "GET /static/js/flot-chart/jquery.flot.tooltip.js HTTP/1.1" 200 8712
+2018-07-13 16:54:08,940 [Thread-36:248908] [django.server:124] [INFO]- "GET /static/js/flot-chart/jquery.flot.resize.js HTTP/1.1" 200 2504
+2018-07-13 16:54:08,950 [Thread-37:249704] [django.server:124] [INFO]- "GET /static/js/morris-chart/morris.js HTTP/1.1" 200 60593
+2018-07-13 16:54:08,953 [Thread-39:84396] [django.server:124] [INFO]- "GET /static/js/calendar/clndr.js HTTP/1.1" 200 31919
+2018-07-13 16:54:08,980 [Thread-40:247356] [django.server:124] [INFO]- "GET /static/js/calendar/evnt.calendar.init.js HTTP/1.1" 200 3028
+2018-07-13 16:54:08,983 [Thread-42:85244] [django.server:124] [INFO]- "GET /static/js/scripts.js HTTP/1.1" 200 4591
+2018-07-13 16:54:08,996 [Thread-38:247244] [django.server:124] [INFO]- "GET /static/js/morris-chart/raphael-min.js HTTP/1.1" 200 91386
+2018-07-13 16:54:09,000 [Thread-43:84308] [django.server:124] [INFO]- "GET /static/js/dashboard-chart-init.js HTTP/1.1" 200 2756
+2018-07-13 16:54:09,016 [Thread-44:246012] [django.server:124] [INFO]- "GET /static/images/logo_icon.png HTTP/1.1" 200 1803
+2018-07-13 16:54:09,028 [Thread-41:247196] [django.server:124] [INFO]- "GET /static/js/calendar/moment-2.2.1.js HTTP/1.1" 200 94929
+2018-07-13 16:54:09,098 [Thread-45:87756] [django.server:124] [INFO]- "GET /index2/ HTTP/1.1" 200 11704
+2018-07-13 16:54:09,887 [Thread-46:249812] [django.server:124] [INFO]- "GET /static/images/plus.png HTTP/1.1" 200 135
+2018-07-13 16:54:10,799 [Thread-47:80644] [django.server:124] [INFO]- "GET /static/images/minus.png HTTP/1.1" 200 129
+2018-07-13 16:54:12,417 [Thread-48:249236] [django.template:925] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [name] in u'<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+2018-07-13 16:54:12,418 [Thread-48:249236] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
+2018-07-13 16:54:12,418 [Thread-48:249236] [django.server:124] [WARNING]- "GET /index2/blank_page.html HTTP/1.1" 404 2241
+2018-07-13 16:54:14,278 [Thread-49:249336] [django.server:124] [INFO]- "GET /index2/ HTTP/1.1" 200 11704

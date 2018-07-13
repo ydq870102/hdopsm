@@ -1,0 +1,3 @@
+2018-07-13 16:53:59,788 [Thread-2:235836] [django.request:152] [WARNING]- Not Found: /
+2018-07-13 16:53:59,915 [Thread-3:248700] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-13 16:54:12,418 [Thread-48:249236] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
