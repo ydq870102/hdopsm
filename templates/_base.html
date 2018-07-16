@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include '_title.html' %}
+    {% include '_head_css.html' %}
+
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    {% include '_left_side_bar.html' %}
+    <!-- left side end-->
+    <!-- main content start-->
+    <div class="main-content">
+        <!-- header section start-->
+        {% include '_main_head.html' %}
+        <!-- header section end-->
+        {% block content %}{% endblock %}
+        <!--footer section start-->
+        {% include '_main_foot.html' %}
+        <!--footer section end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+{% include '_foot_js.html' %}
+
+</body>
+</html>
