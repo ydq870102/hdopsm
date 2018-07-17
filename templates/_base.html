@@ -5,6 +5,7 @@
 
     {% include '_title.html' %}
     {% include '_head_css.html' %}
+    {% block csses %} {% endblock %}
 
 </head>
 
@@ -26,7 +27,7 @@
     </div>
     <!-- main content end-->
 </section>
-
+{% block scripts %} {% endblock %}
 {% include '_foot_js.html' %}
 
 </body>
