@@ -29,9 +29,9 @@ class Person(models.Model):
     人员资产表
     """
     person_name = models.CharField(max_length=20,unique=True,verbose_name='人员名称')
-    phone = models.IntegerField(max_length=11,verbose_name='联系电话')
-    email = models.EmailField(verbose_name='邮箱')
-    department_name = models.ForeignKey('Department_Assets',related_name='department_name',verbose_name='所属部门')
+    phone = models.IntegerField(verbose_name='联系电话', null=True)
+    email = models.EmailField(verbose_name='邮箱', null=True)
+    department_name = models.CharField(max_length=20, verbose_name='所属部门', null=True)
     create_time = models.DateField(auto_now=True)
     last_modify_time = models.DateField(auto_now_add=True)
     class Meta:
@@ -42,7 +42,6 @@ class Person(models.Model):
             ("can_add_person_assets", "添加人员资产权限"),
             ("can_delete_person_assets", "删除人员资产权限"),
         )
-        unique_together = (("project", "service_name"))
         verbose_name = '信息系统资产表'
         verbose_name_plural = '信息系统资产表'
 
@@ -51,12 +50,12 @@ class Itsystem(models.Model):
     """
     信息系统资产表
     """
-    Department = models.ForeignKey('Department_Assets', related_name='department_name', on_delete=models.SET_DEFAULT,verbose_name='所属部门')
-    itsystem_name = models.CharField(max_length=100,verbose_name='信息系统名称')
-    use_for = models.CharField(max_length=255,verbose_name='用途')
-    system_framework = models.CharField(max_length=100,verbose_name='架构描述')
-    system_manager = models.ForeignKey('Person',related_name='person_name',verbose_name='业务系统管理员')
-    system_admin = models.ForeignKey('Person',related_name='person_name',verbose_name='业务系统负责人')
+    department_name = models.CharField(max_length=20, verbose_name='所属部门')
+    itsystem_name = models.CharField(max_length=100, null=True, verbose_name='信息系统名称')
+    use_for = models.CharField(max_length=255, null=True, verbose_name='用途')
+    system_framework = models.CharField(max_length=100, null=True, verbose_name='架构描述')
+    system_manager = models.ForeignKey('Person', related_name='system_manager', null=True, verbose_name='业务系统管理员')
+    system_admin = models.ForeignKey('Person', related_name='system_admin', null=True, verbose_name='业务系统负责人')
     create_time = models.DateField(auto_now=True)
     last_modify_time = models.DateField(auto_now_add=True)
     class Meta:
@@ -67,7 +66,6 @@ class Itsystem(models.Model):
             ("can_add_itsystem_assets", "添加信息系统资产权限"),
             ("can_delete_itsystem_assets", "删除信息系统资产权限"),
         )
-        unique_together = (("project", "service_name"))
         verbose_name = '信息系统资产表'
         verbose_name_plural = '信息系统资产表'
 
@@ -99,7 +97,7 @@ class Zone(models.Model):
     放置区域资产
     """
     line_name = models.CharField(max_length=100, unique=True,verbose_name='网络区域')
-    VLAN = models.CharField(max_length=100,verbose_name='VLAN')
+    VLAN = models.CharField(max_length=100, verbose_name='VLAN', null=True)
     create_time = models.DateField(auto_now=True)
     last_modify_time = models.DateField(auto_now_add=True)
     '''自定义权限'''
@@ -269,7 +267,6 @@ class Disk_Assets(models.Model):
             ("can_add_disk_assets", "添加磁盘资产权限"),
             ("can_delete_disk_assets", "删除磁盘资产权限"),
         )
-        unique_together = (("assets", "device_slot"))
         verbose_name = '磁盘资产表'
         verbose_name_plural = '磁盘资产表'
 
@@ -292,7 +289,6 @@ class Ram_Assets(models.Model):
             ("can_add_ram_assets", "添加内存资产权限"),
             ("can_delete_ram_assets", "删除内存资产权限"),
         )
-        unique_together = (("assets", "device_slot"))
         verbose_name = '内存资产表'
         verbose_name_plural = '内存资产表'
 
@@ -310,4 +306,3 @@ class NetworkCard_Assets(models.Model):
         db_table = 't_assets_networkcard'
         verbose_name = '服务器网卡资产表'
         verbose_name_plural = '服务器网卡资产表'
-        unique_together = (("assets", "macaddress"))

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../OpsManage/.idea/OpsManage.iml" filepath="$PROJECT_DIR$/../OpsManage/.idea/OpsManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../两个运维管理系统模板/adminex/.idea/adminex.iml" filepath="$PROJECT_DIR$/../两个运维管理系统模板/adminex/.idea/adminex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bk_fta/.idea/bk_fta.iml" filepath="$PROJECT_DIR$/../bk_fta/.idea/bk_fta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bk_monitor/.idea/bk_monitor.iml" filepath="$PROJECT_DIR$/../bk_monitor/.idea/bk_monitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hdopsm.iml" filepath="$PROJECT_DIR$/.idea/hdopsm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../osrm/.idea/osrm.iml" filepath="$PROJECT_DIR$/../osrm/.idea/osrm.iml" />
       <module fileurl="file://$PROJECT_DIR$/../xm2cloud_webui/.idea/xm2cloud_webui.iml" filepath="$PROJECT_DIR$/../xm2cloud_webui/.idea/xm2cloud_webui.iml" />
     </modules>
   </component>

@@ -3,3 +3,4 @@ djangorestframework==3.5.3
 djangorestframework-jwt==1.11.0
 redis
 MySQL-python
+xlrd==1.1.0

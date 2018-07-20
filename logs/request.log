@@ -5341,3 +5341,675 @@ Traceback (most recent call last):
 TemplateSyntaxError: Invalid block tag on line 2: 'static'. Did you forget to register or load this tag?
 2018-07-16 11:47:24,831 [Thread-8:313952] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
 2018-07-16 11:49:50,717 [Thread-15:313976] [django.request:152] [WARNING]- Not Found: /index2/index.html
+2018-07-16 18:15:29,213 [Thread-2:317244] [django.request:152] [WARNING]- Not Found: /index2/general.html
+2018-07-17 08:49:31,306 [Thread-44:334276] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
+2018-07-17 08:51:58,582 [Thread-59:322888] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image1.jpg
+2018-07-17 08:51:58,582 [Thread-60:313692] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image2.jpg
+2018-07-17 08:51:58,584 [Thread-61:322868] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image3.jpg
+2018-07-17 08:51:58,585 [Thread-62:323120] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image4.jpg
+2018-07-17 08:51:58,586 [Thread-63:334632] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image5.jpg
+2018-07-17 08:52:19,217 [Thread-67:249416] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image1.jpg
+2018-07-17 08:52:19,220 [Thread-68:333956] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image2.jpg
+2018-07-17 08:52:19,221 [Thread-69:334164] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image3.jpg
+2018-07-17 08:52:19,223 [Thread-70:332976] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image4.jpg
+2018-07-17 08:52:19,223 [Thread-71:75580] [django.request:152] [WARNING]- Not Found: /index2/images/gallery/image5.jpg
+2018-07-17 08:57:36,187 [Thread-81:84396] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 08:57:36,190 [Thread-82:333100] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 08:57:36,193 [Thread-83:334516] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 08:57:36,194 [Thread-84:334408] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:36,872 [Thread-88:61140] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 08:57:36,890 [Thread-89:88240] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 08:57:36,891 [Thread-91:25128] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:36,891 [Thread-90:61256] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 08:57:36,901 [Thread-92:322796] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:37,306 [Thread-96:322800] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 08:57:37,309 [Thread-97:332704] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 08:57:37,309 [Thread-99:322088] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:37,311 [Thread-98:249736] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 08:57:37,336 [Thread-100:313692] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:37,559 [Thread-104:323268] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 08:57:37,576 [Thread-105:322776] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 08:57:37,578 [Thread-106:323120] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 08:57:37,578 [Thread-107:333136] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:56,890 [Thread-112:323240] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 08:57:56,891 [Thread-113:334188] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 08:57:56,894 [Thread-115:321188] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:57:56,894 [Thread-114:332612] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 08:57:56,927 [Thread-116:29400] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 08:59:23,460 [Thread-118:1556] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 298: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2018-07-17 08:59:24,467 [Thread-119:331064] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 298: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2018-07-17 08:59:44,575 [Thread-125:323088] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 08:59:45,247 [Thread-126:250520] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 08:59:45,739 [Thread-127:334348] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 08:59:46,026 [Thread-128:308772] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 08:59:46,279 [Thread-129:322980] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 08:59:46,993 [Thread-130:25172] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 20, in index2
+    return render_to_response('index2.html')
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 516, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 534, in extend_nodelist
+    token, '%r must be the first tag in the template.' % node,
+TemplateSyntaxError: <ExtendsNode: extends '_base.html'> must be the first tag in the template.
+2018-07-17 09:01:52,028 [Thread-139:322900] [django.request:152] [WARNING]- Not Found: /index2/js/jquery-1.10.2.min.js
+2018-07-17 09:01:52,063 [Thread-140:333028] [django.request:152] [WARNING]- Not Found: /index2/js/jquery-ui-1.9.2.custom.min.js
+2018-07-17 09:01:52,082 [Thread-141:323104] [django.request:152] [WARNING]- Not Found: /index2/js/jquery-migrate-1.2.1.min.js
+2018-07-17 09:01:52,085 [Thread-142:87720] [django.request:152] [WARNING]- Not Found: /index2/js/bootstrap.min.js
+2018-07-17 09:01:52,163 [Thread-143:27680] [django.request:152] [WARNING]- Not Found: /index2/js/modernizr.min.js
+2018-07-17 09:01:52,163 [Thread-144:220508] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:01:52,164 [Thread-145:317640] [django.request:152] [WARNING]- Not Found: /index2/js/jquery.nicescroll.js
+2018-07-17 09:01:52,167 [Thread-146:323524] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:01:52,170 [Thread-147:314496] [django.request:152] [WARNING]- Not Found: /index2/js/jquery-ui-1.9.2.custom.min.js
+2018-07-17 09:01:52,171 [Thread-148:315788] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 09:01:52,190 [Thread-149:80644] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:01:52,196 [Thread-150:314376] [django.request:152] [WARNING]- Not Found: /index2/js/jquery-migrate-1.2.1.min.js
+2018-07-17 09:01:52,210 [Thread-151:334592] [django.request:152] [WARNING]- Not Found: /index2/js/bootstrap.min.js
+2018-07-17 09:01:52,217 [Thread-152:313916] [django.request:152] [WARNING]- Not Found: /index2/js/modernizr.min.js
+2018-07-17 09:01:52,224 [Thread-153:61644] [django.request:152] [WARNING]- Not Found: /index2/js/jquery.nicescroll.js
+2018-07-17 09:01:52,230 [Thread-154:77120] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:01:52,244 [Thread-155:323500] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:01:52,253 [Thread-156:320784] [django.request:152] [WARNING]- Not Found: /index2/js/scripts.js
+2018-07-17 09:01:52,263 [Thread-157:321988] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:29:35,457 [Thread-169:320924] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:29:35,460 [Thread-171:334088] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:29:35,460 [Thread-172:334136] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:29:39,282 [Thread-176:321988] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:29:39,296 [Thread-177:333348] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:29:39,296 [Thread-178:288792] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:29:40,197 [Thread-182:61672] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:29:40,200 [Thread-184:88340] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:29:40,200 [Thread-183:243132] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:29:41,012 [Thread-188:26092] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:29:41,013 [Thread-189:313916] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:29:41,013 [Thread-190:322904] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:29:41,808 [Thread-194:320784] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:29:41,809 [Thread-195:316320] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:29:41,809 [Thread-196:322640] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:21,815 [Thread-199:315188] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:30:21,818 [Thread-200:250196] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:30:21,821 [Thread-202:331168] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:21,822 [Thread-203:242432] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:30:21,823 [Thread-204:61140] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:21,828 [Thread-205:28832] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:30:22,569 [Thread-210:334084] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:30:22,572 [Thread-211:334588] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:22,572 [Thread-212:88332] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:30:22,575 [Thread-209:333916] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:30:22,582 [Thread-213:25588] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:22,592 [Thread-214:250520] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:30:22,869 [Thread-217:320920] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:30:22,871 [Thread-218:334000] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:22,874 [Thread-220:334360] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:30:22,877 [Thread-221:323300] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:30:22,878 [Thread-222:334612] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:22,887 [Thread-223:86108] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:30:23,164 [Thread-227:85992] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:30:23,164 [Thread-228:249076] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:30:23,165 [Thread-229:333100] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:30:23,167 [Thread-230:250592] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:23,171 [Thread-231:333868] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:23,171 [Thread-232:334504] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:30:23,444 [Thread-236:332152] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.css
+2018-07-17 09:30:23,444 [Thread-237:322900] [django.request:152] [WARNING]- Not Found: /index2/css/style.css
+2018-07-17 09:30:23,447 [Thread-238:323240] [django.request:152] [WARNING]- Not Found: /index2/css/style-responsive.css
+2018-07-17 09:30:23,448 [Thread-240:332336] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:23,448 [Thread-239:330424] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/jquery.dataTables.js
+2018-07-17 09:30:23,450 [Thread-241:333156] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-17 09:30:23,459 [Thread-242:322832] [django.request:152] [WARNING]- Not Found: /index2/js/data-tables/DT_bootstrap.js
+2018-07-17 09:30:23,467 [Thread-243:334312] [django.request:152] [WARNING]- Not Found: /index2/js/editable-table.js
+2018-07-19 11:06:44,809 [Thread-414:381012] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
+2018-07-19 15:55:03,005 [Thread-435:387792] [django.request:152] [WARNING]- Not Found: /
+2018-07-19 16:55:02,871 [Thread-2:389788] [django.request:152] [WARNING]- Not Found: /
+2018-07-19 17:01:25,283 [Thread-35:389416] [django.request:152] [WARNING]- Not Found: /index2/blank_page.html
+2018-07-19 17:42:35,160 [Thread-2:390352] [django.request:152] [WARNING]- Not Found: /
+2018-07-19 17:42:37,980 [Thread-3:390960] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-19 17:42:41,256 [Thread-9:391064] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 26, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 94, in pages
+    page_range = page_list_return(len(paginator.page_range), current_page)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 102, in page_range
+    return six.moves.range(1, self.num_pages + 1)
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 79, in count
+    return self.object_list.count()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 364, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 499, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 480, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+ProgrammingError: (1146, "Table 'haid_cmdb.t_com_itsystem' doesn't exist")
+2018-07-19 17:44:03,252 [Thread-23:390744] [django.request:152] [WARNING]- Not Found: /osrm/host/host_add/
+2018-07-20 08:59:19,473 [Thread-297:401636] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 28, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'asset_del' not found. 'asset_del' is not a valid view function or pattern name.
+2018-07-20 08:59:23,257 [Thread-298:405732] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 28, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'asset_del' not found. 'asset_del' is not a valid view function or pattern name.
+2018-07-20 09:00:40,946 [Thread-2:404780] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 28, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'itsystem_del' not found. 'itsystem_del' is not a valid view function or pattern name.
+2018-07-20 09:00:41,707 [Thread-3:404920] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 28, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'itsystem_del' not found. 'itsystem_del' is not a valid view function or pattern name.
+2018-07-20 09:47:36,334 [Thread-99:402440] [django.request:152] [WARNING]- Not Found: /assets_import/
+2018-07-20 09:48:11,207 [Thread-105:380908] [django.request:152] [WARNING]- Not Found: /assets_import/
+2018-07-20 09:48:14,786 [Thread-106:405108] [django.request:152] [WARNING]- Not Found: /assets_import/
+2018-07-20 10:09:24,473 [Thread-112:310976] [django.request:152] [WARNING]- Not Found: /assets_import/
+2018-07-20 15:56:28,357 [Thread-2:11000] [django.request:152] [WARNING]- Not Found: /
+2018-07-20 15:56:28,519 [Thread-3:11128] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-20 15:56:32,632 [Thread-4:10868] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-20 15:56:33,996 [Thread-6:10804] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 26, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 94, in pages
+    page_range = page_list_return(len(paginator.page_range), current_page)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 102, in page_range
+    return six.moves.range(1, self.num_pages + 1)
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 79, in count
+    return self.object_list.count()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 364, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 499, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 480, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+ProgrammingError: (1146, "Table 'haid_cmdb.t_com_itsystem' doesn't exist")
+2018-07-20 16:23:59,272 [Thread-2:11948] [django.request:152] [WARNING]- Not Found: /
+2018-07-20 16:37:14,039 [Thread-4:12516] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-20 16:37:16,171 [Thread-5:11768] [django.request:152] [WARNING]- Not Found: /
+2018-07-20 16:37:23,039 [Thread-8:3504] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem
+2018-07-20 16:37:30,663 [Thread-11:13052] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_del/
+2018-07-20 16:37:42,897 [Thread-14:5748] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:37:46,701 [Thread-15:11428] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:38:51,607 [Thread-2:11456] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:38:52,252 [Thread-3:13020] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:38:52,464 [Thread-4:12568] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:38:52,660 [Thread-5:13288] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:38:56,094 [Thread-6:12792] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:39:13,694 [Thread-7:11484] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:28,530 [Thread-8:14012] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:29,095 [Thread-9:14248] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:29,323 [Thread-10:12064] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:29,523 [Thread-11:14048] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:29,739 [Thread-12:14144] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:57:31,352 [Thread-13:13900] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:39,039 [Thread-2:2856] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:39,555 [Thread-3:13904] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:39,755 [Thread-4:13524] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:39,928 [Thread-5:13788] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,107 [Thread-6:13440] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,565 [Thread-7:13972] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,618 [Thread-8:14240] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,645 [Thread-9:14116] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,664 [Thread-10:14040] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,703 [Thread-11:11892] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,753 [Thread-12:12492] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,788 [Thread-13:14268] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,801 [Thread-14:14272] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,815 [Thread-15:13984] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,864 [Thread-16:13744] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,875 [Thread-17:14064] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,926 [Thread-18:14224] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,947 [Thread-19:13164] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:40,969 [Thread-20:7656] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,030 [Thread-21:13260] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,052 [Thread-22:10904] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,062 [Thread-23:12404] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,086 [Thread-24:11968] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,138 [Thread-25:13564] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,150 [Thread-26:14060] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,191 [Thread-27:13696] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,200 [Thread-28:14204] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:41,252 [Thread-29:14072] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:43,569 [Thread-30:12372] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:44,647 [Thread-31:13428] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:47,992 [Thread-32:10800] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-20 16:58:56,072 [Thread-33:13240] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-20 16:58:56,334 [Thread-34:13500] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import
+2018-07-20 16:59:11,966 [Thread-36:14224] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/$
+2018-07-20 16:59:15,996 [Thread-37:14236] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/$
+2018-07-20 16:59:17,459 [Thread-38:13016] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
