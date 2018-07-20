@@ -17,6 +17,6 @@ from django.conf.urls import url
 import views
 
 urlpatterns = [
-    url(r'^itsystem_import/$', views.itsystem_import),
+    url(r'^itsystem/import/$', views.itsystem_import),
 
 ]
