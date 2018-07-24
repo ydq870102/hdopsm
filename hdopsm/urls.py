@@ -20,9 +20,8 @@ import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/$',views.index,name='index'),
+    url(r'^index/$', views.index2, name='index2'),
     url(r'^index2/$', views.index2, name='index2'),
-    url(r'^itsystem_del/$', views.itsystem_del, name='itsystem_del'),
     url(r'^cmdb/', include('cmdb.urls')),
 
 ]

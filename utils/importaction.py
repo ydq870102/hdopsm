@@ -9,7 +9,6 @@ class ImportAction(object):
     def __init__(self, request):
         self.import_file = request.FILES.get('import_file')
         self.upload_file = ''
-        print 'go here'
 
     def save_file(self):
         self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)

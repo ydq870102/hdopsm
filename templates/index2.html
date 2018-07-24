@@ -21,6 +21,11 @@
     <div class="wrapper">
         <div class="row">
             <div class="col-sm-12">
+                {% if error %}
+                    <div class="alert alert-danger text-center" id="error_msg">{{ error }}</div>
+                {% elif msg %}
+                    <div class="alert alert-info text-center" id="sucess_msg">{{ msg }}</div>
+                {% endif %}
                 <section class="panel">
                     <header class="panel-heading">
                         信息系统
@@ -126,6 +131,7 @@
                                 <button type="submit" class="btn btn-primary">导入</button>
                             </div>
                     </form>
+                    <p id="result_dis"></p>
                 </div>
                 <!-- /.modal-content -->
             </div>
@@ -136,53 +142,6 @@
 {% endblock %}
 
 <%{% block scripts %}
-    <script>
-        function dialog_open(check_array) {
-            console.log(check_array.join(","));
-            var d = dialog({
-                title: '提示',
-                content: '确定删除',
-                cancelValue: '取消',
-                cancel: function () {
 
-                },
-                okValue: '确定',
-
-                ok: function () {
-                    $.post("{% url 'itsystem_del' %}",
-                        {id: check_array.join(",")},
-                        function (data) {
-                            $(".gradeX input:checked").closest("tr").remove();
-                        })
-                    this.close(1)
-                }
-            })
-            d.addEventListener('close', function () {
-                var di = dialog({
-                    title: '提示',
-                    content: "删除成功(两秒后自动关闭)"
-                });
-                if (this.returnValue == 1) {
-                    di.show()
-                }
-                setTimeout(function () {
-                        di.close().remove();
-                    },
-                    2000);
-            })
-            if (check_array.length) {
-                d.show()
-            }
-        };
-        $(document).ready(function () {
-            $('#del').click(function () {
-                var check_array = [];
-                $(".gradeX input:checked").each(function () {
-                    check_array.push($(this).attr("value"))
-                });
-                dialog_open(check_array);
-            })
-        });
-    </script>
 {% endblock %}
 

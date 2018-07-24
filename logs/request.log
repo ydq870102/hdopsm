@@ -6222,3 +6222,926 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
     "returned None instead." % (callback.__module__, view_name)
 ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:39:28,236 [Thread-3:69996] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:39:28,872 [Thread-4:76152] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:39:29,805 [Thread-5:69996] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:39:30,423 [Thread-6:76616] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:40:26,010 [Thread-7:76940] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:40:26,473 [Thread-8:77068] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:40:26,816 [Thread-9:77104] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:40:29,380 [Thread-10:74300] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 08:40:55,213 [Thread-22:77596] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view cmdb.views.itsystem_import didn't return an HttpResponse object. It returned None instead.
+2018-07-23 10:11:03,305 [Thread-29:75644] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-23 10:11:05,617 [Thread-30:78456] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-23 10:11:07,489 [Thread-31:15876] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-23 10:11:31,522 [Thread-36:75984] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_import/
+2018-07-23 10:11:45,049 [Thread-42:14368] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-23 10:52:02,174 [Thread-16:76796] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 30, in itsystem_import
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'itsystem_import' not found. 'itsystem_import' is not a valid view function or pattern name.
+2018-07-23 11:04:52,898 [Thread-6:62580] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 29, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 140: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2018-07-23 11:04:53,660 [Thread-7:77864] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 29, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 140: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2018-07-23 11:05:15,917 [Thread-8:10224] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 29, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 139: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2018-07-23 11:05:17,003 [Thread-9:10968] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 29, in index2
+    return render_to_response('index2.html', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 139: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2018-07-23 11:23:57,855 [Thread-22:79232] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 19, in itsystem_import
+    data_list = import_object.get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 23, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 15, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 11:24:38,572 [Thread-2:79296] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-23 11:24:47,765 [Thread-5:77732] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 19, in itsystem_import
+    data_list = import_object.get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 23, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 15, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 11:27:40,075 [Thread-2:14588] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 11, in __init__
+    print request.import_file
+AttributeError: 'WSGIRequest' object has no attribute 'import_file'
+2018-07-23 11:28:26,023 [Thread-2:10964] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 19, in itsystem_import
+    data_list = import_object.get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 24, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 16, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 11:31:29,982 [Thread-2:78952] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 10, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:32:48,255 [Thread-2:77020] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 10, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:33:12,933 [Thread-2:12996] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 11, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:35:32,753 [Thread-5:76432] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 11, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:36:13,239 [Thread-10:5288] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 11, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:44:45,204 [Thread-13:42264] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 18, in itsystem_import
+    import_object = ImportAction(request)
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 11, in __init__
+    self.import_file = request.POST['import_file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'import_file'"
+2018-07-23 11:47:48,433 [Thread-9:78944] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 19, in itsystem_import
+    data_list = import_object.get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 24, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 16, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'unicode' object has no attribute 'name'
+2018-07-23 11:50:02,052 [Thread-2:78964] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 19, in itsystem_import
+    data_list = import_object.get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 24, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 19, in save_file
+    for chrunk in self.import_file.chunks():
+AttributeError: 'unicode' object has no attribute 'chunks'
+2018-07-23 15:21:14,997 [Thread-2:83448] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-23 15:21:15,670 [Thread-3:83548] [django.request:152] [WARNING]- Not Found: /
+2018-07-23 15:21:52,229 [Thread-2:79716] [django.request:152] [WARNING]- Not Found: /
+2018-07-23 15:21:53,153 [Thread-3:82640] [django.request:152] [WARNING]- Not Found: /
+2018-07-23 15:21:53,420 [Thread-4:80728] [django.request:152] [WARNING]- Not Found: /
+2018-07-23 15:32:15,638 [Thread-3:84944] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:32:17,334 [Thread-4:84540] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:32:37,125 [Thread-15:84660] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:35:37,673 [Thread-5:83996] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:36:23,140 [Thread-2:84064] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:36:40,706 [Thread-19:80528] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:56:48,131 [Thread-10:84916] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:57:18,921 [Thread-2:80716] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:57:27,253 [Thread-8:84572] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 15:59:41,963 [Thread-8:83540] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 16:00:11,345 [Thread-2:80716] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 16:00:18,799 [Thread-4:84136] [django.request:93] [WARNING]- Method Not Allowed (POST): /cmdb/itsystem/import/
+2018-07-23 17:02:38,094 [Thread-8:87160] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 24, in itsystem_import_view
+    'system_framework': int(data[3]),
+ValueError: invalid literal for int() with base 10: 'admin'
+2018-07-23 17:03:37,026 [Thread-3:84868] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 28, in itsystem_import_view
+    Itsystem.objects.create(itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: create() takes exactly 1 argument (2 given)
+2018-07-23 17:04:59,540 [Thread-3:87552] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 28, in itsystem_import_view
+    Itsystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "u'22s231'": "Itsystem.system_manager" must be a "Person" instance.
+2018-07-23 17:12:16,997 [Thread-2:87104] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 30, in itsystem_import_view
+    Itsystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<QuerySet [<Person: Person object>]>": "Itsystem.system_manager" must be a "Person" instance.
+2018-07-23 17:13:18,095 [Thread-3:83932] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 17, in itsystem_import_view
+    data_list = ImportAction(request).get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 22, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 14, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 17:14:43,990 [Thread-5:77900] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 17, in itsystem_import_view
+    data_list = ImportAction(request).get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 22, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 14, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 17:14:45,900 [Thread-7:84832] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 17, in itsystem_import_view
+    data_list = ImportAction(request).get_data()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 22, in get_data
+    self.save_file()
+  File "D:\Pyhome\hdopsm\utils\importaction.py", line 14, in save_file
+    self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2018-07-23 17:15:31,233 [Thread-4:81056] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/index2.html
+2018-07-23 17:17:02,022 [Thread-25:78900] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem_list.html
+2018-07-23 17:17:16,953 [Thread-26:85060] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-23 17:17:17,315 [Thread-27:83768] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem_list.html
+2018-07-23 17:20:55,907 [Thread-2:88728] [django.request:152] [WARNING]- Not Found: /cmdb/list/
+2018-07-23 17:21:06,559 [Thread-7:85460] [django.request:152] [WARNING]- Not Found: /itsystem/list/
+2018-07-23 17:29:17,736 [Thread-15:88300] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem_list.html
+2018-07-23 17:30:32,680 [Thread-2:87788] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem_list.html
+2018-07-23 17:30:37,572 [Thread-5:88184] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:05,017 [Thread-18:87100] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:06,963 [Thread-19:88544] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:07,309 [Thread-20:88340] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:07,509 [Thread-21:82764] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:07,701 [Thread-22:87076] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:07,885 [Thread-23:87708] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:08,069 [Thread-24:88876] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:08,259 [Thread-25:87100] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:08,463 [Thread-26:87112] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:08,665 [Thread-27:88248] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:08,868 [Thread-28:88544] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:09,055 [Thread-29:88340] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:31:09,197 [Thread-30:83832] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/import/cmdb/itsystem/list/
+2018-07-23 17:53:42,187 [Thread-2:82548] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 43, in itsystem_list_view
+    msg = request.session['message'].decode
+AttributeError: 'list' object has no attribute 'decode'
+2018-07-23 17:53:45,187 [Thread-3:90432] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 43, in itsystem_list_view
+    msg = request.session['message'].decode
+AttributeError: 'list' object has no attribute 'decode'
+2018-07-24 14:34:53,348 [Thread-23:111220] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-24 14:34:54,433 [Thread-24:110176] [django.request:135] [ERROR]- Internal Server Error: /index2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 22, in index2
+    object_list = Itsystem.objects.all().order_by('itsystem_name')
+NameError: global name 'Itsystem' is not defined
+2018-07-24 14:34:55,040 [Thread-25:106880] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-24 14:35:53,611 [Thread-4:106844] [django.request:152] [WARNING]- Not Found: /index2/cmdb/itsystem_list.html
+2018-07-24 14:36:34,173 [Thread-7:109772] [django.request:152] [WARNING]- Not Found: /index2/cmdb/itsystem_list.html
+2018-07-24 14:36:52,267 [Thread-2:111000] [django.request:152] [WARNING]- Not Found: /index2/cmdb/itsystem/list/
+2018-07-24 14:39:15,197 [Thread-26:108976] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/boxed_view.html
+2018-07-24 14:54:06,289 [Thread-54:110868] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/index.html
+2018-07-24 14:54:13,838 [Thread-56:110504] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/index.html
+2018-07-24 14:54:55,191 [Thread-2:108992] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/index.html
+2018-07-24 14:54:56,062 [Thread-3:111172] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/index.html
+2018-07-24 14:54:58,329 [Thread-4:110364] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-24 15:00:20,773 [Thread-62:111236] [django.request:152] [WARNING]- Not Found: /index/fontawesome.html
+2018-07-24 15:16:11,992 [Thread-139:11936] [django.request:152] [WARNING]- Not Found: /index/general.html
+2018-07-24 15:17:26,197 [Thread-144:87652] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/leftmenu_collapsed_view.html
+2018-07-24 15:31:07,138 [Thread-149:113408] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/horizontal_menu.html
+2018-07-24 15:32:31,848 [Thread-152:113564] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 26, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'department_name' is an invalid keyword argument for this function
+2018-07-24 15:57:56,470 [Thread-2:112084] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 33, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'department_name' is an invalid keyword argument for this function
+2018-07-24 15:59:20,312 [Thread-4:113932] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 33, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'department_name' is an invalid keyword argument for this function
+2018-07-24 16:00:25,263 [Thread-6:111292] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 33, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'department_name' is an invalid keyword argument for this function
+2018-07-24 16:01:56,780 [Thread-3:113716] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 34, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'department_name' is an invalid keyword argument for this function
+2018-07-24 16:03:11,503 [Thread-4:112232] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 34, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1106, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1059, in as_sql
+    for obj in self.query.objs
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 998, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 762, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 1853, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u662f' in position 0: invalid decimal Unicode string
+2018-07-24 16:04:35,019 [Thread-3:114064] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 38, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1106, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1059, in as_sql
+    for obj in self.query.objs
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 998, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 762, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 1853, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u662f' in position 0: invalid decimal Unicode string
+2018-07-24 16:05:35,823 [Thread-2:112724] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 38, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1106, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1059, in as_sql
+    for obj in self.query.objs
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 998, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 762, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 1853, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u662f' in position 0: invalid decimal Unicode string
+2018-07-24 16:09:23,786 [Thread-4:114580] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 38, in itsystem_import_view
+    ItSystem.objects.create(**itsystem)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1106, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 1059, in as_sql
+    for obj in self.query.objs
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 998, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 762, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 1853, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode character u'\u662f' in position 0: invalid decimal Unicode string
+2018-07-24 16:42:03,835 [Thread-3:109772] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/import/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 32, in itsystem_import_view
+    itsystemobj = ItSystemDAO(itsystem)
+TypeError: __init__() takes exactly 1 argument (2 given)
+2018-07-24 17:01:49,411 [Thread-25:106476] [django.request:152] [WARNING]- Not Found: /favicon.ico
