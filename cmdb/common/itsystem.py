@@ -13,6 +13,7 @@ class ItSystemDAO(object):
         return ItSystem.objects.filter(itsystem_name=self.kwargs.get('itsystem_name')).count()
 
     def data_format(self):
+        self.kwargs['is_delete'] = 0
         iupu = self.kwargs.get('is_untrained_person_use')
         if iupu == '' or iupu == u'否':
             self.kwargs['is_untrained_person_use'] = 0
@@ -31,9 +32,9 @@ class ItSystemDAO(object):
             print ex
 
     @staticmethod
-    def delete(name):
+    def delete(id):
         try:
-            ItSystem.objects.filter(itsystem_name=name).delete()
+            ItSystem.objects.filter(id=id).update(is_delete=1)
         except Exception, ex:
             print ex
 

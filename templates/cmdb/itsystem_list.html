@@ -131,7 +131,6 @@
                                 <button type="submit" class="btn btn-primary">导入</button>
                             </div>
                     </form>
-                    <p id="result_dis"></p>
                 </div>
                 <!-- /.modal-content -->
             </div>
@@ -143,35 +142,53 @@
 
 <%{% block scripts %}
     <script>
-        function deleteAssets(obj, id) {
-            var txt = "是否确认删除？";
-            var btnObj = $(obj);
-            btnObj.attr('disabled', true);
-            var option = {
-                title: "删除当前资产",
-                btn: parseInt("0011", 2),
-                onOk: function () {
+        $('#del').click(function () {
+            var check_array = [];
+            $("input:checked").each(function () {
+                check_array.push($(this).attr("value"))
+            });
+            if (check_array.length) {
+                swal({
+                    title: '确定删除吗？',
+                    text: '你将无法恢复它！',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '确定删除！',
+                }).then(function (isConfirm) {
+                    if (isConfirm.value === true) {
                     $.ajax({
-                        type: 'DELETE',
-                        url: '/api/assets/' + id + '/',
+                        type: 'POST',
+                        url: '/cmdb/itsystem/delete/',
+                        data: {
+                            "ids": check_array,
+                        },
                         success: function (response) {
-                            btnObj.removeAttr('disabled');
-                            window.wxc.xcConfirm("删除成功", window.wxc.xcConfirm.typeEnum.success);
-                            location.reload('/assets_list/');
+                            swal(
+                                '成功删除！',
+                                '数据已经被删除',
+                                'success'
+                            );
                         },
                         error: function (response) {
-                            btnObj.removeAttr('disabled');
-                            window.wxc.xcConfirm("删除失败！", window.wxc.xcConfirm.typeEnum.error);
-                        }
+                            swal(
+                                '删除失败！',
+                                '失败原因：response.data',
+                                'error'
+                            );
+                        },
                     });
-                },
-                onCancel: function () {
-                },
-                onClose: function () {
                 }
-            }
-            window.wxc.xcConfirm(txt, "custom", option);
+                    else {
+                        swal.close;
+                    }
+                })
         }
+            else {
+                swal('请选择要删除的数据')
+            }
+        });
     </script>
 {% endblock %}
 

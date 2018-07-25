@@ -11,7 +11,7 @@ from hdopsm.common import pages
 from utils.importaction import ImportAction
 from django.views.decorators.csrf import csrf_exempt
 from common.itsystem import *
-
+from django.http import JsonResponse
 
 
 @csrf_exempt
@@ -39,11 +39,14 @@ def itsystem_import_view(request):
     return HttpResponseRedirect('/cmdb/itsystem/list/')
 
 
+@csrf_exempt
 def itsystem_delete_view(request):
-    keys = request.GET.get('id', '')
-    key = keys.split(',')
-
-    return HttpResponseRedirect('/cmdb/itsystem/list/')
+    print request.POST
+    keys = request.POST.getlist('ids[]', '')
+    for key in keys:
+        print key
+        ItSystemDAO.delete(key)
+    return JsonResponse({'msg': "删除成功", 'code': 200})
 
 
 def itsystem_list_view(request):
@@ -55,7 +58,7 @@ def itsystem_list_view(request):
     msg = []
     error = []
     keyword = request.GET.get('keyword', '')
-    object_list = ItSystem.objects.all().order_by('itsystem_name')
+    object_list = ItSystem.objects.all().filter(is_delete=0).order_by('itsystem_name')
     if keyword:
         object_list = ItSystem.objects.filter(Q(itsystem_name=keyword))
 

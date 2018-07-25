@@ -25,6 +25,7 @@ class ImportAction(object):
         try:
             template = bk.sheet_by_name("template")
             for i in range(2, template.nrows):
+                print template.row_values(i)
                 dataList.append(template.row_values(i))
         except Exception, e:
             return []
