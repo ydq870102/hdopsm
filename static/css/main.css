@@ -5,3 +5,11 @@
     -webkit-border-radius: 0;
     border: none;
 }
+.panel-content .condition-left {
+    width: calc(100% - 215px);
+
+}.clearfix {
+    display: block;
+    zoom: 1;
+}
+

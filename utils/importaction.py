@@ -24,9 +24,17 @@ class ImportAction(object):
         dataList = []
         try:
             template = bk.sheet_by_name("template")
+            max_row = self.get_excel_max_row(template)
             for i in range(2, template.nrows):
-                print template.row_values(i)
                 dataList.append(template.row_values(i))
+            print dataList
         except Exception, e:
             return []
         return dataList
+
+    def get_excel_max_row(self,sheet):
+        max_row = 0
+        for row in sheet.row_values(1):
+            if row:
+                max_row = max_row + 1
+        return max_row

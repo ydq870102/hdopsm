@@ -5,27 +5,26 @@
 {% endblock %}
 {% block content %}
     <div class="page-heading">
-        <h3>
-            信息系统
-        </h3>
-        <ul class="breadcrumb">
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">资源管理</a>
-            </li>
-            <li class="active"> 信息系统</li>
-        </ul>
-    </div>
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-sm-12">
-                {% if error %}
-                    <div class="alert alert-danger text-center" id="error_msg">{{ error }}</div>
-                {% elif msg %}
-                    <div class="alert alert-info text-center" id="sucess_msg">{{ msg }}</div>
-                {% endif %}
+        <section class="filter">
+            <div class="panel">
+                <header class="panel-heading">
+                    条件过滤
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                     </span>
+                </header>
+                <div class="panel-body panel-content clearfix" id="panelContent" >
+                    <div class="condition-left pull-left">
+                        <div class="clearfix condition-row" data-type="condition-row">
+                            <div class="pull-left condition-item">
+                                <p class="title">集群名</p>
+                                <input id="set-select2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
                 <section class="panel">
                     <header class="panel-heading">
                         信息系统
@@ -66,8 +65,8 @@
                             <table class="table table-striped table-hover table-bordered" id="editable-sample">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">
-                                        <input type="checkbox" id="check_all">
+                                    <th class="text-center" style="width:3.5%;">
+                                        <input type="checkbox" id="check_all"  >
                                     </th>
                                     <th>所属区域</th>
                                     <th>信息系统名称</th>
@@ -79,7 +78,7 @@
                                 </thead>
                                 {% for object in objects.object_list %}
                                     <tbody>
-                                    <tr class="">
+                                    <tr class="gradeX">
                                         <td class="text-center">
                                             <input type="checkbox" name="checked" value="{{ object.id }}">
                                         </td>
@@ -144,7 +143,7 @@
     <script>
         $('#del').click(function () {
             var check_array = [];
-            $("input:checked").each(function () {
+            $(".gradeX input:checked").each(function () {
                 check_array.push($(this).attr("value"))
             });
             if (check_array.length) {
@@ -165,11 +164,15 @@
                             "ids": check_array,
                         },
                         success: function (response) {
-                            swal(
-                                '成功删除！',
-                                '数据已经被删除',
-                                'success'
-                            );
+                            swal({
+                                title:'成功删除！',
+                                text:'数据已经被删除',
+                                type:'success',
+                                confirmButtonText: 'OK！'
+                            }).then(function () {
+                                window.location.reload();
+                            });
+
                         },
                         error: function (response) {
                             swal(
