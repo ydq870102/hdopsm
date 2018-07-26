@@ -5,11 +5,46 @@
     -webkit-border-radius: 0;
     border: none;
 }
-.panel-content .condition-left {
-    width: calc(100% - 215px);
 
-}.clearfix {
-    display: block;
-    zoom: 1;
+.filter {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 25px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
 }
 
+.panel-heading {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-transform: uppercase;
+    color: #535351;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.panel-content {
+    position: relative;
+    padding: 30px 70px 26px;
+}
+
+.condition-item {
+    margin-right: 49px;
+    margin-bottom: 10px;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.main-list {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 30px;
+    font-family: "Microsoft YaHei";
+    /*font-weight: bold;*/
+    font-size: 14px;
+    color: #666;
+}

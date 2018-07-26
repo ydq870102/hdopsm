@@ -5,32 +5,33 @@
 {% endblock %}
 {% block content %}
     <div class="page-heading">
-        <section class="filter">
-            <div class="panel">
+        <section class="panel filter">
                 <header class="panel-heading">
-                    条件过滤
+                    <i class="fa fa-search-plus"></i> 条件过滤
                     <span class="tools pull-right">
-                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-chevron-up"></a>
                      </span>
                 </header>
-                <div class="panel-body panel-content clearfix" id="panelContent" >
+            <div class="panel-body panel-content clearfix" id="panelContent" style="display: none;">
                     <div class="condition-left pull-left">
                         <div class="clearfix condition-row" data-type="condition-row">
-                            <div class="pull-left condition-item">
-                                <p class="title">集群名</p>
+                            <div class="pull-left condition-item" style="width: 307.5px;">
+                                <p class="title">网络区域</p>
+                                <input id="set-select2">
+                            </div>
+                            <div class="pull-left condition-item" style="width: 15%;">
+                                <p class="title">信息系统名称</p>
                                 <input id="set-select2">
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
-                <section class="panel">
+        <section class="panel main-list">
                     <header class="panel-heading">
-                        信息系统
+                        <i class="fa fa-tasks "></i> 信息系统
                         <span class="tools pull-right">
-                        <a href="javascript:;" class="fa fa-chevron-down"></a>
-                        <a href="javascript:;" class="fa fa-times"></a>
+
                      </span>
                     </header>
                     <div class="panel-body">
@@ -46,9 +47,7 @@
                                 <div class="btn-group">
                                     <button id="del" class="btn btn-danger ">
                                         删除 <i class="fa fa-minus"></i>
-
                                     </button>
-
                                 </div>
                                 <div class="btn-group pull-right">
                                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tools <i
@@ -152,7 +151,7 @@
                     text: '你将无法恢复它！',
                     type: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#374152',
                     cancelButtonColor: '#d33',
                     confirmButtonText: '确定删除！',
                 }).then(function (isConfirm) {
@@ -168,7 +167,8 @@
                                 title:'成功删除！',
                                 text:'数据已经被删除',
                                 type:'success',
-                                confirmButtonText: 'OK！'
+                                confirmButtonText: 'OK！',
+                                confirmButtonColor: '#374152',
                             }).then(function () {
                                 window.location.reload();
                             });
@@ -189,7 +189,11 @@
                 })
         }
             else {
-                swal('请选择要删除的数据')
+                swal({
+                        text: '请选择要删除的数据',
+                        confirmButtonColor: '#374152',
+                    }
+                )
             }
         });
     </script>

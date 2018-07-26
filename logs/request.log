@@ -7145,3 +7145,113 @@ Traceback (most recent call last):
     itsystemobj = ItSystemDAO(itsystem)
 TypeError: __init__() takes exactly 1 argument (2 given)
 2018-07-24 17:01:49,411 [Thread-25:106476] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-25 11:08:31,641 [Thread-4:132820] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/delete/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 47, in itsystem_delete_view
+    ItSystemDAO.update(key)
+TypeError: unbound method update() must be called with ItSystemDAO instance as first argument (got str instance instead)
+2018-07-25 11:10:01,936 [Thread-4:112652] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/delete/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\utils\deprecation.py", line 142, in __call__
+    response = self.process_response(request, response)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 115, in process_response
+    if response.status_code == 404:
+AttributeError: 'dict' object has no attribute 'status_code'
+2018-07-25 12:23:31,209 [Thread-4:134084] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/delete/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 44, in itsystem_delete_view
+    print request.POST.Meta
+AttributeError: 'QueryDict' object has no attribute 'Meta'
+2018-07-25 12:30:16,301 [Thread-2:132900] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/delete/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 47, in itsystem_delete_view
+    key_list = keys.split(',')
+AttributeError: 'list' object has no attribute 'split'
+2018-07-26 09:13:45,446 [Thread-135:13196] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-26 09:57:09,585 [Thread-365:134348] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-26 10:08:57,601 [Thread-388:84512] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-26 10:13:30,858 [Thread-2:155248] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 67, in itsystem_list_view
+    return render_to_response('cmdb/itsystem_list.html?page=1', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 38, in get_template
+    contents = self.get_contents(origin)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 28, in get_contents
+    with io.open(origin.name, encoding=self.engine.file_charset) as fp:
+IOError: [Errno 22] Invalid argument: u'D:\\Pyhome\\hdopsm\\templates\\cmdb\\itsystem_list.html?page=1'
+2018-07-26 10:13:32,119 [Thread-3:155192] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views.py", line 67, in itsystem_list_view
+    return render_to_response('cmdb/itsystem_list.html?page=1', locals())
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Python27\lib\site-packages\django\template\loaders\base.py", line 38, in get_template
+    contents = self.get_contents(origin)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 28, in get_contents
+    with io.open(origin.name, encoding=self.engine.file_charset) as fp:
+IOError: [Errno 22] Invalid argument: u'D:\\Pyhome\\hdopsm\\templates\\cmdb\\itsystem_list.html?page=1'
+2018-07-26 10:13:32,901 [Thread-4:155340] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-26 10:16:14,779 [Thread-2:134332] [django.request:152] [WARNING]- Not Found: /
+2018-07-26 10:20:12,937 [Thread-30:104060] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-07-26 12:20:41,904 [Thread-611:156964] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/horizontal_menu.html
+2018-07-26 12:25:04,278 [Thread-701:157528] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/horizontal_menu.html
