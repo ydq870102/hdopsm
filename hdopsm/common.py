@@ -103,7 +103,7 @@ def pages(post_objects, request):
     else:
         show_first = 0
 
-    if current_page <= (len(paginator.page_range) - 3):
+    if current_page <= (len(paginator.page_range) - 5):
         show_end = 1
     else:
         show_end = 0

@@ -5,33 +5,33 @@
 {% endblock %}
 {% block content %}
     <div class="page-heading">
-        <h3>
-            信息系统
-        </h3>
-        <ul class="breadcrumb">
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">资源管理</a>
-            </li>
-            <li class="active"> 信息系统</li>
-        </ul>
-    </div>
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-sm-12">
-                {% if error %}
-                    <div class="alert alert-danger text-center" id="error_msg">{{ error }}</div>
-                {% elif msg %}
-                    <div class="alert alert-info text-center" id="sucess_msg">{{ msg }}</div>
-                {% endif %}
-                <section class="panel">
+        <section class="panel filter">
+            <header class="panel-heading">
+                <i class="fa fa-search-plus"></i> 条件过滤
+                <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-up"></a>
+                     </span>
+            </header>
+            <div class="panel-body panel-content clearfix" id="panelContent" style="display: none;">
+                <div class="condition-left pull-left">
+                    <div class="clearfix condition-row" data-type="condition-row">
+                        <div class="pull-left condition-item" style="width: 307.5px;">
+                            <p class="title">网络区域</p>
+                            <input id="set-select2">
+                        </div>
+                        <div class="pull-left condition-item" style="width: 15%;">
+                            <p class="title">信息系统名称</p>
+                            <input id="set-select2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="panel main-list">
                     <header class="panel-heading">
-                        信息系统
+                        <i class="fa fa-tasks "></i> 信息系统
                         <span class="tools pull-right">
-                        <a href="javascript:;" class="fa fa-chevron-down"></a>
-                        <a href="javascript:;" class="fa fa-times"></a>
+
                      </span>
                     </header>
                     <div class="panel-body">
@@ -45,11 +45,9 @@
 
                                 </div>
                                 <div class="btn-group">
-                                    <button id="del" class="btn btn-danger disabled">
+                                    <button id="del" class="btn btn-danger ">
                                         删除 <i class="fa fa-minus"></i>
-
                                     </button>
-
                                 </div>
                                 <div class="btn-group pull-right">
                                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tools <i
@@ -66,31 +64,31 @@
                             <table class="table table-striped table-hover table-bordered" id="editable-sample">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">
+                                    <th class="text-center" style="width:3.5%;">
                                         <input type="checkbox" id="check_all">
                                     </th>
+                                    <th>所属区域</th>
                                     <th>信息系统名称</th>
                                     <th>用途</th>
-                                    <th>所属部门</th>
+                                    <th>架构描述</th>
                                     <th>业务系统管理员</th>
                                     <th>业务系统负责人</th>
-                                    <th>架构描述</th>
                                 </tr>
                                 </thead>
                                 {% for object in objects.object_list %}
-                                <tbody>
-                                <tr class="">
-                                    <td class="text-center">
-                                        <input type="checkbox" name="checked" value="{{ object.id }}">
-                                    </td>
-                                    <td>{{ object.itsystem_name }}</td>
-                                    <td>{{ object.use_for }}</td>
-                                    <td>{{ object.department_name }}</td>
-                                    <td>{{ object.system_manager }}</td>
-                                    <td>{{ object.system_admin }}</td>
-                                    <td>{{ object.system_framework }}</td>
-                                </tr>
-                                </tbody>
+                                    <tbody>
+                                    <tr class="gradeX">
+                                        <td class="text-center">
+                                            <input type="checkbox" name="checked" value="{{ object.id }}">
+                                        </td>
+                                        <td>{{ object.zone }}</td>
+                                        <td>{{ object.itsystem_name }}</td>
+                                        <td>{{ object.use_for }}</td>
+                                        <td>{{ object.system_framework }}</td>
+                                        <td>{{ object.system_manager }}</td>
+                                        <td>{{ object.system_admin }}</td>
+                                    </tr>
+                                    </tbody>
                                 {% endfor %}
                             </table>
                             <div class="row">
@@ -131,7 +129,6 @@
                                 <button type="submit" class="btn btn-primary">导入</button>
                             </div>
                     </form>
-                    <p id="result_dis"></p>
                 </div>
                 <!-- /.modal-content -->
             </div>
@@ -142,6 +139,63 @@
 {% endblock %}
 
 <%{% block scripts %}
+    <script>
+        $('#del').click(function () {
+            var check_array = [];
+            $(".gradeX input:checked").each(function () {
+                check_array.push($(this).attr("value"))
+            });
+            if (check_array.length) {
+                swal({
+                    title: '确定删除吗？',
+                    text: '你将无法恢复它！',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#374152',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '确定删除！',
+                }).then(function (isConfirm) {
+                    if (isConfirm.value === true) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/cmdb/itsystem/delete/',
+                            data: {
+                                "ids": check_array,
+                            },
+                            success: function (response) {
+                                swal({
+                                    title: '成功删除！',
+                                    text: '数据已经被删除',
+                                    type: 'success',
+                                    confirmButtonText: 'OK！',
+                                    confirmButtonColor: '#374152',
+                                }).then(function () {
+                                    window.location.reload();
+                                });
 
+                            },
+                            error: function (response) {
+                                swal(
+                                    '删除失败！',
+                                    '失败原因：response.data',
+                                    'error'
+                                );
+                            },
+                        });
+                    }
+                    else {
+                        swal.close;
+                    }
+                })
+            }
+            else {
+                swal({
+                        text: '请选择要删除的数据',
+                        confirmButtonColor: '#374152',
+                    }
+                )
+            }
+        });
+    </script>
 {% endblock %}
 

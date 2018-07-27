@@ -3,17 +3,18 @@
 
 
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
-from models import *
 from django.db.models import Q
 from hdopsm.common import pages
 from utils.importaction import ImportAction
+from utils.apiaction import api_action
+from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from common.itsystem import *
 from django.http import JsonResponse
+import logging
 
-
+logger = logging.getLogger('info_handler')
 @csrf_exempt
 def itsystem_import_view(request):
     data_list = ImportAction(request).get_data()
@@ -39,6 +40,7 @@ def itsystem_import_view(request):
     return HttpResponseRedirect('/cmdb/itsystem/list/')
 
 
+
 @csrf_exempt
 def itsystem_delete_view(request):
     print request.POST
@@ -49,19 +51,16 @@ def itsystem_delete_view(request):
     return JsonResponse({'msg': "删除成功", 'code': 200})
 
 
+@csrf_exempt
 def itsystem_list_view(request):
     """
     @ 信息系统页面
     :param request:
     :return: html
     """
-    msg = []
-    error = []
-    keyword = request.GET.get('keyword', '')
-    object_list = ItSystem.objects.all().filter(is_delete=0).order_by('itsystem_name')
-    if keyword:
-        object_list = ItSystem.objects.filter(Q(itsystem_name=keyword))
-
-    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
-
-    return render_to_response('cmdb/itsystem_list.html', locals())
+    if request.method == 'GET':
+        sql_params = sql_get_params(request)
+        object_list = api_action('itsystem.get', sql_params)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+        print object_list
+        return render_to_response('cmdb/itsystem_list.html', locals())
