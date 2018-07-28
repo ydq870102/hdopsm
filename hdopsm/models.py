@@ -71,6 +71,26 @@ class Room(models.Model):
         verbose_name_plural = '机房资产表'
 
 
+class Enum(models.Model):
+    """
+    枚举表
+    """
+    table_name = models.CharField(max_length=50, default='', verbose_name='表名')
+    table_column = models.CharField(max_length=50, default='', verbose_name='字段名称')
+    value  = models.CharField(max_length=100, default='', verbose_name='字段值')
+    value_desc = models.CharField(max_length=100, default='', verbose_name='值描述')
+    '''自定义权限'''
+    class Meta:
+        db_table = 't_com_enum'
+        permissions = (
+            ("can_read_enum_assets", "读取枚举表权限"),
+            ("can_change_enum_assets", "更改枚举表权限"),
+            ("can_add_enum_assets", "添加枚举表权限"),
+            ("can_delete_enum_assets", "删除枚举表权限"),
+        )
+        verbose_name = '枚举表'
+        verbose_name_plural = '枚举表'
+
 """
 class Operate_log(models.Model):
     assets_id = models.IntegerField(verbose_name='资产类型id',blank=True,null=True,default=None)

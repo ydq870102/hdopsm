@@ -3,38 +3,45 @@
 
 import os
 import xlrd
+import datetime
+import logging
+logger = logging.getLogger('django.request')
 
 
 class ImportAction(object):
     def __init__(self, request):
         self.import_file = request.FILES.get('import_file')
         self.upload_file = ''
+        self.upload_file_name = self.import_file.name.split('.')[0]+datetime.datetime.now().strftime('%Y%m%d%H%M%S')+'.xlsx'
+        self.data_list = []
 
     def save_file(self):
-        self.upload_file = os.path.join(os.getcwd() + '/upload/', self.import_file.name)
-        if os.path.isdir(os.path.dirname(self.upload_file)) is not True: os.makedirs(os.path.dirname(self.upload_file))
+        """
+        保存上传的文件
+        :return:
+        """
+        if os.path.isdir(os.getcwd() + '/upload/') is not True:
+            os.makedirs(os.getcwd() + '/upload/')
+        self.upload_file = os.path.join(os.getcwd() + '/upload/', self.upload_file_name)
+
         fobj = open(self.upload_file, 'wb')
         for chrunk in self.import_file.chunks():
             fobj.write(chrunk)
         fobj.close()
 
-    def get_data(self):
+    def parse_data(self):
         self.save_file()
         bk = xlrd.open_workbook(self.upload_file)
-        dataList = []
         try:
             template = bk.sheet_by_name("template")
-            max_row = self.get_excel_max_row(template)
-            for i in range(2, template.nrows):
-                dataList.append(template.row_values(i))
-            print dataList
+            for nr in range(3, template.nrows):
+                data_value = {}
+                for lc in range(0,template.ncols):
+                    data_value[template.cell_value(1, lc)] =template.cell_value(nr, lc)
+                self.data_list.append(data_value)
         except Exception, e:
-            return []
-        return dataList
+            logger.error(e.message)
+        return self.data_list
 
-    def get_excel_max_row(self,sheet):
-        max_row = 0
-        for row in sheet.row_values(1):
-            if row:
-                max_row = max_row + 1
-        return max_row
+
+

@@ -160,26 +160,28 @@
                         type: 'POST',
                         url: '/cmdb/itsystem/delete/',
                         data: {
-                            "ids": check_array,
+                            "where": check_array,
                         },
-                        success: function (response) {
+                        success: function (data) {
                             swal({
                                 title:'成功删除！',
                                 text:'数据已经被删除',
                                 type:'success',
                                 confirmButtonText: 'OK！',
                                 confirmButtonColor: '#374152',
+                                timer:1500
                             }).then(function () {
                                 window.location.reload();
                             });
 
                         },
-                        error: function (response) {
-                            swal(
-                                '删除失败！',
-                                '失败原因：response.data',
-                                'error'
-                            );
+                        error: function (data) {
+                            swal({
+                                title:'删除失败！',
+                                text:data,
+                                type:'error',
+                                timer:1500
+                            });
                         },
                     });
                 }
