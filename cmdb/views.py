@@ -18,7 +18,7 @@ def itsystem_import_view(request):
     data_list = ImportAction(request).parse_data()
     sql_params = sql_import_params(data_list)
     msg = api_action('itsystem.imp', sql_params)
-    return HttpResponseRedirect('/cmdb/itsystem/list/')
+    return JsonResponse({'msg': "导入成功", 'code': 200})
 
 
 @csrf_exempt

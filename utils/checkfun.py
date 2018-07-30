@@ -3,13 +3,13 @@
 
 from hdopsm.models import Enum
 import logging
-logger = logging.getLogger('django.request')
+logger = logging.getLogger('django')
 
 
 def check_exists_filed(model, kwargs):
     for filed in kwargs.keys():
         if not hasattr(model, filed):
-            logger.error()
+            logger.error("参数错误,{} 不在{}这张表里".format(model, filed))
             raise Exception("参数错误,{} 不在{}这张表里".format(model, filed))
 
 
@@ -48,8 +48,10 @@ def check_column_enum(model, column, kwargs):
     enums = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
     for enum in enums:
         enum_list.append(enum['value_desc'])
-    if kwargs[column] not in enum_list:
-        raise Exception("{}字段{}的值必须为：{}".format(model, column, kwargs[column]))
+    for args in kwargs:
+        if args[column] not in enum_list:
+                raise Exception("{}字段{}的值必须为：{}".format(model, column, kwargs[column]))
+
 
 
 def change_column_eum(model, column, kwargs):

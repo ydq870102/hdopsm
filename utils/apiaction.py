@@ -4,9 +4,10 @@
 
 from api.autoload import AutoLoad
 import logging
+import traceback
 
 
-logger = logging.getLogger('django.request')
+logger = logging.getLogger('django')
 
 
 def api_action(method="", params={}):
@@ -30,4 +31,4 @@ def api_action(method="", params={}):
             logger.error("函数不能被调用{}.{}".format(module, func))
             return False
     except Exception, e:
-        logger.error("调用模块执行中出错：{}".format(e.message))
+        logger.error("调用模块执行中出错：{}".format(traceback.format_exc()))
