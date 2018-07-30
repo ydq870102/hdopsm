@@ -6,13 +6,11 @@ import logging
 logger = logging.getLogger('django.request')
 
 
-
 def check_exists_filed(model, kwargs):
     for filed in kwargs.keys():
         if not hasattr(model, filed):
             logger.error()
             raise Exception("参数错误,{} 不在{}这张表里".format(model, filed))
-
 
 
 def check_output_filed(model, output):
@@ -46,9 +44,16 @@ def check_where_id(where):
 
 
 def check_column_enum(model, column, kwargs):
-    print model,
-    print Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
-    enum_list = list(Enum.objects.filter(table_name=model, table_column=column).values('value_desc'))
-    for value in kwargs:
-        if value['is_untrained_person_use'] not in enum_list:
-            raise Exception("{}字段{}的值必须为：{}".format(model,column,kwargs))
+    enum_list = []
+    enums = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+    for enum in enums:
+        enum_list.append(enum['value_desc'])
+    if kwargs[column] not in enum_list:
+        raise Exception("{}字段{}的值必须为：{}".format(model, column, kwargs[column]))
+
+
+def change_column_eum(model, column, kwargs):
+    sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
+    kwargs[column] =sql_filter[0].value
+    return kwargs
+

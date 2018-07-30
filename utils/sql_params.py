@@ -68,5 +68,4 @@ def sql_import_params(args):
     :param request:
     :return: 条件字典
     """
-    print type(args)
     return {"result": args}

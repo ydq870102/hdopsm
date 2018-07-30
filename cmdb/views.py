@@ -16,10 +16,8 @@ import json
 @csrf_exempt
 def itsystem_import_view(request):
     data_list = ImportAction(request).parse_data()
-    print type(data_list)
     sql_params = sql_import_params(data_list)
     msg = api_action('itsystem.imp', sql_params)
-    print msg
     return HttpResponseRedirect('/cmdb/itsystem/list/')
 
 

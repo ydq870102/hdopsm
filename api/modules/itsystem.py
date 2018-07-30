@@ -85,6 +85,7 @@ def imp(**kwargs):
         try:
             check_exists_filed(ItSystem, data)
             check_column_enum('ItSystem', 'is_untrained_person_use', data)
+            data = change_column_eum('ItSystem', 'is_untrained_person_use', data)
         except Exception,e:
             logger.error("检查导入值有误.错误为: {}".format(e.message))
             msg.append("检查导入值有误.错误为: {}".format(e.message))
@@ -93,12 +94,13 @@ def imp(**kwargs):
                 data['is_delete'] = 0
                 ItSystem.objects.filter(itsystem_name=data['itsystem_name']).update(**data)
             except Exception, e:
-                logger.error("sql 执行出错，错误原因: {}".format(e.message))
-                msg.append("sql 执行出错，错误原因: {}".format(e.message))
+                print e.message
+                logger.error("sql 执行出错，错误原因: {}".format(e.reason))
+                msg.append("sql 执行出错，错误原因: {}".format(e.reason))
         else:
             try:
                 ItSystem.objects.create(**data)
             except Exception, e:
                 logger.error("sql 执行出错，错误原因: {}".format(e.message))
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
-        return msg
+    return msg
