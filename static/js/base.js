@@ -6,24 +6,23 @@ $(document).ready(function () {
             $('.nav-active').removeClass('nav-active');
             $(this).parent().addClass('active');
             $(this).parents().addClass('nav-active');
+
         }
     });
-});
-
-$(function () {
-    $("#check_all").click(function () {
-        $("input[name='checked']").prop("checked", $(this).prop("checked"));
-    });
-});
-
-
-$(document).ready(function () {
     $('.page').each(function () {
         $this = $(this);
         if (window.location.href.indexOf($this[0].href) == 0) {
             $(this).parent().addClass('active');
 
         }
+    });
+    $('#error-info').hide();
+
+});
+
+$(function () {
+    $("#check_all").click(function () {
+        $("input[name='checked']").prop("checked", $(this).prop("checked"));
     });
 });
 

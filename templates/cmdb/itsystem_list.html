@@ -114,7 +114,7 @@
                 </div>
                 <form role="form"
                       accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                      enctype="multipart/form-data" class="main form-horizontal import-form ">
+                      enctype="multipart/form-data" class="main form-horizontal import-form ">{{% csrf_token %}
                     <div class="modal-body">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">上传文件</label>
@@ -158,6 +158,7 @@
                         $.ajax({
                             type: 'POST',
                             url: '/cmdb/itsystem/delete/',
+                            csrfmiddlewaretoken:"{% csrf_token %}",
                             data: {
                                 "where": check_array,
                             },
@@ -181,6 +182,7 @@
                                     type:'error',
                                     timer:1000
                                 });
+                                $('#error-info').html(data[0]).show().delay(3000).fadeOut();
                             },
                         });
                     }
@@ -195,18 +197,17 @@
                         confirmButtonColor: '#374152',
                         timer:1000
                     }
+
                 )
             }
         });
 
 
         $('#import-form').click(function(){
-            var form = $(".import-form")
-            console.log( new FormData($(".import-form")[0]))
             $.ajax({
                 type: "POST",
                 url: "/cmdb/itsystem/import/",
-                {#csrfmiddlewaretoken:"{{ csrf_token }}",#}
+                csrfmiddlewaretoken:"{% csrf_token %}",
                 processData:false,
                 contentType:false,
                 data: new FormData($(".import-form")[0]),

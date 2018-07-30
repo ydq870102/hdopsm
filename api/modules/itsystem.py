@@ -52,10 +52,10 @@ def delete(**kwargs):
     msg = []
     if isinstance(where, dict):
         try:
-            obj = ItSystem.objects.filter(where).update(is_delete=1)
+            ItSystem.objects.filter(**where).update(is_delete=1)
         except Exception, e:
-            logger.error("ID{}删除执行出错，错误原因: {}".format(obj.id, traceback.format_exc()))
-            msg.append("ID{}删除执行出错，错误原因: {}".format(obj.id, traceback.format_exc()))
+            logger.error("ID{}删除执行出错，错误原因: {}".format(where, traceback.format_exc()))
+            msg.append("ID{}删除执行出错，错误原因: {}".format(where, traceback.format_exc()))
     if isinstance(where, list):
         for key in where:
             try:
