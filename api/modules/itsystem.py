@@ -21,7 +21,7 @@ def create(**kwargs):
         itsystem = ItSystem.objects.create(**result)
     except Exception, e:
         logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-        raise Exception("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+        raise Exception("sql 执行出错，错误原因: {}".format(e.message))
     return itsystem.id
 
 
@@ -42,7 +42,7 @@ def get(**kwargs):
         data = ItSystem.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
     except Exception, e:
         logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-        raise Exception("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+        raise Exception("sql 执行出错，错误原因: {}".format(e.message))
     return data
 
 
@@ -55,14 +55,14 @@ def delete(**kwargs):
             ItSystem.objects.filter(**where).update(is_delete=1)
         except Exception, e:
             logger.error("ID{}删除执行出错，错误原因: {}".format(where, traceback.format_exc()))
-            msg.append("ID{}删除执行出错，错误原因: {}".format(where, traceback.format_exc()))
+            msg.append("ID{}删除执行出错，错误原因: {}".format(where, e.message))
     if isinstance(where, list):
         for key in where:
             try:
                 ItSystem.objects.filter(id=key).update(is_delete=1)
             except Exception, e:
                 logger.error("ID{}删除执行出错，错误原因: {}".format(key, traceback.format_exc()))
-                msg.append("ID{}删除执行出错，错误原因: {}".format(key, traceback.format_exc()))
+                msg.append("ID{}删除执行出错，错误原因: {}".format(key, e.message))
     return msg
 
 
@@ -75,21 +75,22 @@ def update(**kwargs):
         obj = ItSystem.objects.filter(where).update(**result)
     except Exception, e:
         logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-        raise Exception("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+        raise Exception("sql 执行出错，错误原因: {}".format(e.message))
     return obj.id
 
 
 def imp(**kwargs):
     data_list = kwargs.get("result", [])
     msg = []
-    check_exists_filed(ItSystem, data_list[0])
-    check_column_enum('ItSystem', 'is_untrained_person_use', data_list)
+    try:
+        check_exists_filed(ItSystem, data_list[0])
+        check_column_enum('ItSystem', 'is_untrained_person_use', data_list)
+    except Exception, e:
+        logger.error("检查导入值有误.错误为: {}".format(traceback.format_exc()))
+        msg.append("检查导入值有误.错误为: {}".format(e.message))
+        return msg
     for data in data_list:
-        try:
-            data = change_column_eum('ItSystem', 'is_untrained_person_use', data)
-        except Exception,e:
-            logger.error("检查导入值有误.错误为: {}".format(traceback.format_exc()))
-            msg.append("检查导入值有误.错误为: {}".format(traceback.format_exc()))
+        data = change_column_eum('ItSystem', 'is_untrained_person_use', data)
         if ItSystem.objects.filter(itsystem_name=data['itsystem_name']).count() == 1:
             try:
                 data['is_delete'] = 0
@@ -97,11 +98,11 @@ def imp(**kwargs):
             except Exception, e:
                 print traceback.format_exc()
                 logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-                msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+                msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
                 ItSystem.objects.create(**data)
             except Exception, e:
                 logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-                msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+                msg.append("sql 执行出错，错误原因: {}".format(e.message))
     return msg

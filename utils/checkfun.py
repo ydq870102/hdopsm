@@ -50,8 +50,7 @@ def check_column_enum(model, column, kwargs):
         enum_list.append(enum['value_desc'])
     for args in kwargs:
         if args[column] not in enum_list:
-                raise Exception("{}字段{}的值必须为：{}".format(model, column, kwargs[column]))
-
+                raise Exception("{}字段{}的枚举{}填写不正确".format(model, column, args[column]))
 
 
 def change_column_eum(model, column, kwargs):

@@ -18,9 +18,14 @@ def itsystem_import_view(request):
     data_list = ImportAction(request).parse_data()
     sql_params = sql_import_params(data_list)
     msg = api_action('itsystem.imp', sql_params)
-    return JsonResponse({'msg': "导入成功", 'code': 200})
+    msg = ",".join(msg)
+    if msg or msg is None:
+        return JsonResponse(data=msg, status=500, safe=False)
+    else:
+        return JsonResponse(data=msg, status=200, safe=False)
 
 
+@csrf_exempt
 def itsystem_list_view(request):
     """
     @ 信息系统页面
@@ -39,9 +44,7 @@ def itsystem_delete_view(request):
     if request.method == 'POST':
         sql_params = sql_delete_params(request)
         msg = api_action('itsystem.delete', sql_params)
-        msg =['sssssss','ssssssss','dddddddddddddd']
         if msg or msg is None:
             return JsonResponse(data=msg, status=403, safe=False)
-
         else:
-            return JsonResponse(data=msg, status=403, safe=False)
+            return JsonResponse(data=msg, status=200, safe=False)
