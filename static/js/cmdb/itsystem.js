@@ -114,11 +114,11 @@ $('.bk-tab2-head ul li').click(function () {
 
 $('.group-more-link').click(function () {
     if ($(this).children().is('.fa-angle-double-up')){
-        $('#attr_move').parent().css({"display" : "true"})
+        $('#group_display').parent().css('display','block');
         $(this).children().removeClass('fa-angle-double-up').addClass('fa-angle-double-down')
     }
     else{
-        $('#attr_move').parent().css({"display" : "none"})
+        $('#group_display').parent().css('display','none');
         $(this).children().removeClass('fa-angle-double-down').addClass('fa-angle-double-up')
     }
 
