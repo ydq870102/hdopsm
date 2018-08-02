@@ -27,6 +27,9 @@
     <orderEntry type="module" module-name="osrm" />
     <orderEntry type="module" module-name="OpsManage" />
     <orderEntry type="module" module-name="xm2cloud_webui" />
+    <orderEntry type="module" module-name="osrm" />
+    <orderEntry type="module" module-name="bk_monitor" />
+    <orderEntry type="module" module-name="OpsManage" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

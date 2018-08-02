@@ -14,15 +14,13 @@ def sql_get_params(request):
         limit = request.GET.get('limit', None)
         where = request.GET.get('where', {})
         where['is_delete'] = 0
-        return {"where": where, "output": output, "limit": limit, "order_by": order_by}
-
     elif request.method == 'POST':
         output = request.POST.get('output', [])
         order_by = request.POST.get('order_by', 'id')
         limit = request.POST.get('limit', None)
         where = request.POST.get('where', {})
         where['is_delete'] = 0
-        return {"where": where, "output": output, "limit": limit, "order_by": order_by}
+    return format_dict(where=where, output=output, limit=limit, order_by=order_by)
 
 
 def sql_create_params(request):
@@ -33,7 +31,7 @@ def sql_create_params(request):
     """
     if request.method == 'POST':
         result = request.POST.get('result', {})
-        return {"result": result}
+        return format_dict(result=result)
 
 
 def sql_delete_params(request):
@@ -47,7 +45,7 @@ def sql_delete_params(request):
             where = request.POST.getlist('where[]', [])
         else:
             where = request.POST.get('where', {})
-        return {"where": where}
+        return format_dict(where=where)
 
 
 def sql_update_params(request):
@@ -59,13 +57,35 @@ def sql_update_params(request):
     if request.method == 'POST':
         where = request.POST.get('where', {})
         result = request.POST.get('result', {})
-        return {"where": where, "result": result}
+        return format_dict(where=where, result=result)
 
 
-def sql_import_params(args):
+def sql_import_params(result):
     """
     @ 对象导入条件拼接
     :param request:
     :return: 条件字典
     """
-    return {"result": args}
+    return format_dict(result=result)
+
+
+def sql_detail_params(id):
+    """
+    @ 对象导入条件拼接
+    :param request:
+    :return: 条件字典
+    """
+    return format_dict(where={"id": id})
+
+
+def format_dict(output=[], order_by='id', limit=None, where={}, result={}):
+    """
+    @返回结果封装
+    :param output:
+    :param order_by:
+    :param limit:
+    :param where:
+    :param result:
+    :return:
+    """
+    return {"where": where, "output": output, "limit": limit, "order_by": order_by, "result": result}

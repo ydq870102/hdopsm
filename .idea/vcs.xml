@@ -2,8 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../OpsManage" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../osrm" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../xm2cloud_webui" vcs="Git" />
+    <mapping directory="D:/Pyhome/OpsManage" vcs="Git" />
   </component>
 </project>

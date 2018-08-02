@@ -20,4 +20,6 @@ urlpatterns = [
     url(r'^itsystem/import/$', itsystem_import_view, name='itsystem_import'),
     url(r'^itsystem/list/$', itsystem_list_view, name='itsystem_list'),
     url(r'^itsystem/delete/$', itsystem_delete_view, name='itsystem_delete'),
+    url(r'^itsystem/detail/(?P<id>[0-9]+)/$', itsystem_detail_view, name='itsystem_detail'),
+
 ]

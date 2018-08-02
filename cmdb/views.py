@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 
-from django.http import HttpResponseRedirect
+from django.template.loader import render_to_string
 from django.shortcuts import render_to_response
 from hdopsm.common import pages
 from utils.importaction import ImportAction
@@ -10,7 +10,6 @@ from utils.apiaction import api_action
 from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-import json
 
 
 @csrf_exempt
@@ -48,3 +47,18 @@ def itsystem_delete_view(request):
             return JsonResponse(data=msg, status=403, safe=False)
         else:
             return JsonResponse(data=msg, status=200, safe=False)
+
+@csrf_exempt
+def itsystem_detail_view(request, id):
+    if request.is_ajax():
+        sql_params = sql_detail_params(id)
+        object = api_action('itsystem.get', sql_params)
+        content_html = render_to_string('cmdb/itsystem_detail.html', {"object": object[0]})
+        render_dict ={'content_html': content_html}
+        return JsonResponse(data=render_dict, status=200, safe=False)
+
+
+
+def itsystem_edit_view(request, id):
+    if request.method == 'POST':
+        sql_params = sql_detail_params(id)
