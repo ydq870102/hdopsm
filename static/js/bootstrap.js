@@ -835,7 +835,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       var transition = $.support.transition && that.$element.hasClass('fade')
 
       if (!that.$element.parent().length) {
-        that.$element.appendTo(document.body) // don't move modals dom position
+        that.$element.appendTo(document.body) // don'templatetags move modals dom position
       }
 
       that.$element
@@ -1233,7 +1233,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     offset.top  = offset.top  + marginTop
     offset.left = offset.left + marginLeft
 
-    // $.fn.offset doesn't round pixel values
+    // $.fn.offset doesn'templatetags round pixel values
     // so we use setOffset directly with our own function B-0
     $.offset.setOffset($tip[0], $.extend({
       using: function (props) {
@@ -1473,7 +1473,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     $tip.removeClass('fade top bottom left right in')
 
-    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
+    // IE8 doesn'templatetags accept hiding via the `:empty` pseudo selector, we have to do
     // this manually by checking the contents.
     if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
   }
