@@ -39,7 +39,7 @@ config.read(os.path.join(BASE_DIR, 'syscfg.conf'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '30%+%n#c)tj0skq6$8w%-j_hcriavuk989tn&m$9-tk1p&i=@m'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don'templatetags run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []

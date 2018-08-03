@@ -7,6 +7,7 @@ import logging
 import traceback
 
 logger = logging.getLogger('django')
+msg = []
 
 
 def create(**kwargs):
@@ -49,7 +50,6 @@ def get(**kwargs):
 def delete(**kwargs):
     where = kwargs.get("where", [])
     check_where_id(where)
-    msg = []
     if isinstance(where, dict):
         try:
             ItSystem.objects.filter(**where).update(is_delete=1)
@@ -69,19 +69,25 @@ def delete(**kwargs):
 def update(**kwargs):
     where = kwargs.get("where", {})
     result = kwargs.get("result", {})
-    check_where_id(where)
-    check_exists_filed(ItSystem, **result)
     try:
-        obj = ItSystem.objects.filter(where).update(**result)
+        check_where_id(where)
+        check_exists_filed(ItSystem, result)
+        check_column_enum('ItSystem', 'is_untrained_person_use', result)
+    except Exception, e:
+        logger.error("检查导入值有误.错误为: {}".format(traceback.format_exc()))
+        msg.append("检查导入值有误.错误为: {}".format(e.message))
+        return msg
+    try:
+        result = change_column_eum('ItSystem', 'is_untrained_person_use', result)
+        ItSystem.objects.filter(**where).update(**result)
     except Exception, e:
         logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-        raise Exception("sql 执行出错，错误原因: {}".format(e.message))
-    return obj.id
+        msg.append("sql 执行出错，错误原因: {}".format(e.message))
+    return msg
 
 
 def imp(**kwargs):
     data_list = kwargs.get("result", [])
-    msg = []
     try:
         check_exists_filed(ItSystem, data_list[0])
         check_column_enum('ItSystem', 'is_untrained_person_use', data_list)

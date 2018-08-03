@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //左边菜单栏页面跳转JS
     $('.menu-list ul li a').each(function () {
         $this = $(this);
         if (window.location.href.indexOf($this[0].href) == 0) {
@@ -9,6 +10,7 @@ $(document).ready(function () {
 
         }
     });
+    //分页界面跳转js
     $('.page').each(function () {
         $this = $(this);
         if (window.location.href.indexOf($this[0].href) == 0) {
@@ -16,8 +18,6 @@ $(document).ready(function () {
 
         }
     });
-    $('#error-info').hide();
-
 });
 
 $(function () {

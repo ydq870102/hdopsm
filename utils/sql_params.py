@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
+import json
 
 
 def sql_get_params(request):
@@ -71,11 +72,33 @@ def sql_import_params(result):
 
 def sql_detail_params(id):
     """
-    @ 对象导入条件拼接
+    @ 对象明细条件拼接
     :param request:
     :return: 条件字典
     """
     return format_dict(where={"id": id})
+
+
+def sql_edit_params(request, id):
+    """
+    @ 对象编辑条件拼接
+    :param request:
+    :return: 条件字典
+    """
+    if request.method == 'POST':
+        result = request.POST.get('result', {})
+        return format_dict(where={"id": id}, result=json.loads(result))
+
+
+def sql_edit_params(request):
+    """
+    @ 对象导出条件拼接
+    :param request:
+    :return: 条件字典
+    """
+    if request.method == 'GET':
+        where = request.GET.get('where', {})
+        return format_dict(where=where)
 
 
 def format_dict(output=[], order_by='id', limit=None, where={}, result={}):

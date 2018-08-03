@@ -9,8 +9,7 @@ from utils.importaction import ImportAction
 from utils.apiaction import api_action
 from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-
+from django.http import JsonResponse, FileResponse
 
 @csrf_exempt
 def itsystem_import_view(request):
@@ -24,7 +23,7 @@ def itsystem_import_view(request):
         return JsonResponse(data=msg, status=200, safe=False)
 
 
-@csrf_exempt
+
 def itsystem_list_view(request):
     """
     @ 信息系统页面
@@ -48,7 +47,7 @@ def itsystem_delete_view(request):
         else:
             return JsonResponse(data=msg, status=200, safe=False)
 
-@csrf_exempt
+
 def itsystem_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
@@ -58,7 +57,23 @@ def itsystem_detail_view(request, id):
         return JsonResponse(data=render_dict, status=200, safe=False)
 
 
-
+@csrf_exempt
 def itsystem_edit_view(request, id):
-    if request.method == 'POST':
-        sql_params = sql_detail_params(id)
+    if request.is_ajax():
+        sql_params = sql_edit_params(request, id)
+        msg = api_action('itsystem.update', sql_params)
+        if msg or msg is None:
+            return JsonResponse(data=msg, status=500, safe=False)
+        else:
+            return JsonResponse(data=msg, status=200, safe=False)
+
+
+def itsystem_template_view(request):
+        file = open('static/excel/template_itsystem.xls', 'rb')
+        response = FileResponse(file)
+        response['Content-Type'] = 'application/octet-stream'
+        response['Content-Disposition'] = 'attachment;filename="template_itsystem.xls"'
+        return response
+
+def itsystem_export_view(request):
+    pass

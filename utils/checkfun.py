@@ -38,9 +38,14 @@ def check_limit_type(limit):
 
 
 def check_where_id(where):
-    for key in where:
-        if not key.isdigit():
-            raise Exception("执行条件ID必须为数字")
+    if isinstance(where, list):
+        for key in where:
+            if not key.isdigit():
+                raise Exception("执行条件ID必须为数字")
+    elif isinstance(where, dict):
+        for key in where.values():
+            if not key.isdigit:
+                raise Exception("执行条件ID必须为数字")
 
 
 def check_column_enum(model, column, kwargs):
@@ -48,13 +53,22 @@ def check_column_enum(model, column, kwargs):
     enums = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
     for enum in enums:
         enum_list.append(enum['value_desc'])
-    for args in kwargs:
-        if args[column] not in enum_list:
-                raise Exception("{}字段{}的枚举{}填写不正确".format(model, column, args[column]))
+    if isinstance(kwargs, list):
+        for args in kwargs:
+            if args[column] not in enum_list:
+                    raise Exception("{}字段{}的枚举{}填写不正确".format(model, column, args[column]))
+    elif isinstance(kwargs, dict):
+        if kwargs[column] not in enum_list:
+            raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format(model, column, enum_list))
+    else:
+        raise Exception("更新数据{}类型{}不正确".format(kwargs, type(kwargs)))
 
 
 def change_column_eum(model, column, kwargs):
-    sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
-    kwargs[column] =sql_filter[0].value
-    return kwargs
+    try:
+        sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
+        kwargs[column] =sql_filter[0].value
+        return kwargs
+    except Exception, e:
+        raise Exception("字段{}枚举转换出错".format(column))
 

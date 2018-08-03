@@ -1,3 +1,4 @@
+//点击【删除按钮】触发JS
 $('#del').click(function () {
     var check_array = [];
     $(".gradeX input:checked").each(function () {
@@ -61,12 +62,12 @@ $('#del').click(function () {
     }
 });
 
-
+//点击【导入】按钮触发JS
 $('#import-form').click(function(){
     $.ajax({
         type: "POST",
         url: "/cmdb/itsystem/import/",
-        csrfmiddlewaretoken:"{% csrf_token %}",
+        // csrfmiddlewaretoken:"{% csrf_token %}",
         processData:false,
         contentType:false,
         data: new FormData($(".import-form")[0]),
@@ -91,6 +92,7 @@ $('#import-form').click(function(){
     });
 });
 
+//点击【数据行】触发弹出明细界面
 $('tbody tr').click(function (event) {
     if(  event.target.name !='checked') {
         var id = $(this).find('input').val()
@@ -105,17 +107,19 @@ $('tbody tr').click(function (event) {
     }
 });
 
+//点击非主体部分触发关闭明细界面
 $('.slidebar-wrapper').live("click",function (event) {
     if (event.target.className == 'slidebar-wrapper'){
         $('.slidebar-wrapper').remove()
     }
-});
+})
+;
 
+//点击明细tab触发切换界面
 $('.bk-tab2-head ul li').live("click",function () {
     $('.tab2-nav-item').removeClass('actived')
     $(this).addClass('actived')
     var num =$(this).index()
-    console.log(num)
     $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
     $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
 });
@@ -146,12 +150,35 @@ $('.attr-edit').live("click",function () {
 
 //属性编辑界面点击【保存】按钮
 $('.form-save').live("click",function () {
+    var id = $(this).val()
+    var form_dict = get_form_data()
     $.ajax({
         type: "POST",
         url: "/cmdb/itsystem/edit/"+ id +"/",
-        success:function (result) {
-            var detail_html =result['content_html']
-            $('#myimportModal').after(detail_html)
-        }
-    })
+        data:  {'result': JSON.stringify(form_dict)},
+        success:function () {
+            $('.slidebar-wrapper').remove()
+            $.ajax({
+                    type: "GET",
+                    url: "/cmdb/itsystem/detail/"+ id +"/",
+                    success:function (result) {
+                        var detail_html =result['content_html']
+                        $('#myimportModal').after(detail_html)
+                    }})},
+        error:function (result) {
+            console.log( $('#edit-error'))
+            $('#edit-error').html(result['responseJSON']).show().delay(8000).fadeOut();
+        }})
 })
+
+//获取form数据，返回字段函数
+function get_form_data() {
+    var result = {}
+    $('.attribute-item-field').each(function () {
+        var form_attr = $(this).children().attr('title')
+        var form_value =  $(this).children().val()
+        result[form_attr] = form_value
+    })
+    return result
+
+}
