@@ -12,8 +12,8 @@ class Department(models.Model):
     """
     department_name = models.CharField(max_length=100,unique=True,verbose_name='部门名称')
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now=True, null=True)
-    last_modify_time = models.DateField(auto_now_add=True, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
     class Meta:
         db_table = 't_com_department'
         permissions = (
@@ -34,8 +34,8 @@ class Person(models.Model):
     email = models.EmailField(verbose_name='邮箱', null=True)
     department_name = models.CharField(max_length=20, verbose_name='所属部门', null=True)
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now=True, null=True)
-    last_modify_time = models.DateField(auto_now_add=True, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
     class Meta:
         db_table = 't_com_person'
         permissions = (
@@ -56,8 +56,8 @@ class Room(models.Model):
     room_contact = models.CharField(max_length=100,blank=True,null=True,verbose_name='机房联系人')
     room_phone = models.CharField(max_length=100,blank=True,null=True,verbose_name='联系人号码')
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now=True, null=True)
-    last_modify_time = models.DateField(auto_now_add=True, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
     '''自定义权限'''
     class Meta:
         db_table = 't_com_room'

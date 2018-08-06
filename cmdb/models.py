@@ -22,41 +22,6 @@ class Line(models.Model):
         verbose_name_plural = '出口线路资产表'
 
 
-class ItSystem(models.Model):
-    """
-    信息系统资产表
-    """
-    bool_type_choices = (
-        ('0', u'否'),
-        ('1', u'是'),
-    )
-    zone = models.CharField(max_length=20, verbose_name='所属区域')
-    itsystem_name = models.CharField(max_length=100, null=True, unique=True, verbose_name='信息系统名称')
-    use_for = models.CharField(max_length=255, null=True, verbose_name='用途')
-    system_framework = models.CharField(max_length=100, null=True, verbose_name='架构描述')
-    system_manager = models.CharField(max_length=100, null=True, verbose_name='业务系统管理员')
-    system_admin = models.CharField(max_length=100, null=True, verbose_name='业务系统负责人')
-    interface_system = models.CharField(max_length=200, null=True, verbose_name='交互系统')
-    user_of_service = models.CharField(max_length=200, null=True, verbose_name='使用人员')
-    is_untrained_person_use = models.IntegerField(choices=bool_type_choices, default=0, null=True,
-                                                  verbose_name='是否普通用户使用')
-    line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
-    is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
-    create_time = models.DateField(auto_now=True, null=True)
-    last_modify_time = models.DateField(auto_now_add=True, null=True)
-
-    class Meta:
-        db_table = 't_com_itsystem'
-        permissions = (
-            ("can_read_itsystem_assets", "读取信息系统资产权限"),
-            ("can_change_itsystem_assets", "更改信息系统资产权限"),
-            ("can_add_itsystem_assets", "添加信息系统资产权限"),
-            ("can_delete_itsystem_assets", "删除信息系统资产权限"),
-        )
-        verbose_name = '信息系统资产表'
-        verbose_name_plural = '信息系统资产表'
-
-
 class Zone(models.Model):
     """
     放置区域资产
@@ -64,8 +29,8 @@ class Zone(models.Model):
     line_name = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
     vlan = models.CharField(max_length=100, null=True, verbose_name='vlan')
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now=True, null=True)
-    last_modify_time = models.DateField(auto_now_add=True, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
     '''自定义权限'''
 
     class Meta:
@@ -78,6 +43,43 @@ class Zone(models.Model):
         )
         verbose_name = '放置区域资产表'
         verbose_name_plural = '放置区域资产表'
+
+
+class ItSystem(models.Model):
+    """
+    信息系统资产表
+    """
+    bool_type_choices = (
+        ('0', u'否'),
+        ('1', u'是'),
+    )
+
+    itsystem_name = models.CharField(max_length=100, null=True, unique=True, verbose_name='信息系统名称')
+    use_for = models.CharField(max_length=255, null=True, verbose_name='用途')
+    system_framework = models.CharField(max_length=100, null=True, verbose_name='架构描述')
+    system_manager = models.CharField(max_length=100, null=True, verbose_name='业务系统管理员')
+    system_admin = models.CharField(max_length=100, null=True, verbose_name='业务系统负责人')
+    interface_system = models.CharField(max_length=200, null=True, verbose_name='交互系统')
+    user_of_service = models.CharField(max_length=200, null=True, verbose_name='使用人员')
+    is_untrained_person_use = models.CharField(max_length=20, null=True,verbose_name='是否普通用户使用')
+    line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
+    is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
+
+    zone = models.ForeignKey(Zone)
+
+    class Meta:
+        db_table = 't_com_itsystem'
+        permissions = (
+            ("can_read_itsystem_assets", "读取信息系统资产权限"),
+            ("can_change_itsystem_assets", "更改信息系统资产权限"),
+            ("can_add_itsystem_assets", "添加信息系统资产权限"),
+            ("can_delete_itsystem_assets", "删除信息系统资产权限"),
+        )
+        verbose_name = '信息系统资产表'
+        verbose_name_plural = '信息系统资产表'
+
 
 
 class Assets(models.Model):
@@ -105,12 +107,13 @@ class Assets(models.Model):
     model = models.CharField(max_length=100, blank=True, null=True, verbose_name='资产型号')
     status = models.SmallIntegerField(blank=True, null=True, verbose_name='状态')
     room = models.SmallIntegerField(blank=True, null=True, verbose_name='所属机房')
-    put_zone = models.SmallIntegerField(blank=True, null=True, verbose_name='放置区域')
-    itsystem = models.SmallIntegerField(blank=True, null=True, verbose_name='信息系统')
     department = models.SmallIntegerField(blank=True, null=True, verbose_name='所属部门')
     is_delete = models.IntegerField(default=0, null=True)
-    create_date = models.DateTimeField(auto_now=True, null=True)
-    last_modify_time = models.DateTimeField(auto_now_add=True, null=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
+
+    put_zone = models.ForeignKey(Zone)
+    itsystem = models.ForeignKey(ItSystem)
 
     class Meta:
         db_table = 't_com_assets'
@@ -145,8 +148,8 @@ class Server_Assets(models.Model):
     raid = models.SmallIntegerField(blank=True, null=True, verbose_name='raid类型')
     system = models.CharField(max_length=100, blank=True, null=True, verbose_name='操作系统类型')
     is_delete = models.IntegerField(default=0)
-    create_date = models.DateTimeField(auto_now_add=True)
-    update_date = models.DateTimeField(auto_now_add=True)
+    create_time = models.DateField(auto_now_add=True, null=True)
+    last_modify_time = models.DateField(auto_now=True, null=True)
     '''自定义添加只读权限-系统自带了add change delete三种权限'''
 
     class Meta:

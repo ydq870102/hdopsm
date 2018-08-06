@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^itsystem/detail/(?P<id>[0-9]+)/$', itsystem_detail_view, name='itsystem_detail'),
     url(r'^itsystem/edit/(?P<id>[0-9]+)/$', itsystem_edit_view, name='itsystem_edit'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
-    url(r'^itsystem/export//$', itsystem_export_view, name='itsystem_export'),
+    url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
 
 ]

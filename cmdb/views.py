@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import render_to_response
 from hdopsm.common import pages
 from utils.importaction import ImportAction
+from utils.exportaction import ExportAction
 from utils.apiaction import api_action
 from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
@@ -43,7 +44,7 @@ def itsystem_delete_view(request):
         sql_params = sql_delete_params(request)
         msg = api_action('itsystem.delete', sql_params)
         if msg or msg is None:
-            return JsonResponse(data=msg, status=403, safe=False)
+            return JsonResponse(data=msg, status=500, safe=False)
         else:
             return JsonResponse(data=msg, status=200, safe=False)
 
@@ -60,7 +61,7 @@ def itsystem_detail_view(request, id):
 @csrf_exempt
 def itsystem_edit_view(request, id):
     if request.is_ajax():
-        sql_params = sql_edit_params(request, id)
+        sql_params = sql_update_params(request, id)
         msg = api_action('itsystem.update', sql_params)
         if msg or msg is None:
             return JsonResponse(data=msg, status=500, safe=False)
@@ -75,5 +76,13 @@ def itsystem_template_view(request):
         response['Content-Disposition'] = 'attachment;filename="template_itsystem.xls"'
         return response
 
+
 def itsystem_export_view(request):
-    pass
+    sql_params = sql_get_params(request)
+    object_list = api_action('itsystem.exp', sql_params)
+    export_file, export_file_name = ExportAction( object_list, 'template_itsystem.xls').parse_data()
+    file = open(export_file, 'rb')
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="{}"'.format(export_file_name)
+    return response

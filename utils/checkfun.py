@@ -64,11 +64,32 @@ def check_column_enum(model, column, kwargs):
         raise Exception("更新数据{}类型{}不正确".format(kwargs, type(kwargs)))
 
 
-def change_column_eum(model, column, kwargs):
-    try:
-        sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
-        kwargs[column] =sql_filter[0].value
+def foreignkey_change(kwargs, column, foreignobj):
+    if isinstance(kwargs, list):
+        for args in kwargs:
+            print args,args[column]
+            obj = foreignobj.objects.filter(line_name=args[column])
+            print obj
+        print kwargs
         return kwargs
-    except Exception, e:
-        raise Exception("字段{}枚举转换出错".format(column))
+
+#
+#
+# def change_column_enum(model, column, kwargs):
+#     if isinstance(kwargs, dict):
+#         try:
+#             sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
+#             kwargs[column] =sql_filter[0].value
+#             return kwargs
+#         except Exception, e:
+#             raise Exception("字段{}枚举转换出错".format(column))
+#     else:
+#         print type(kwargs)
+#         for line in kwargs:
+#             try:
+#                 sql_filter = Enum.objects.filter(table_name=model, table_column=column, value_desc=kwargs[column])
+#                 kwargs[column] = sql_filter[0].value
+#             except Exception, e:
+#                 raise Exception("字段{}枚举转换出错".format(column))
+#         return kwargs
 
