@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -61,13 +62,21 @@ class ItSystem(models.Model):
     system_admin = models.CharField(max_length=100, null=True, verbose_name='业务系统负责人')
     interface_system = models.CharField(max_length=200, null=True, verbose_name='交互系统')
     user_of_service = models.CharField(max_length=200, null=True, verbose_name='使用人员')
-    is_untrained_person_use = models.CharField(max_length=20, null=True,verbose_name='是否普通用户使用')
+    is_untrained_person_use = models.CharField(choices=((u'否', u'否'), ('是', '是')), max_length=20, null=True,
+                                               verbose_name= '是否普通用户使用')
     line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
     is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
     create_time = models.DateField(auto_now_add=True, null=True)
     last_modify_time = models.DateField(auto_now=True, null=True)
-
     zone = models.ForeignKey(Zone)
+
+    @staticmethod
+    def get_foreignkey_column():
+        return [{'Zone': 'zone'}]
+
+    @staticmethod
+    def get_enum_column():
+        return [{'ItSystem': 'is_untrained_person_use'}]
 
     class Meta:
         db_table = 't_com_itsystem'
@@ -79,7 +88,6 @@ class ItSystem(models.Model):
         )
         verbose_name = '信息系统资产表'
         verbose_name_plural = '信息系统资产表'
-
 
 
 class Assets(models.Model):

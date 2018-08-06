@@ -42,18 +42,44 @@ class Funnel(object):
                     raise CheckException("where条件ID必须为数字")
 
     def check_column_enum(self):
-        for column in self.filter['enum']:
-            enums = Enum.objects.filter(table_name=self.model, table_column=column).values('value_desc')
-            enum_list = [enum['value_desc'] for enum in enums]
-            if isinstance(self.kwargs, list):
-                for args in self.kwargs:
-                    if args[column] not in enum_list:
-                        raise Exception("{}字段{}的枚举{}填写不正确".format(self.model, column, args[column]))
-            elif isinstance(self.kwargs, dict):
-                if self.kwargs[column] not in enum_list:
+        for enum_dict in self.filter['enum']:
+            for table_name, column in enum_dict.items():
+                enums = Enum.objects.filter(table_name=table_name, table_column=column).values('value_desc')
+                enum_list = [enum['value_desc'] for enum in enums]
+                if isinstance(self.kwargs, dict) or self.kwargs[column] not in enum_list:
                     raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format(self.model, column, enum_list))
 
+    def covert_foreignkey(self):
+
+        for key, value in self.filter['foreignkey'].items():
+            try:
+                obj = __import__(key)
+                self.kwargs[value] = obj.objects.filter(self.kwargs[value])
+            except Exception, e:
+                raise CovertException("关键对象{}不存在".format(key))
+
     def funnel_get(self):
+        self.is_exists_filed()
+        self.is_exists_output_filed()
+        self.check_limit_type()
+        self.check_order_by()
+
+    def funnel_create(self):
+        self.is_exists_filed()
+        self.check_column_enum()
+
+    def funnel_delete(self):
+        self.check_where_id()
+
+    def funnel_update(self):
+        self.check_where_id()
+        self.check_column_enum()
+
+    def funnel_imp(self):
+        self.is_exists_filed()
+        self.check_column_enum()
+
+    def funnel_exp(self):
         pass
 
 
@@ -69,6 +95,13 @@ class CovertException(Exception):
         Exception.__init__(self, err)
 
 
-def get_filter(output=[], limit=None, order_by="-id", where={}, foreignkey=[], enum=[]):
-    return {'output': output, "limit": limit, 'order_by': order_by, 'where': where, 'foreignkey': foreignkey,
-            'enum': enum}
+def get_filter(kwargs, eargs):
+    output = kwargs.get("output", ())
+    limit = kwargs.get("limit", None)
+    order_by = kwargs.get("order_by", "-id")
+    where = kwargs.get("where", {})
+    result = kwargs.get("result", {})
+    foreignkey = eargs.get('foreignkey', {})
+    enum = eargs.get('enum')
+    return {'output': output, "limit": limit, 'order_by': order_by, 'where': where, 'result': result,
+            'foreignkey': foreignkey, 'enum': enum}

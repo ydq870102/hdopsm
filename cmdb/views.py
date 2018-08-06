@@ -17,7 +17,7 @@ def itsystem_import_view(request):
     data_list = ImportAction(request).parse_data()
     sql_params = sql_import_params(data_list)
     msg = api_action('itsystem.imp', sql_params)
-    msg = ",".join(msg)
+    # msg = ",".join(msg)
     if msg or msg is None:
         return JsonResponse(data=msg, status=500, safe=False)
     else:

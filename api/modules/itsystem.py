@@ -5,6 +5,7 @@ from cmdb.models import ItSystem, Zone
 from utils.checkfun import *
 import logging
 import traceback
+from utils.funnel import *
 
 logger = logging.getLogger('django')
 msg = []
@@ -86,29 +87,26 @@ def update(**kwargs):
 
 
 def imp(**kwargs):
-    data_list = kwargs.get("result", [])
-    try:
-        check_exists_filed(ItSystem, data_list[0])
-        check_column_enum('ItSystem', 'is_untrained_person_use', data_list)
-        data_list = foreignkey_change(data_list, 'zone', Zone)
-        print data_list
-    except Exception, e:
-        logger.error("检查导入值有误.错误为: {}".format(traceback.format_exc()))
-        msg.append("检查导入值有误.错误为: {}".format(e.message))
-        return msg
-    for data in data_list:
-        if ItSystem.objects.filter(itsystem_name=data['itsystem_name']).count() == 1:
+    result_list = kwargs.get('result', {})
+    for result in result_list:
+        covert_data = get_covert()
+        filter_data = get_filter({'result': result}, covert_data)
+
+        try:
+            Funnel(ItSystem, result, filter_data).funnel_imp()
+        except Exception, e:
+            msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+            continue
+        if ItSystem.objects.filter(itsystem_name=result['itsystem_name']).count() == 1:
             try:
-                data['is_delete'] = 0
-                ItSystem.objects.filter(itsystem_name=data['itsystem_name']).update(**data)
+                result['is_delete'] = 0
+                ItSystem.objects.filter(itsystem_name=result['itsystem_name']).update(**result)
             except Exception, e:
-                logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
-                ItSystem.objects.create(**data)
+                ItSystem.objects.create(**result)
             except Exception, e:
-                logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
     return msg
 
@@ -132,3 +130,9 @@ def exp(**kwargs):
         logger.error("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         raise Exception("sql 执行出错，错误原因: {}".format(e.message))
     return data
+
+
+def get_covert():
+    foreignkey = ItSystem.get_foreignkey_column()
+    enum = ItSystem.get_enum_column()
+    return {'foreignkey': foreignkey, 'enum': enum}
