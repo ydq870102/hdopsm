@@ -185,21 +185,62 @@ function get_form_data() {
 }
 
 //
-$('#select_form').change(function (){
+$('#select_form').change(function () {
     var zone_name = $(this).val()
-    load_table_data()
+    var dict = {}
+    if (zone_name == 'all') {
+        dict['where'] = {}
+    }
+    else {
+        dict['where'] = JSON.stringify({'zone': zone_name})
+    }
     $.ajax({
         type: "POST",
         url: "/cmdb/itsystem/list/",
-        data: {'where': JSON.stringify({'zone':zone_name})},
+        data: dict,
         success: function (result) {
-                    var detail_html = result['content_html']
-                    $('#myimportModal').after(detail_html)
-                }
+            console.log('here')
+            console.log(result)
+            load_table_data(result)
+        }
     })
 })
 
-function load_table_data() {
-    console.log($('tbody tr td'))
-
+function load_table_data(data) {
+    //替换table部分
+    var html = "";
+    for (var i = 0; i < data.length; i++) {
+        html += "<tbody> "
+        html += "<tr class=\"gradeX\">"
+        html += "<td class=\"text-center\">"
+        html += '<input type="checkbox" name="checked" value="' + data[i].id + '">'
+        html += "</td>"
+        html += "<td>" + data[i].zone + "</td>"
+        html += "<td>" + data[i].itsystem_name + "</td>"
+        html += "<td>" + data[i].use_for + "</td>"
+        html += "<td>" + data[i].system_framework + "</td>"
+        html += "<td>" + data[i].system_manager + "</td>"
+        html += "<td>" + data[i].system_admin + "</td>"
+        html += "</tr> "
+        html += "</tbody> "
+    }
+    $("table tbody").remove()
+    $("table thead").after(html)
 }
+
+
+$('#set-select2').on('input propertychange',function(){
+　　var text = $(this).val()
+    var column = $(this).attr('title') + "__icontains"
+    var dict ={'where':{column:text}}
+    $.ajax({
+        type: "POST",
+        url: "/cmdb/itsystem/search/",
+        data: dict,
+        success: function (result) {
+            console.log('here')
+            console.log(result)
+            load_table_data(result)
+        }
+    })
+});

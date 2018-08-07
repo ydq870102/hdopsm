@@ -324,7 +324,7 @@ body .main-btn, html .main-btn {
 }
 
 .attribute-list.edit .attribute-item .attribute-item-field {
-    width: 310px;
+    width: 90%;
     white-space: normal;
     position: relative;
 }

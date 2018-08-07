@@ -19,6 +19,7 @@ from views import *
 urlpatterns = [
     url(r'^itsystem/import/$', itsystem_import_view, name='itsystem_import'),
     url(r'^itsystem/list/$', itsystem_list_view, name='itsystem_list'),
+    url(r'^itsystem/search/$', itsystem_search_view, name='itsystem_search'),
     url(r'^itsystem/delete/$', itsystem_delete_view, name='itsystem_delete'),
     url(r'^itsystem/detail/(?P<id>[0-9]+)/$', itsystem_detail_view, name='itsystem_detail'),
     url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),

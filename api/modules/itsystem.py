@@ -95,7 +95,7 @@ def imp(**kwargs):
         covert_data = get_covert()
         filter_data = get_filter(eargs=covert_data)
         try:
-            result = Funnel(ItSystem, result, filter_data).funnel_imp()
+            result, filter_data = Funnel(ItSystem, result, filter_data).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
