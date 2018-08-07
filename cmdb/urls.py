@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^itsystem/list/$', itsystem_list_view, name='itsystem_list'),
     url(r'^itsystem/delete/$', itsystem_delete_view, name='itsystem_delete'),
     url(r'^itsystem/detail/(?P<id>[0-9]+)/$', itsystem_detail_view, name='itsystem_detail'),
-    url(r'^itsystem/edit/(?P<id>[0-9]+)/$', itsystem_edit_view, name='itsystem_edit'),
+    url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
     url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
 

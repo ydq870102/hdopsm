@@ -11,6 +11,7 @@ from utils.apiaction import api_action
 from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
+from cmdb.sqldao import *
 
 @csrf_exempt
 def itsystem_import_view(request):
@@ -24,7 +25,7 @@ def itsystem_import_view(request):
         return JsonResponse(data=msg, status=200, safe=False)
 
 
-
+@csrf_exempt
 def itsystem_list_view(request):
     """
     @ 信息系统页面
@@ -35,6 +36,14 @@ def itsystem_list_view(request):
         sql_params = sql_get_params(request)
         object_list = api_action('itsystem.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+        zones = get_itsystem_zone()
+        return render_to_response('cmdb/itsystem_list.html', locals())
+    if request.method == 'POST':
+        sql_params = sql_get_params(request)
+        object_list = api_action('itsystem.get', sql_params)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+        zones = get_itsystem_zone()
+        print object_list
         return render_to_response('cmdb/itsystem_list.html', locals())
 
 
@@ -59,7 +68,7 @@ def itsystem_detail_view(request, id):
 
 
 @csrf_exempt
-def itsystem_edit_view(request, id):
+def itsystem_update_view(request, id):
     if request.is_ajax():
         sql_params = sql_update_params(request, id)
         msg = api_action('itsystem.update', sql_params)

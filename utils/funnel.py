@@ -2,6 +2,7 @@
 #  encoding: utf-8
 
 from hdopsm.models import Enum
+import json
 
 
 class Funnel(object):
@@ -46,42 +47,54 @@ class Funnel(object):
             for table_name, column in enum_dict.items():
                 enums = Enum.objects.filter(table_name=table_name, table_column=column).values('value_desc')
                 enum_list = [enum['value_desc'] for enum in enums]
-                if isinstance(self.kwargs, dict) or self.kwargs[column] not in enum_list:
+                if not isinstance(self.kwargs, dict) or self.kwargs[column] not in enum_list:
                     raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format(self.model, column, enum_list))
 
-    def covert_foreignkey(self):
 
-        for key, value in self.filter['foreignkey'].items():
-            try:
-                obj = __import__(key)
-                self.kwargs[value] = obj.objects.filter(self.kwargs[value])
-            except Exception, e:
-                raise CovertException("关键对象{}不存在".format(key))
+    # def name_covert_foreigney(self):
+    #
+    #     for foreignkey_dict in self.filter['foreignkey']:
+    #         for key, value in foreignkey_dict.items():
+    #             try:
+    #                 obj = _load_model_modules(key)
+    #                 print value[1], self.kwargs[value[0]]
+    #                 parms = {value[1]: self.kwargs[value[0]]}
+    #                 self.kwargs[value[0]] = obj.objects.get(**parms)
+    #             except Exception, e:
+    #                 raise CovertException("关键对象{}外键{}不存在".format(key, self.kwargs[value[0]]))
 
     def funnel_get(self):
         self.is_exists_filed()
         self.is_exists_output_filed()
         self.check_limit_type()
         self.check_order_by()
+        return self.kwargs,self.filter
 
     def funnel_create(self):
         self.is_exists_filed()
         self.check_column_enum()
+        return self.kwargs, self.filter
 
     def funnel_delete(self):
         self.check_where_id()
+        return self.kwargs, self.filter
 
     def funnel_update(self):
         self.check_where_id()
         self.check_column_enum()
+        return self.kwargs, self.filter
 
     def funnel_imp(self):
         self.is_exists_filed()
         self.check_column_enum()
+        return self.kwargs, self.filter
 
     def funnel_exp(self):
-        pass
-
+        self.is_exists_filed()
+        self.is_exists_output_filed()
+        self.check_limit_type()
+        self.check_order_by()
+        return self.kwargs, self.filter
 
 class CheckException(Exception):
 
@@ -95,13 +108,22 @@ class CovertException(Exception):
         Exception.__init__(self, err)
 
 
-def get_filter(kwargs, eargs):
-    output = kwargs.get("output", ())
+def get_filter(kwargs={}, eargs={}):
+    output = kwargs.get("output", [])
     limit = kwargs.get("limit", None)
     order_by = kwargs.get("order_by", "-id")
     where = kwargs.get("where", {})
-    result = kwargs.get("result", {})
     foreignkey = eargs.get('foreignkey', {})
     enum = eargs.get('enum')
-    return {'output': output, "limit": limit, 'order_by': order_by, 'where': where, 'result': result,
+    return {'output': output, "limit": limit, 'order_by': order_by, 'where': where,
             'foreignkey': foreignkey, 'enum': enum}
+
+
+# def _load_model_modules(model):
+#     modult_dirs = ['cmdb.models', 'hdopsm.models']
+#     for model_dir in modult_dirs:
+#         module = __import__(model_dir, globals(), locals(), [model], 0)
+#         if hasattr(module, model):
+#             return getattr(module, model)
+#         else:
+#             continue

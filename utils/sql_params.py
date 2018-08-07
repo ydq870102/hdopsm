@@ -14,11 +14,17 @@ def sql_get_params(request):
         order_by = request.GET.get('order_by', 'id')
         limit = request.GET.get('limit', None)
         where = request.GET.get('where', {})
+        if isinstance(where,(unicode)):
+            where =json.loads(where)
+        where['is_delete'] = 0
     elif request.method == 'POST':
         output = request.POST.get('output', [])
         order_by = request.POST.get('order_by', 'id')
         limit = request.POST.get('limit', None)
         where = request.POST.get('where', {})
+        if isinstance(where,(unicode)):
+            where =json.loads(where)
+        where['is_delete'] = 0
     return format_dict(where=where, output=output, limit=limit, order_by=order_by)
 
 
