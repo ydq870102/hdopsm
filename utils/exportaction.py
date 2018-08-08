@@ -12,7 +12,8 @@ logger = logging.getLogger('django')
 
 class ExportAction(object):
     def __init__(self, query_set, tempalte_file):
-
+        self.style = xlwt.XFStyle()
+        self.style1 = xlwt.XFStyle()
         self.template_file =os.path.join(os.getcwd() + '/static/excel', tempalte_file)
         self.query_set = query_set
         self.temp_file_name = tempalte_file.split('.')[0] + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.xls'
@@ -20,8 +21,9 @@ class ExportAction(object):
         if os.path.isdir(os.getcwd() + '/temp/') is not True:
             os.makedirs(os.getcwd() + '/temp/')
 
+
     def parse_data(self):
-        print self.template_file
+        self.execl_style()
         bk = xlrd.open_workbook(self.template_file)
         try:
             writebook = xlwt.Workbook(encoding='utf-8')
@@ -30,13 +32,41 @@ class ExportAction(object):
             # 写入头文件
             for nr in range(0, 4):
                 for lc in range(0, read_sheet.ncols):
-                    write_sheet.write(nr, lc, read_sheet.cell_value(nr, lc))
+                    write_sheet.write(nr, lc, read_sheet.cell_value(nr, lc),self.style)
             # 写入内容
             for nr in range(0, len(self.query_set)):
                 for lc in range(0, read_sheet.ncols):
-                    write_sheet.write(nr + 4, lc, self.query_set[nr][read_sheet.cell_value(1, lc)])
+                    write_sheet.write(nr + 4, lc, self.query_set[nr][read_sheet.cell_value(1, lc)],self.style1)
 
+            for lc in range(0, read_sheet.ncols):
+                write_sheet.col(lc).width = 5000
             writebook.save(self.export_file)
             return self.export_file, self.temp_file_name
         except Exception, e:
             logger.error(traceback.format_exc())
+
+    def execl_style(self):
+        borders = xlwt.Borders()  # Create Borders
+        borders.left = xlwt.Borders.THIN
+        borders.right = xlwt.Borders.THIN
+        borders.top = xlwt.Borders.THIN
+        borders.bottom = xlwt.Borders.THIN
+        borders.left_colour = 0x40
+        borders.right_colour = 0x40
+        borders.top_colour = 0x40
+        borders.bottom_colour = 0x40
+        pattern = xlwt.Pattern()
+        pattern.pattern = xlwt.Pattern.SOLID_PATTERN
+        pattern.pattern_fore_colour = 5
+        alignment = xlwt.Alignment()
+        alignment.horz = xlwt.Alignment.HORZ_CENTER
+        alignment.vert = xlwt.Alignment.VERT_CENTER
+        font = xlwt.Font()
+        font.bold = True
+        font.name = 'Times New Roman'
+        self.style.borders = borders
+        self.style.pattern = pattern
+        self.style.alignment = alignment
+        self.style.font = font
+        self.style1.borders = borders
+        self.style1.alignment = alignment

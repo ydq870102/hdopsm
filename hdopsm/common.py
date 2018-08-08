@@ -80,17 +80,16 @@ def page_list_return(total, current=1):
     return range(min_page, max_page + 1)
 
 
-def pages(post_objects, request):
+def pages(post_objects, current_page=1):
     """
     page public function , return page's object tuple
     分页公用函数，返回分页的对象元组
     """
     paginator = Paginator(post_objects, 10)
     try:
-        current_page = int(request.GET.get('page', '1'))
+        current_page = int(current_page)
     except ValueError:
         current_page = 1
-
     page_range = page_list_return(len(paginator.page_range), current_page)
 
     try:

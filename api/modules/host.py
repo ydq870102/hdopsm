@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 #  encoding: utf-8
 
-from cmdb.models import ItSystem, Zone
+from cmdb.models import *
 from utils.checkfun import *
 import logging
 import traceback
@@ -22,12 +22,12 @@ def create(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, result, filter_data).funnel_create()
+        Funnel(Host, result, filter_data).funnel_create()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        ItSystem.objects.create(**result)
+        Host.objects.create(**result)
         msg.append('创建成功')
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
@@ -42,13 +42,13 @@ def get(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_get()
+        Funnel(Host, {}, filter_data).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
         # filter_data['where']['is_delete'] = 0
-        data = ItSystem.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
+        data = Host.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
             filter_data['order_by'])[0:filter_data['limit']]
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
@@ -64,12 +64,12 @@ def search(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_get()
+        Funnel(Host, {}, filter_data).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        data = ItSystem.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
+        data = Host.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
             filter_data['order_by'])[0:filter_data['limit']]
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
@@ -82,13 +82,13 @@ def delete(**kwargs):
     check_where_id(where)
     if isinstance(where, dict):
         try:
-            ItSystem.objects.filter(**where).update(is_delete=1)
+            Host.objects.filter(**where).update(is_delete=1)
         except Exception, e:
             msg.append("ID{}删除执行出错，错误原因: {}".format(where, e.message))
     if isinstance(where, list):
         for key in where:
             try:
-                ItSystem.objects.filter(id=key).update(is_delete=1)
+                Host.objects.filter(id=key).update(is_delete=1)
             except Exception, e:
                 msg.append("ID{}删除执行出错，错误原因: {}".format(key, e.message))
     return msg
@@ -99,12 +99,12 @@ def update(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, result, filter_data).funnel_update()
+        Funnel(Host, result, filter_data).funnel_update()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        ItSystem.objects.filter(**filter_data['where']).update(**result)
+        Host.objects.filter(**filter_data['where']).update(**result)
         return msg
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
@@ -117,19 +117,19 @@ def imp(**kwargs):
         covert_data = get_covert()
         filter_data = get_filter(eargs=covert_data)
         try:
-            result, filter_data = Funnel(ItSystem, result, filter_data).funnel_imp()
+            result, filter_data = Funnel(Host, result, filter_data).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
-        if ItSystem.objects.filter(label_cn=result['label_cn']).count() == 1:
+        if Host.objects.filter(itsystem_name=result['itsystem_name']).count() == 1:
             try:
                 result['is_delete'] = 0
-                ItSystem.objects.filter(label_cn=result['label_cn']).update(**result)
+                Host.objects.filter(itsystem_name=result['itsystem_name']).update(**result)
             except Exception, e:
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
-                ItSystem.objects.create(**result)
+                Host.objects.create(**result)
             except Exception, e:
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
     return msg
@@ -144,13 +144,12 @@ def exp(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_exp()
+        Funnel(Host, {}, filter_data).funnel_exp()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        # filter_data['where']['is_delete'] = 0
-        data = ItSystem.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
+        data = Host.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
             filter_data['order_by'])[0:filter_data['limit']]
         return data
     except Exception, e:
@@ -158,5 +157,5 @@ def exp(**kwargs):
 
 
 def get_covert():
-    enum = ItSystem.get_enum_column()
+    enum = Host.get_enum_column()
     return {'enum': enum}

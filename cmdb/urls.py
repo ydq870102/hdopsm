@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
     url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
+    url(r'^host/list/$', host_list_view, name='host_list'),
 
 ]

@@ -1,3 +1,4 @@
+var url_params = {}
 //点击【删除按钮】触发JS
 $('#del').click(function () {
     var check_array = [];
@@ -66,7 +67,6 @@ $('#import-form').click(function () {
     $.ajax({
         type: "POST",
         url: "/cmdb/itsystem/import/",
-        // csrfmiddlewaretoken:"{% csrf_token %}",
         processData: false,
         contentType: false,
         data: new FormData($(".import-form")[0]),
@@ -92,7 +92,7 @@ $('#import-form').click(function () {
 });
 
 //点击【数据行】触发弹出明细界面
-$('tbody tr').click(function (event) {
+$('tbody tr').live("click", function (event){
     if (event.target.name != 'checked') {
         var id = $(this).find('input').val()
         $.ajax({
@@ -105,47 +105,6 @@ $('tbody tr').click(function (event) {
         })
     }
 });
-
-//点击非主体部分触发关闭明细界面
-$('.slidebar-wrapper').live("click", function (event) {
-    if (event.target.className == 'slidebar-wrapper') {
-        $('.slidebar-wrapper').remove()
-    }
-})
-;
-
-//点击明细tab触发切换界面
-$('.bk-tab2-head ul li').live("click", function () {
-    $('.tab2-nav-item').removeClass('actived')
-    $(this).addClass('actived')
-    var num = $(this).index()
-    $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
-    $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
-});
-
-// 属性界面点击【更多属性】弹出更多属性界面
-$('.group-more-link').live("click", function () {
-    if ($(this).children().is('.fa-angle-double-up')) {
-        $('#attr_more').show()
-        $(this).children().removeClass('fa-angle-double-up').addClass('fa-angle-double-down')
-    }
-    else {
-        $('#attr_more').hide()
-        $(this).children().removeClass('fa-angle-double-down').addClass('fa-angle-double-up')
-    }
-})
-
-// 属性编辑界面点击【取消】按钮触发弹出属性界面
-$('.form-cancel').live("click", function () {
-    $('.edit-list').removeClass('active').addClass('bk-tab2-pane')
-    $('.attr-list').removeClass('bk-tab2-pane').addClass('active')
-})
-
-// 点击【属性编辑】界面触发弹出编辑界面
-$('.attr-edit').live("click", function () {
-    $('.edit-list').removeClass('bk-tab2-pane').addClass('active')
-    $('.attr-list').removeClass('active').addClass('bk-tab2-pane')
-})
 
 //属性编辑界面点击【保存】按钮
 $('.form-save').live("click", function () {
@@ -167,7 +126,6 @@ $('.form-save').live("click", function () {
             })
         },
         error: function (result) {
-            console.log($('#edit-error'))
             $('#edit-error').html(result['responseJSON']).show().delay(8000).fadeOut();
         }
     })
@@ -184,29 +142,65 @@ function get_form_data() {
     return result
 }
 
-//
-$('#select_form').change(function () {
+//网络区域搜索选择框触发js
+$('#select_form_zone').change(function () {
     var zone_name = $(this).val()
-    var dict = {}
     if (zone_name == 'all') {
-        dict['where'] = {}
+        url_params['where'] = {}
     }
     else {
-        dict['where'] = JSON.stringify({'zone': zone_name})
+        url_params['where'] = JSON.stringify({'zone': zone_name})
     }
     $.ajax({
         type: "POST",
-        url: "/cmdb/itsystem/list/",
-        data: dict,
+        url: "/cmdb/itsystem/search/",
+        data: url_params,
         success: function (result) {
-            console.log('here')
-            console.log(result)
-            load_table_data(result)
+            load_table_data(result['result'], result['content_html'])
         }
     })
 })
 
-function load_table_data(data) {
+//管理员搜索选择框触发js
+$('#select_form_manager').change(function () {
+    var manager_name = $(this).val()
+    if (manager_name == 'all') {
+        url_params['where'] = {}
+    }
+    else {
+        url_params['where'] = JSON.stringify({'system_manager': manager_name})
+    }
+    $.ajax({
+        type: "POST",
+        url: "/cmdb/itsystem/search/",
+        data: url_params,
+        success: function (result) {
+            load_table_data(result['result'], result['content_html'])
+        }
+    })
+})
+
+//负责人搜索选择框触发js
+$('#select_form_admin').change(function () {
+    var admin_name = $(this).val()
+    if (admin_name == 'all') {
+        url_params['where'] = {}
+    }
+    else {
+        url_params['where'] = JSON.stringify({'system_admin': admin_name})
+    }
+    $.ajax({
+        type: "POST",
+        url: "/cmdb/itsystem/search/",
+        data: url_params,
+        success: function (result) {
+            load_table_data(result['result'], result['content_html'])
+        }
+    })
+})
+
+//动态更新table函数
+function load_table_data(data, page) {
     //替换table部分
     var html = "";
     for (var i = 0; i < data.length; i++) {
@@ -216,7 +210,7 @@ function load_table_data(data) {
         html += '<input type="checkbox" name="checked" value="' + data[i].id + '">'
         html += "</td>"
         html += "<td>" + data[i].zone + "</td>"
-        html += "<td>" + data[i].itsystem_name + "</td>"
+        html += "<td>" + data[i].label_cn + "</td>"
         html += "<td>" + data[i].use_for + "</td>"
         html += "<td>" + data[i].system_framework + "</td>"
         html += "<td>" + data[i].system_manager + "</td>"
@@ -226,21 +220,42 @@ function load_table_data(data) {
     }
     $("table tbody").remove()
     $("table thead").after(html)
+    $('#paginate_page').remove()
+    $("table").after(page)
 }
 
-
-$('#set-select2').on('input propertychange',function(){
-　　var text = $(this).val()
-    var column = $(this).attr('title') + "__icontains"
-    var dict ={'where':{column:text}}
+//动态搜索框输入查询
+$('#set-select2').bind('input propertychange', function () {
+    var text = $(this).val()
+    url_params['where'] = JSON.stringify({'label_cn__icontains':text})
     $.ajax({
         type: "POST",
         url: "/cmdb/itsystem/search/",
-        data: dict,
+        data: url_params,
         success: function (result) {
-            console.log('here')
-            console.log(result)
-            load_table_data(result)
+            load_table_data(result['result'], result['content_html'])
         }
     })
 });
+
+//分页点击切换
+$(".page").live("click", function () {
+    var current_page = $(this).attr('title')
+    var previous_page = $(".page-active").attr('title')
+    if (current_page == 'next'){
+        current_page =Number(previous_page)  + 1
+    }
+    else if(current_page == 'previous'){
+        current_page = Number(previous_page) - 1
+    }
+    url_params['current_page'] = current_page
+    $.ajax({
+        type: "POST",
+        url: "/cmdb/itsystem/search/",
+        data: url_params,
+        success: function (result) {
+            load_table_data(result['result'], result['content_html'])
+            delete url_params['current_page']
+        }
+    })
+})
