@@ -12,8 +12,7 @@ from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
 from cmdb.sqldao import *
-from django.db.models import Q
-from django.core import serializers
+
 
 
 @csrf_exempt
@@ -38,17 +37,20 @@ def itsystem_list_view(request):
     if request.method == 'GET':
         sql_params = sql_get_params(request)
         object_list = api_action('itsystem.get', sql_params)
-        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
         zones = get_itsystem_zone()
+        system_managers = get_itsystem_system_manager()
+        system_admins = get_itsystem_system_admin()
         return render_to_response('cmdb/itsystem_list.html', locals())
     if request.method == 'POST':
         sql_params = sql_get_params(request)
         object_list = api_action('itsystem.get', sql_params)
-        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
-        result = list(object_list)
-        return JsonResponse(data=result, status=200, safe=False)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list,sql_params['current_page'])
+        result = list(objects)
+        content_html = render_to_string('page.html', locals())
+        return JsonResponse(data={'result': result, 'content_html': content_html}, status=200, safe=False)
 
-
+@csrf_exempt
 def itsystem_search_view(request):
     """
     @ 信息系统页面
@@ -56,11 +58,12 @@ def itsystem_search_view(request):
     :return: html
     """
     if request.method == 'POST':
-        sql_params = sql_get_params(request)
-        object_list = api_action('itsystem.get', sql_params)
-        object_list = ItSystem.objects.filter(Q(**sql_params['where']))
-        result = list(object_list)
-        return JsonResponse(data=result, status=200, safe=False)
+        sql_params = sql_search_params(request)
+        object_list = api_action('itsystem.search', sql_params)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, sql_params['current_page'])
+        result = list(objects)
+        content_html = render_to_string('page.html', locals())
+        return JsonResponse(data={'result': result, 'content_html': content_html}, status=200, safe=False)
 
 
 @csrf_exempt
@@ -111,3 +114,27 @@ def itsystem_export_view(request):
     response['Content-Type'] = 'application/octet-stream'
     response['Content-Disposition'] = 'attachment;filename="{}"'.format(export_file_name)
     return response
+
+
+@csrf_exempt
+def host_list_view(request):
+    """
+    @ 信息系统页面
+    :param request:
+    :return: html
+    """
+    if request.method == 'GET':
+        sql_params = sql_get_params(request)
+        object_list = api_action('host.get', sql_params)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
+        zones = get_itsystem_zone()
+        system_managers = get_itsystem_system_manager()
+        system_admins = get_itsystem_system_admin()
+        return render_to_response('cmdb/host_list.html', locals())
+    if request.method == 'POST':
+        sql_params = sql_get_params(request)
+        object_list = api_action('host.get', sql_params)
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list,sql_params['current_page'])
+        result = list(objects)
+        content_html = render_to_string('page.html', locals())
+        return JsonResponse(data={'result': result, 'content_html': content_html}, status=200, safe=False)

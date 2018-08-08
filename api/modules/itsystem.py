@@ -6,6 +6,7 @@ from utils.checkfun import *
 import logging
 import traceback
 from utils.funnel import *
+from django.db.models import Q
 
 logger = logging.getLogger('django')
 msg = []
@@ -48,6 +49,27 @@ def get(**kwargs):
     try:
         # filter_data['where']['is_delete'] = 0
         data = ItSystem.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
+            filter_data['order_by'])[0:filter_data['limit']]
+    except Exception, e:
+        msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+        return msg
+    return data
+
+def search(**kwargs):
+    """
+    itsystem 查询方法
+    :param kwargs:
+    :return:
+    """
+    covert_data = get_covert()
+    filter_data = get_filter(kwargs, covert_data)
+    try:
+        Funnel(ItSystem, {}, filter_data).funnel_get()
+    except Exception, e:
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        return msg
+    try:
+        data = ItSystem.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
             filter_data['order_by'])[0:filter_data['limit']]
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
@@ -99,10 +121,10 @@ def imp(**kwargs):
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
-        if ItSystem.objects.filter(itsystem_name=result['itsystem_name']).count() == 1:
+        if ItSystem.objects.filter(label_cn=result['label_cn']).count() == 1:
             try:
                 result['is_delete'] = 0
-                ItSystem.objects.filter(itsystem_name=result['itsystem_name']).update(**result)
+                ItSystem.objects.filter(label_cn=result['label_cn']).update(**result)
             except Exception, e:
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:

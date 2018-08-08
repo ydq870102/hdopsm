@@ -7,8 +7,10 @@
                 <div class="alert alert-danger text-center  bk-tab2-head " id="edit-error" style="display: none;"></div>
                 <div class="bk-tab2-head">
                     <ul class="bk-tab2-nav">
-                        <li class="tab2-nav-item actived"> 信息系统属性</li>
-                        <li class="tab2-nav-item "> 关联</li>
+                        <li class="tab2-nav-item actived"> 系统属性</li>
+                        <li class="tab2-nav-item "> 关联信息</li>
+                        <li class="tab2-nav-item "> 告警信息</li>
+                        <li class="tab2-nav-item "> 变更记录</li>
                     </ul>
                 </div>
                 <div class="bk-tab2-content">
@@ -27,7 +29,7 @@
                                     </li>
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">信息系统名称 :</span>
-                                        <span class="attribute-item-value" title="itsystem_name">{{ object.itsystem_name }}</span>
+                                        <span class="attribute-item-value" title="label_cn">{{ object.label_cn }}</span>
                                     </li>
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">用途 :</span>
@@ -92,6 +94,16 @@
 
                         </div>
                     </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
                     <section class="edit-list bk-tab2-pane">
                         <div class="attribute-wrapper">
                             <from class="edit-form">
@@ -115,7 +127,7 @@
                                                 </label>
                                             </div>
                                             <div class="attribute-item-field">
-                                                <input type="text" class="bk-form-input" title="itsystem_name" value="{{ object.itsystem_name }}">
+                                                <input type="text" class="bk-form-input" title="label_cn" value="{{ object.label_cn }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">

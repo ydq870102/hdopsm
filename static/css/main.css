@@ -37,6 +37,7 @@
 
 .pull-left {
     float: left !important;
+    width: 100%;
 }
 
 .main-list {
@@ -372,8 +373,8 @@ body .main-btn, html .main-btn {
 .input-control {
     display: block;
     width: 100%;
-    height: 30px;
-    padding: 5px 12px;
+    height: 26px;
+    padding: 2px 12px;
     font-size: 12px;
     line-height: 1.42857143;
     color: #555;
@@ -387,3 +388,8 @@ body .main-btn, html .main-btn {
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
 }
+
+ .pagination  li  .page-active{
+    background-color: #65CEA7;
+}
+

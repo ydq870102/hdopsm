@@ -27,7 +27,7 @@ class Zone(models.Model):
     """
     放置区域资产
     """
-    zone_name = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
+    label_cn = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
     vlan = models.CharField(max_length=100, null=True, verbose_name='vlan')
     is_delete = models.IntegerField(default=0, null=True)
     create_time = models.DateField(auto_now_add=True, null=True)
@@ -55,7 +55,7 @@ class ItSystem(models.Model):
         ('1', u'是'),
     )
     zone = models.CharField(max_length=100, null=True, verbose_name='所属区域')
-    itsystem_name = models.CharField(max_length=100, null=True, unique=True, verbose_name='信息系统名称')
+    label_cn = models.CharField(max_length=100, null=True, unique=True, verbose_name='信息系统名称')
     use_for = models.CharField(max_length=255, null=True, verbose_name='用途')
     system_framework = models.CharField(max_length=100, null=True, verbose_name='架构描述')
     system_manager = models.CharField(max_length=100, null=True, verbose_name='业务系统管理员')
@@ -87,30 +87,38 @@ class ItSystem(models.Model):
 
 class Host(models.Model):
     assets_type_choices = (
-        ('server', u'物理机'),
-        ('vmser', u'虚拟机'),
+        ('物理机', u'物理机'),
+        ('虚拟机', u'虚拟机'),
     )
-
-    assets_type = models.CharField(choices=assets_type_choices, max_length=100, default='server', verbose_name='资产类型')
-    name = models.CharField(max_length=100, verbose_name='资产编号', unique=True)
+    # 基础属性
+    status = models.CharField(max_length=20, blank=True, null=True, verbose_name='状态')
+    hostname = models.CharField(max_length=100, blank=True, null=True, verbose_name='主机名称')
+    ip = models.CharField(max_length=100, unique=True, blank=True, null=True, verbose_name='IP地址')
+    management_ip = models.GenericIPAddressField(u'管理IP', blank=True, null=True)
+    assets_type = models.CharField(choices=assets_type_choices, max_length=100, default='物理机', verbose_name='资产类型')
+    use_for = models.CharField(max_length=100, blank=True, null=True, verbose_name='用途')
+    # 维护属性
+    room = models.CharField(max_length=50, blank=True, null=True, verbose_name='所属机房')
+    department = models.CharField(max_length=50, blank=True, null=True, verbose_name='所属部门')
+    itsystem = models.CharField(max_length=100, blank=True, null=True, verbose_name='信息系统')
+    zone = models.CharField(max_length=20, blank=True, null=True, verbose_name='所属区域')
+    # 资产属性
+    label_cn = models.CharField(max_length=100, verbose_name='资产编号', unique=True)
     sn = models.CharField(max_length=100, verbose_name='设备序列号', blank=True, null=True)
     buy_time = models.DateField(blank=True, null=True, verbose_name='购买时间')
     expire_date = models.DateField(u'过保修期', null=True, blank=True)
-    buy_user = models.SmallIntegerField(blank=True, null=True, verbose_name='购买人')
-    management_ip = models.GenericIPAddressField(u'管理IP', blank=True, null=True)
-    manufacturer = models.CharField(max_length=100, blank=True, null=True, verbose_name='制造商')
-    provider = models.CharField(max_length=100, blank=True, null=True, verbose_name='供货商')
-    model = models.CharField(max_length=100, blank=True, null=True, verbose_name='资产型号')
-    status = models.SmallIntegerField(blank=True, null=True, verbose_name='状态')
-    room = models.SmallIntegerField(blank=True, null=True, verbose_name='所属机房')
-    department = models.SmallIntegerField(blank=True, null=True, verbose_name='所属部门')
-    ip = models.CharField(max_length=100, unique=True, blank=True, null=True, verbose_name='IP地址')
-    hostname = models.CharField(max_length=100, blank=True, null=True, verbose_name='主机名称')
+    buy_user = models.CharField(max_length=100, blank=True, null=True, verbose_name='购买人')
+    manufacturer = models.CharField(max_length=30, blank=True, null=True, verbose_name='制造商')
+    provider = models.CharField(max_length=30, blank=True, null=True, verbose_name='供货商')
+    model = models.CharField(max_length=20, blank=True, null=True, verbose_name='资产型号')
+
+    # 配置属性
     username = models.CharField(max_length=100, blank=True, null=True, verbose_name='用户名')
     passwd = models.CharField(max_length=100, blank=True, null=True, verbose_name='密码')
-    keyfile = models.SmallIntegerField(blank=True, null=True, verbose_name='SSH秘钥')
+    keyfile = models.CharField(max_length=30, blank=True, null=True, verbose_name='SSH秘钥')
     port = models.DecimalField(max_digits=6, decimal_places=0, blank=True, null=True, verbose_name='SSH端口')
-    line = models.SmallIntegerField(blank=True, null=True, verbose_name='出口线路')
+    line = models.CharField(max_length=30,blank=True, null=True, verbose_name='出口线路')
+    mac = models.CharField(max_length=3, blank=True, null=True, verbose_name='MAC地址')
     cpu = models.CharField(max_length=100, blank=True, null=True, verbose_name='CPU型号')
     cpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='CPU个数')
     vcpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='虚拟CPU个数')
@@ -135,3 +143,7 @@ class Host(models.Model):
         )
         verbose_name = '服务器表'
         verbose_name_plural = '服务器表'
+
+    @staticmethod
+    def get_enum_column():
+        return [{'Host': 'assets_type'}]
