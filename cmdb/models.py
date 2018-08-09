@@ -31,8 +31,8 @@ class Zone(models.Model):
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
     vlan = models.CharField(max_length=100, null=True, verbose_name='vlan')
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
     '''自定义权限'''
 
     class Meta:
@@ -67,8 +67,8 @@ class ItSystem(models.Model):
                                                verbose_name='是否普通用户使用')
     line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
     is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     @staticmethod
     def get_enum_column():
@@ -135,9 +135,9 @@ class Host(models.Model):
 
     # 维护属性
     agent_status = models.CharField(max_length=20, null=True,verbose_name='agent状态')
-    is_delete = models.IntegerField(default=0)
-    create_time = models.DateTimeField(auto_now_add=True)
-    last_modify_time = models.DateTimeField(auto_now=True)
+    is_delete = models.IntegerField(default=0, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     class Meta:
         db_table = 't_com_host'

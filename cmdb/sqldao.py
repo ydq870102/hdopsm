@@ -3,7 +3,9 @@
 
 
 from cmdb.models import *
+from hdopsm.models import *
 from django.db.models import Count
+
 
 def get_itsystem_zone():
     zone_list = ItSystem.objects.all().filter(is_delete=0).values('zone').order_by('zone').annotate(
@@ -40,3 +42,26 @@ def get_itsystem_system_admin():
         data.append(temp)
     return data
 
+
+def get_host_status_enum():
+    host_status_list = Enum.objects.filter(table_name='Host', table_column='status').values('value_desc')
+    data = []
+    for item in host_status_list:
+        data.append(item['value_desc'])
+    return data
+
+
+def get_host_type_enum():
+    host_type_list = Enum.objects.filter(table_name='Host', table_column='assets_type').values('value_desc')
+    data = []
+    for item in host_type_list:
+        data.append(item['value_desc'])
+    return data
+
+
+def get_itsystem_name():
+    itsystem_name_list = ItSystem.objects.all().values('label_cn')
+    data = []
+    for item in itsystem_name_list:
+        data.append(item['label_cn'])
+    return data

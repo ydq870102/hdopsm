@@ -95,13 +95,26 @@ $('.attr-edit').live("click", function () {
         });
     })
 
-// IP地址合法监测
+//获取form数据，返回字段函数
+function get_form_data() {
+    var result = {}
+    $('.attribute-item-field').each(function () {
+        var form_attr = $(this).attr('title')
+        var form_value = $(this).children().val()
+        result[form_attr] = form_value
+    })
+    return result
+}
 
+// IP地址合法监测
 $(".ip-input").live('blur',function () {
     var ip = $(this).val()
     var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
     var reg = ip.match(exp);
     if (reg == null){
-
+    $(this).addClass('error-ip-input')
+    }
+    else {
+        $(this).removeClass('error-ip-input')
     }
 })

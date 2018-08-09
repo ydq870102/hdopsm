@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/Pyhome/OpsManage/.idea/OpsManage.iml" filepath="D:/Pyhome/OpsManage/.idea/OpsManage.iml" />
-      <module fileurl="file://D:/Pyhome/bk_monitor/.idea/bk_monitor.iml" filepath="D:/Pyhome/bk_monitor/.idea/bk_monitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hdopsm.iml" filepath="$PROJECT_DIR$/.idea/hdopsm.iml" />
-      <module fileurl="file://D:/Pyhome/osrm/.idea/osrm.iml" filepath="D:/Pyhome/osrm/.idea/osrm.iml" />
     </modules>
   </component>
 </project>

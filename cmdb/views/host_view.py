@@ -13,6 +13,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
 from cmdb.sqldao import *
 
+host_status_enum_list = get_host_status_enum()
+host_type_enum_list = get_host_type_enum()
+itsystem_name = get_itsystem_name()
+
 
 @csrf_exempt
 def host_import_view(request):
@@ -84,7 +88,9 @@ def host_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
         object = api_action('host.get', sql_params)
-        content_html = render_to_string('cmdb/host_detail.html', {"object": object[0]})
+        content_html = render_to_string('cmdb/host_detail.html',
+                                        {"object": object[0], 'host_status_enum_list': host_status_enum_list,
+                                         'host_type_enum_list': host_type_enum_list, 'itsystem_name':itsystem_name})
         render_dict = {'content_html': content_html}
         return JsonResponse(data=render_dict, status=200, safe=False)
 

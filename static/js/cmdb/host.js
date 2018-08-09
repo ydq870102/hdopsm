@@ -131,16 +131,7 @@ $('.form-save').live("click", function () {
     })
 })
 
-//获取form数据，返回字段函数
-function get_form_data() {
-    var result = {}
-    $('.attribute-item-field').each(function () {
-        var form_attr = $(this).children().attr('title')
-        var form_value = $(this).children().val()
-        result[form_attr] = form_value
-    })
-    return result
-}
+
 
 //网络区域搜索选择框触发js
 $('#select_form_zone').change(function () {

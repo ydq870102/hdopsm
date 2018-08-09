@@ -330,7 +330,7 @@ body .main-btn, html .main-btn {
     position: relative;
 }
 
-.attribute-btn-group button[data-v-4d636d03] {
+.attribute-btn-group button {
     width: 110px;
     height: 34px;
     line-height: 32px;
@@ -393,3 +393,6 @@ body .main-btn, html .main-btn {
     background-color: #65CEA7;
 }
 
+.error-ip-input{
+        border: 1px solid #f9090c;
+}
