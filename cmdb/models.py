@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
@@ -30,8 +31,8 @@ class Zone(models.Model):
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
     vlan = models.CharField(max_length=100, null=True, verbose_name='vlan')
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now_add=True, null=True)
-    last_modify_time = models.DateField(auto_now=True, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
     '''自定义权限'''
 
     class Meta:
@@ -66,8 +67,8 @@ class ItSystem(models.Model):
                                                verbose_name='是否普通用户使用')
     line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
     is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
-    create_time = models.DateField(auto_now_add=True, null=True)
-    last_modify_time = models.DateField(auto_now=True, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
 
     @staticmethod
     def get_enum_column():
@@ -91,47 +92,52 @@ class Host(models.Model):
         ('虚拟机', u'虚拟机'),
     )
     # 基础属性
-    status = models.CharField(max_length=20, blank=True, null=True, verbose_name='状态')
-    hostname = models.CharField(max_length=100, blank=True, null=True, verbose_name='主机名称')
-    ip = models.CharField(max_length=100, unique=True, blank=True, null=True, verbose_name='IP地址')
-    management_ip = models.GenericIPAddressField(u'管理IP', blank=True, null=True)
-    assets_type = models.CharField(choices=assets_type_choices, max_length=100, default='物理机', verbose_name='资产类型')
-    use_for = models.CharField(max_length=100, blank=True, null=True, verbose_name='用途')
-    # 维护属性
-    room = models.CharField(max_length=50, blank=True, null=True, verbose_name='所属机房')
-    department = models.CharField(max_length=50, blank=True, null=True, verbose_name='所属部门')
-    itsystem = models.CharField(max_length=100, blank=True, null=True, verbose_name='信息系统')
-    zone = models.CharField(max_length=20, blank=True, null=True, verbose_name='所属区域')
-    # 资产属性
     label_cn = models.CharField(max_length=100, verbose_name='资产编号', unique=True)
-    sn = models.CharField(max_length=100, verbose_name='设备序列号', blank=True, null=True)
-    buy_time = models.DateField(blank=True, null=True, verbose_name='购买时间')
-    expire_date = models.DateField(u'过保修期', null=True, blank=True)
-    buy_user = models.CharField(max_length=100, blank=True, null=True, verbose_name='购买人')
-    manufacturer = models.CharField(max_length=30, blank=True, null=True, verbose_name='制造商')
-    provider = models.CharField(max_length=30, blank=True, null=True, verbose_name='供货商')
-    model = models.CharField(max_length=20, blank=True, null=True, verbose_name='资产型号')
+    sn = models.CharField(max_length=100, verbose_name='设备序列号', null=True)
+    zone = models.CharField(max_length=20, null=True, verbose_name='所属区域')
+    itsystem = models.CharField(max_length=100, null=True, verbose_name='信息系统')
+    assets_type = models.CharField(choices=assets_type_choices, max_length=100, default='物理机', verbose_name='资产类型')
+    status = models.CharField(max_length=20, null=True, verbose_name='状态')
+    ip = models.CharField(max_length=100, unique=True, null=True, verbose_name='IP地址')
+    management_ip = models.GenericIPAddressField(u'管理IP', null=True)
+    use_for = models.CharField(max_length=100, null=True, verbose_name='用途')
+    room = models.CharField(max_length=50, null=True, verbose_name='所属机房')
+    department = models.CharField(max_length=50, null=True, verbose_name='所属部门')
 
     # 配置属性
-    username = models.CharField(max_length=100, blank=True, null=True, verbose_name='用户名')
-    passwd = models.CharField(max_length=100, blank=True, null=True, verbose_name='密码')
-    keyfile = models.CharField(max_length=30, blank=True, null=True, verbose_name='SSH秘钥')
-    port = models.DecimalField(max_digits=6, decimal_places=0, blank=True, null=True, verbose_name='SSH端口')
+    hostname = models.CharField(max_length=100, null=True, verbose_name='主机名称')
+    username = models.CharField(max_length=100, null=True, verbose_name='用户名')
+    passwd = models.CharField(max_length=100, null=True, verbose_name='密码')
+    keyfile = models.CharField(max_length=30, null=True, verbose_name='SSH秘钥')
+    port = models.DecimalField(max_digits=6, decimal_places=0, null=True, verbose_name='SSH端口')
     line = models.CharField(max_length=30,blank=True, null=True, verbose_name='出口线路')
-    mac = models.CharField(max_length=3, blank=True, null=True, verbose_name='MAC地址')
-    cpu = models.CharField(max_length=100, blank=True, null=True, verbose_name='CPU型号')
+    mac = models.CharField(max_length=3, null=True, verbose_name='MAC地址')
+    cpu = models.CharField(max_length=100, null=True, verbose_name='CPU型号')
     cpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='CPU个数')
     vcpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='虚拟CPU个数')
     cpu_core = models.SmallIntegerField(blank=True, null=True, verbose_name='CPU核数')
-    disk_total = models.CharField(max_length=100, blank=True, null=True, verbose_name='硬盘总量')
+    disk_total = models.CharField(max_length=100, null=True, verbose_name='硬盘总量')
     ram_total = models.IntegerField(blank=True, null=True, verbose_name='内存总量')
-    kernel = models.CharField(max_length=100, blank=True, null=True, verbose_name='内核版本')
-    selinux = models.CharField(max_length=100, blank=True, null=True, verbose_name='是否开启selinux')
-    swap = models.CharField(max_length=100, blank=True, null=True, verbose_name='虚拟CPU个数')
-    system = models.CharField(max_length=100, blank=True, null=True, verbose_name='操作系统类型')
-    is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateField(auto_now_add=True, null=True)
-    last_modify_time = models.DateField(auto_now=True, null=True)
+    kernel = models.CharField(max_length=100, null=True, verbose_name='内核版本')
+    selinux = models.CharField(max_length=100, null=True, verbose_name='是否开启selinux')
+    swap = models.CharField(max_length=100, null=True, verbose_name='swap空间')
+    system = models.CharField(max_length=100, null=True, verbose_name='操作系统类型')
+    system_version =  models.CharField(max_length=100, null=True, verbose_name='操作系统版本')
+
+
+    # 资产属性
+    buy_time = models.DateTimeField(blank=True, null=True, verbose_name='购买时间')
+    expire_date = models.DateTimeField(u'过保修期', null=True)
+    buy_user = models.CharField(max_length=100, null=True, verbose_name='购买人')
+    manufacturer = models.CharField(max_length=30, null=True, verbose_name='制造商')
+    provider = models.CharField(max_length=30, null=True, verbose_name='供货商')
+    model = models.CharField(max_length=20, null=True, verbose_name='资产型号')
+
+    # 维护属性
+    agent_status = models.CharField(max_length=20, null=True,verbose_name='agent状态')
+    is_delete = models.IntegerField(default=0)
+    create_time = models.DateTimeField(auto_now_add=True)
+    last_modify_time = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 't_com_host'
@@ -146,4 +152,4 @@ class Host(models.Model):
 
     @staticmethod
     def get_enum_column():
-        return [{'Host': 'assets_type'}]
+        return [{'Host': 'assets_type'}, {'Host': 'status'}]

@@ -43,12 +43,18 @@ class Funnel(object):
                     raise CheckException("where条件ID必须为数字")
 
     def check_column_enum(self):
+
         for enum_dict in self.filter['enum']:
             for table_name, column in enum_dict.items():
+                if not self.kwargs.has_key(column):
+                    continue
                 enums = Enum.objects.filter(table_name=table_name, table_column=column).values('value_desc')
                 enum_list = [enum['value_desc'] for enum in enums]
                 if not isinstance(self.kwargs, dict) or self.kwargs[column] not in enum_list:
                     raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format(self.model, column, enum_list))
+
+    def change_date_filed(self):
+        pass
 
 
     # def name_covert_foreigney(self):

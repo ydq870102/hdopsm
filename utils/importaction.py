@@ -40,7 +40,9 @@ class ImportAction(object):
                 for lc in range(0,sheet.ncols):
                     ctype = sheet.cell(nr, lc).ctype
                     cell = sheet.cell_value(nr, lc)
+                    print ctype,cell
                     if ctype == 3:
+
                         date_tuple = xlrd.xldate_as_tuple(cell, 0)
                         cell = datetime.datetime(*date_tuple)
                     data_value[sheet.cell_value(1, lc)] = cell

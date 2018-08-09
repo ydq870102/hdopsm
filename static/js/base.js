@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     //左边菜单栏页面跳转JS
     $('.menu-list ul li a').each(function () {
@@ -20,13 +18,13 @@ $(function () {
 });
 
 $('tbody tr').click(function (event) {
-    if(  event.target.name !='checked') {
+    if (event.target.name != 'checked') {
         $('.slidebar-wrapper').removeClass('hidden')
     }
 });
 
 $('.slidebar-wrapper').click(function (event) {
-    if (event.target.className == 'slidebar-wrapper'){
+    if (event.target.className == 'slidebar-wrapper') {
         $('.slidebar-wrapper').addClass('hidden')
     }
 });
@@ -34,7 +32,7 @@ $('.slidebar-wrapper').click(function (event) {
 $('.bk-tab2-head ul li').click(function () {
     $('.tab2-nav-item').removeClass('actived')
     $(this).addClass('actived')
-    var num =$(this).index()
+    var num = $(this).index()
     $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
     $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
 });
@@ -59,11 +57,15 @@ $('.bk-tab2-head ul li').live("click", function () {
 // 属性界面点击【更多属性】弹出更多属性界面
 $('.group-more-link').live("click", function () {
     if ($(this).children().is('.fa-angle-double-up')) {
-        $('#attr_more').show()
+        $('.attr_more').each(function () {
+            $(this).show()
+        })
         $(this).children().removeClass('fa-angle-double-up').addClass('fa-angle-double-down')
     }
     else {
-        $('#attr_more').hide()
+        $('.attr_more').each(function () {
+            $(this).hide()
+        })
         $(this).children().removeClass('fa-angle-double-down').addClass('fa-angle-double-up')
     }
 })
@@ -79,4 +81,27 @@ $('.form-cancel').live("click", function () {
 $('.attr-edit').live("click", function () {
     $('.edit-list').removeClass('bk-tab2-pane').addClass('active')
     $('.attr-list').removeClass('active').addClass('bk-tab2-pane')
+})
+
+// 日期选择样式
+    $('.datetimepicker').live('focus',function () {
+        $(this).datetimepicker({
+            format: 'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
+            autoclose: true,//选择后是否自动关闭
+            minView: 0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
+            language: 'zh-CN', //中文
+            todayBtn: true,  //在底部是否显示今天
+            initialDate: new Date()
+        });
+    })
+
+// IP地址合法监测
+
+$(".ip-input").live('blur',function () {
+    var ip = $(this).val()
+    var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+    var reg = ip.match(exp);
+    if (reg == null){
+
+    }
 })

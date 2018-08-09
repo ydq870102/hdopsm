@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from views.host import *
-from views.itsystem import *
+from views.host_view import *
+from views.itsystem_view import *
 
 urlpatterns = [
+    # itsystem URL
     url(r'^itsystem/import/$', itsystem_import_view, name='itsystem_import'),
     url(r'^itsystem/list/$', itsystem_list_view, name='itsystem_list'),
     url(r'^itsystem/search/$', itsystem_search_view, name='itsystem_search'),
@@ -26,8 +27,10 @@ urlpatterns = [
     url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
     url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
+    # host URL
     url(r'^host/list/$', host_list_view, name='host_list'),
     url(r'^host/import/$', host_import_view, name='host_import'),
     url(r'^host/delete/$', host_delete_view, name='host_delete'),
     url(r'^host/detail/(?P<id>[0-9]+)/$', host_detail_view, name='host_detail'),
+    url(r'^host/update/(?P<id>[0-9]+)/$', host_update_view, name='host_update'),
 ]

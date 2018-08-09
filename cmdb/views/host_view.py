@@ -90,10 +90,10 @@ def host_detail_view(request, id):
 
 
 @csrf_exempt
-def itsystem_update_view(request, id):
+def host_update_view(request, id):
     if request.is_ajax():
         sql_params = sql_update_params(request, id)
-        msg = api_action('itsystem.update', sql_params)
+        msg = api_action('host.update', sql_params)
         if msg or msg is None:
             return JsonResponse(data=msg, status=500, safe=False)
         else:

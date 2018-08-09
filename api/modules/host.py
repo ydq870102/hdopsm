@@ -14,9 +14,9 @@ msg = []
 
 def create(**kwargs):
     """
-    @itsystem 创建方法
+    Host 创建方法
     :param kwargs:
-    :return:
+    :return: Message
     """
     result = kwargs.get('result', {})
     covert_data = get_covert()
@@ -35,9 +35,9 @@ def create(**kwargs):
 
 def get(**kwargs):
     """
-    itsystem 查询方法
+    Host 查询方法
     :param kwargs:
-    :return:
+    :return: 查询集
     """
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
@@ -55,11 +55,12 @@ def get(**kwargs):
         return msg
     return data
 
+
 def search(**kwargs):
     """
-    itsystem 查询方法
+    Host 查询方法
     :param kwargs:
-    :return:
+    :return: 查询集
     """
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
@@ -78,6 +79,11 @@ def search(**kwargs):
 
 
 def delete(**kwargs):
+    """
+    Host 删除方法
+    :param kwargs: 字典
+    :return: Message
+    """
     where = kwargs.get("where", [])
     check_where_id(where)
     if isinstance(where, dict):
@@ -95,6 +101,11 @@ def delete(**kwargs):
 
 
 def update(**kwargs):
+    """
+    Host 更新方法
+    :param kwargs:
+    :return: Message
+    """
     result = json.loads(kwargs.get("result", {}))
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
@@ -112,6 +123,11 @@ def update(**kwargs):
 
 
 def imp(**kwargs):
+    """
+    Host 导入方法
+    :param kwargs:
+    :return: Message
+    """
     result_list = kwargs.get('result', {})
     for result in result_list:
         covert_data = get_covert()
@@ -160,6 +176,10 @@ def exp(**kwargs):
 
 
 def get_covert():
+    """
+    @获取Host表枚举字段
+    :return: 返回字典
+    """
     try:
         enum = Host.get_enum_column()
         return {'enum': enum}
