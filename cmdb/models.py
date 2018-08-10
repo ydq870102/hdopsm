@@ -103,6 +103,10 @@ class Host(models.Model):
     use_for = models.CharField(max_length=100, null=True, verbose_name='用途')
     room = models.CharField(max_length=50, null=True, verbose_name='所属机房')
     department = models.CharField(max_length=50, null=True, verbose_name='所属部门')
+    host_admin = models.CharField(max_length=30, null=True, verbose_name='系统维护人')
+    backup_admin = models.CharField(max_length=30, null=True, verbose_name='备份维护人')
+    related_phy_host = models.GenericIPAddressField(u'所属物理机IP', null=True)
+
 
     # 配置属性
     hostname = models.CharField(max_length=100, null=True, verbose_name='主机名称')

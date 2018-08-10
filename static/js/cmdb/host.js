@@ -92,7 +92,7 @@ $('#import-form').click(function () {
 });
 
 //点击【数据行】触发弹出明细界面
-$('tbody tr').live("click", function (event){
+$('tbody tr').live("click", function (event) {
     if (event.target.name != 'checked') {
         var id = $(this).find('input').val()
         $.ajax({
@@ -110,37 +110,45 @@ $('tbody tr').live("click", function (event){
 $('.form-save').live("click", function () {
     var id = $(this).val()
     var form_dict = get_form_data()
-    $.ajax({
-        type: "POST",
-        url: "/cmdb/host/update/" + id + "/",
-        data: {'result': JSON.stringify(form_dict)},
-        success: function () {
-            $('.slidebar-wrapper').remove()
-            $.ajax({
-                type: "GET",
-                url: "/cmdb/host/detail/" + id + "/",
-                success: function (result) {
-                    var detail_html = result['content_html']
-                    $('#myimportModal').after(detail_html)
-                }
-            })
-        },
-        error: function (result) {
-            $('#edit-error').html(result['responseJSON']).show().delay(8000).fadeOut();
-        }
-    })
+    var error_info = $('.error-ip-input').val()
+    if (error_info) {
+        $('#edit-error').html('请填写正确的数据！').show().delay(8000).fadeOut();
+    }
+    else {
+        $.ajax({
+            type: "POST",
+            url: "/cmdb/host/update/" + id + "/",
+            data: {'result': JSON.stringify(form_dict)},
+            success: function () {
+                $('.slidebar-wrapper').remove()
+                $.ajax({
+                    type: "GET",
+                    url: "/cmdb/host/detail/" + id + "/",
+                    success: function (result) {
+                        var detail_html = result['content_html']
+                        $('#myimportModal').after(detail_html)
+                    }
+                })
+            },
+            error: function (result) {
+                $('#edit-error').html(result['responseJSON']).show().delay(8000).fadeOut();
+            }
+        })
+    }
 })
 
 
-
-//网络区域搜索选择框触发js
-$('#select_form_zone').change(function () {
-    var zone_name = $(this).val()
-    if (zone_name == 'all') {
+//搜索选择框触发js
+$('.select_form').change(function () {
+    var column_value = $(this).val()
+    var column_name = $(this).attr('title')
+    var filter_params = {}
+    filter_params[column_name] = column_value
+    if (column_value == 'all') {
         url_params['where'] = {}
     }
     else {
-        url_params['where'] = JSON.stringify({'zone': zone_name})
+        url_params['where'] = JSON.stringify(filter_params)
     }
     $.ajax({
         type: "POST",
@@ -152,43 +160,22 @@ $('#select_form_zone').change(function () {
     })
 })
 
-//管理员搜索选择框触发js
-$('#select_form_manager').change(function () {
-    var manager_name = $(this).val()
-    if (manager_name == 'all') {
-        url_params['where'] = {}
-    }
-    else {
-        url_params['where'] = JSON.stringify({'system_manager': manager_name})
-    }
+//动态搜索框输入查询
+$('.set-select2').bind('input propertychange', function () {
+    var column_value = $(this).val()
+    var column_name = $(this).attr('title')
+    var filter_params = {}
+    filter_params[column_name + '__icontains'] = column_value
+    url_params['where'] = JSON.stringify(filter_params)
     $.ajax({
         type: "POST",
-        url: "/cmdb/host/search/",
+        url: "/cmdb/itsystem/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
         }
     })
-})
-
-//负责人搜索选择框触发js
-$('#select_form_admin').change(function () {
-    var admin_name = $(this).val()
-    if (admin_name == 'all') {
-        url_params['where'] = {}
-    }
-    else {
-        url_params['where'] = JSON.stringify({'system_admin': admin_name})
-    }
-    $.ajax({
-        type: "POST",
-        url: "/cmdb/host/search/",
-        data: url_params,
-        success: function (result) {
-            load_table_data(result['result'], result['content_html'])
-        }
-    })
-})
+});
 
 //动态更新table函数
 function load_table_data(data, page) {
@@ -215,28 +202,14 @@ function load_table_data(data, page) {
     $("table").after(page)
 }
 
-//动态搜索框输入查询
-$('#set-select2').bind('input propertychange', function () {
-    var text = $(this).val()
-    url_params['where'] = JSON.stringify({'label_cn__icontains':text})
-    $.ajax({
-        type: "POST",
-        url: "/cmdb/host/search/",
-        data: url_params,
-        success: function (result) {
-            load_table_data(result['result'], result['content_html'])
-        }
-    })
-});
-
 //分页点击切换
 $(".page").live("click", function () {
     var current_page = $(this).attr('title')
     var previous_page = $(".page-active").attr('title')
-    if (current_page == 'next'){
-        current_page =Number(previous_page)  + 1
+    if (current_page == 'next') {
+        current_page = Number(previous_page) + 1
     }
-    else if(current_page == 'previous'){
+    else if (current_page == 'previous') {
         current_page = Number(previous_page) - 1
     }
     url_params['current_page'] = current_page

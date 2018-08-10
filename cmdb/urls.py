@@ -33,4 +33,7 @@ urlpatterns = [
     url(r'^host/delete/$', host_delete_view, name='host_delete'),
     url(r'^host/detail/(?P<id>[0-9]+)/$', host_detail_view, name='host_detail'),
     url(r'^host/update/(?P<id>[0-9]+)/$', host_update_view, name='host_update'),
+    url(r'^host/template/$', host_template_view, name='host_template'),
+    url(r'^host/export/$', host_export_view, name='host_export'),
+    url(r'^host/search/$', host_search_view, name='host_search'),
 ]

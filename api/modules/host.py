@@ -146,7 +146,6 @@ def imp(**kwargs):
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
-                print type(result)
                 Host.objects.create(**result)
             except Exception, e:
                 logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))

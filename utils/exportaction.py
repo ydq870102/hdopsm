@@ -14,6 +14,7 @@ class ExportAction(object):
     def __init__(self, query_set, tempalte_file):
         self.style = xlwt.XFStyle()
         self.style1 = xlwt.XFStyle()
+        self.style2 = xlwt.XFStyle()
         self.template_file =os.path.join(os.getcwd() + '/static/excel', tempalte_file)
         self.query_set = query_set
         self.temp_file_name = tempalte_file.split('.')[0] + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.xls'
@@ -30,13 +31,18 @@ class ExportAction(object):
             write_sheet = writebook.add_sheet('template')
             read_sheet = bk.sheet_by_name("template")
             # 写入头文件
-            for nr in range(0, 4):
+            for nr in range(0, 3):
                 for lc in range(0, read_sheet.ncols):
-                    write_sheet.write(nr, lc, read_sheet.cell_value(nr, lc),self.style)
+                    sheet_value = read_sheet.cell_value(nr, lc)
+                    write_sheet.write(nr, lc, sheet_value, self.style)
             # 写入内容
             for nr in range(0, len(self.query_set)):
                 for lc in range(0, read_sheet.ncols):
-                    write_sheet.write(nr + 4, lc, self.query_set[nr][read_sheet.cell_value(1, lc)],self.style1)
+                    sheet_value = self.query_set[nr][read_sheet.cell_value(1, lc)]
+                    if isinstance(sheet_value, (datetime.datetime)):
+                        write_sheet.write(nr + 3, lc, sheet_value, self.style2)
+                    else:
+                        write_sheet.write(nr + 3, lc, sheet_value, self.style1)
 
             for lc in range(0, read_sheet.ncols):
                 write_sheet.col(lc).width = 5000
@@ -70,3 +76,8 @@ class ExportAction(object):
         self.style.font = font
         self.style1.borders = borders
         self.style1.alignment = alignment
+        self.style1.num_format_str = 'yyyy/mm/dd'
+        self.style2.borders = borders
+        self.style2.alignment = alignment
+        self.style2.num_format_str = 'yyyy/mm/dd'
+

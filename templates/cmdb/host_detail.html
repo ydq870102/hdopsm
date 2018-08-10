@@ -64,6 +64,21 @@
                                         <span class="attribute-item-value"
                                               title="use_for">{{ object.use_for|default_if_none:"" }}</span>
                                     </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">操作系统类型 :</span>
+                                        <span class="attribute-item-value"
+                                              title="use_for">{{ object.system|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">系统维护人 :</span>
+                                        <span class="attribute-item-value"
+                                              title="use_for">{{ object.host_admin|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">备份维护人 :</span>
+                                        <span class="attribute-item-value"
+                                              title="use_for">{{ object.backup_admin|default_if_none:"" }}</span>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="attribute-group">
@@ -98,11 +113,6 @@
                                         <span class="attribute-item-label">硬盘总量 :</span>
                                         <span class="attribute-item-value"
                                               title="disk_total">{{ object.disk_total|default_if_none:"" }}</span>
-                                    </li>
-                                    <li class="attribute-item ">
-                                        <span class="attribute-item-label">操作系统类型 :</span>
-                                        <span class="attribute-item-value"
-                                              title="system">{{ object.system|default_if_none:"" }}</span>
                                     </li>
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">操作系统版本 :</span>
@@ -209,7 +219,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="zone">
                                                 <input type="text" class="bk-form-input"
-                                                       value="{{ object.zone }}">
+                                                       value="{{ object.zone|default_if_none:"" }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -222,23 +232,12 @@
                                                 <select class="bk-form-select">
                                                     {% for name in itsystem_name %}
                                                         {% ifequal name object.itsystem %}
-                                                            <option selected="selected">{{ object.itsystem }}</option>
+                                                            <option selected="selected">{{ object.itsystem|default_if_none:""  }}</option>
                                                         {% else %}
                                                             <option>{{ name }}</option>
                                                         {% endifequal %}
                                                     {% endfor %}
                                                 </select>
-                                            </div>
-                                        </li>
-                                        <li class="attribute-item fl">
-                                            <div>
-                                                <label class="bk-form-checkbox bk-checkbox-small">
-                                                    <span>设备序列号</span>
-                                                </label>
-                                            </div>
-                                            <div class="attribute-item-field" title="sn">
-                                                <input type="text" class="bk-form-input"
-                                                       value="{{ object.sn }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -251,7 +250,7 @@
                                                 <select class="bk-form-select">
                                                     {% for status in host_status_enum_list %}
                                                         {% ifequal status object.status %}
-                                                            <option selected="selected">{{ object.status }}</option>
+                                                            <option selected="selected">{{ object.status|default_if_none:""  }}</option>
                                                         {% else %}
                                                             <option>{{ status }}</option>
                                                         {% endifequal %}
@@ -267,7 +266,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="ip">
                                                 <input type="text" class="bk-form-input ip-input"
-                                                       value="{{ object.ip }}">
+                                                       value="{{ object.ip|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -278,7 +277,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="management_ip">
                                                 <input type="text" class="bk-form-input ip-input"
-                                                       value="{{ object.management_ip }}">
+                                                       value="{{ object.management_ip|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -289,7 +288,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="use_for">
                                                 <input type="text" class="bk-form-input"
-                                                       value="{{ object.use_for }}">
+                                                       value="{{ object.use_for|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -302,12 +301,52 @@
                                                 <select class="bk-form-select">
                                                     {% for type in host_type_enum_list %}
                                                         {% ifequal type object.assets_type %}
-                                                            <option selected="selected">{{ object.assets_type }}</option>
+                                                            <option selected="selected">{{ object.assets_type|default_if_none:""  }}</option>
                                                         {% else %}
                                                             <option>{{ type }}</option>
                                                         {% endifequal %}
                                                     {% endfor %}
                                                 </select>
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>操作系统类型</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="system">
+                                                <select class="bk-form-select">
+                                                    {% for system in host_system_enum_list %}
+                                                        {% ifequal system object.status %}
+                                                            <option selected="selected">{{ object.system|default_if_none:""  }}</option>
+                                                        {% else %}
+                                                            <option>{{ system }}</option>
+                                                        {% endifequal %}
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>系统维护人</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="host_admin">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.host_admin|default_if_none:""  }}">
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>备份维护人</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="backup_admin">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.backup_admin|default_if_none:""  }}">
                                             </div>
                                         </li>
                                     </ul>
@@ -323,7 +362,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="buy_user">
                                                 <input type="text" class="bk-form-input"
-                                                       value="{{ object.buy_user }}">
+                                                       value="{{ object.buy_user|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -345,7 +384,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="provider">
                                                 <input type="text" class="bk-form-input "
-                                                       value="{{ object.provider }}">
+                                                       value="{{ object.provider|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -368,7 +407,7 @@
                                             </div>
                                             <div class="attribute-item-field" title="manufacturer">
                                                 <input type="text" class="bk-form-input"
-                                                       value="{{ object.manufacturer }}">
+                                                       value="{{ object.manufacturer|default_if_none:""  }}">
                                             </div>
                                         </li>
                                         <li class="attribute-item fl">
@@ -379,7 +418,18 @@
                                             </div>
                                             <div class="attribute-item-field" title="model">
                                                 <input type="text" class="bk-form-input"
-                                                       value="{{ object.model }}">
+                                                       value="{{ object.model|default_if_none:""  }}">
+                                            </div>
+                                        </li>
+                                                                                <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>设备序列号</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="sn">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.sn |default_if_none:"" }}">
                                             </div>
                                         </li>
                                     </ul>

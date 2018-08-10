@@ -396,3 +396,19 @@ body .main-btn, html .main-btn {
 .error-ip-input{
         border: 1px solid #f9090c;
 }
+
+.filter-more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background-color: #fafafa;
+    font-size: 12px;
+    font-weight: normal;
+    cursor: pointer;
+}

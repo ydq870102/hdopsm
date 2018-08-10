@@ -11,6 +11,9 @@ insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','
 insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','assets_type','server','物理机');
 insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','assets_type','vmserver','虚拟机');
 
+# host表枚举
+insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','system','0','Linux');
+insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','system','1','Windows');
 
 insert into t_com_zone (label_cn) values('ERP类');
 insert into t_com_zone (label_cn) values('财务类');

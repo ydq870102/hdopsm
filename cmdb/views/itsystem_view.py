@@ -12,7 +12,7 @@ from utils.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
 from cmdb.sqldao import *
-
+from utils.content_params import format_content_dict
 
 
 @csrf_exempt
@@ -36,19 +36,12 @@ def itsystem_list_view(request):
     """
     if request.method == 'GET':
         sql_params = sql_get_params(request)
+        content_params = get_itsystem_params_list()
         object_list = api_action('itsystem.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
-        zones = get_itsystem_zone()
-        system_managers = get_itsystem_system_manager()
-        system_admins = get_itsystem_system_admin()
-        return render_to_response('cmdb/itsystem_list.html', locals())
-    if request.method == 'POST':
-        sql_params = sql_get_params(request)
-        object_list = api_action('itsystem.get', sql_params)
-        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list,sql_params['current_page'])
-        result = list(objects)
-        content_html = render_to_string('page.html', locals())
-        return JsonResponse(data={'result': result, 'content_html': content_html}, status=200, safe=False)
+        content_params = format_content_dict(content_params,object_list, p, objects, page_range, current_page, show_first, show_end)
+        return render_to_response('cmdb/itsystem_list.html', content_params)
+
 
 @csrf_exempt
 def itsystem_search_view(request):
