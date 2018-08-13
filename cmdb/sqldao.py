@@ -81,10 +81,13 @@ def get_host_params_list():
     host_system_enum_list = get_host_system_enum()
     host_zone_list = get_host_zone()
     host_itsystem_list = get_host_itsystem()
+    host_system_list = get_host_system()
+    host_type_list = get_host_type()
     print host_zone_list
     return {'host_status_enum_list': host_status_enum_list, 'host_type_enum_list': host_type_enum_list,
             'host_system_enum_list': host_system_enum_list, 'host_zone_list': host_zone_list,
-            'host_itsystem_list': host_itsystem_list}
+            'host_itsystem_list': host_itsystem_list, 'host_system_list': host_system_list,
+            'host_type_list': host_type_list}
 
 
 def get_host_status_enum():
@@ -153,7 +156,7 @@ def get_host_zone():
 
 def get_host_itsystem():
     """
-    信息系统界面所属区域项
+    信息系统界面信息系统项
     :return:
     """
     zone_list = Host.objects.all().filter(is_delete=0).values('itsystem').order_by('itsystem').annotate(
@@ -163,5 +166,37 @@ def get_host_itsystem():
         temp = {}
         temp['itsystem'] = item['itsystem']
         temp['itsystem_count'] = item['itsystem_count']
+        data.append(temp)
+    return data
+
+
+def get_host_system():
+    """
+    信息系统界面系统类型项
+    :return:
+    """
+    system_list = Host.objects.all().filter(is_delete=0).values('system').order_by('system').annotate(
+        system_count=Count('id'))
+    data = []
+    for item in system_list:
+        temp = {}
+        temp['system'] = item['system']
+        temp['system_count'] = item['system_count']
+        data.append(temp)
+    return data
+
+
+def get_host_type():
+    """
+    信息系统界面系统类型项
+    :return:
+    """
+    type_list = Host.objects.all().filter(is_delete=0).values('assets_type').order_by('assets_type').annotate(
+        assets_type_count=Count('id'))
+    data = []
+    for item in type_list:
+        temp = {}
+        temp['assets_type'] = item['assets_type']
+        temp['assets_type_count'] = item['assets_type_count']
         data.append(temp)
     return data

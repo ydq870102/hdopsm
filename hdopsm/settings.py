@@ -42,7 +42,7 @@ SECRET_KEY = '30%+%n#c)tj0skq6$8w%-j_hcriavuk989tn&m$9-tk1p&i=@m'
 # SECURITY WARNING: don'templatetags run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

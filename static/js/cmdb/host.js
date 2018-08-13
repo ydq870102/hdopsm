@@ -169,7 +169,7 @@ $('.set-select2').bind('input propertychange', function () {
     url_params['where'] = JSON.stringify(filter_params)
     $.ajax({
         type: "POST",
-        url: "/cmdb/itsystem/search/",
+        url: "/cmdb/host/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
