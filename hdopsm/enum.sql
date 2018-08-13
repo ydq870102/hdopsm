@@ -15,13 +15,5 @@ insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','
 insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','system','0','Linux');
 insert into t_com_enum(table_name,table_column,value,value_desc)values ('Host','system','1','Windows');
 
-insert into t_com_zone (label_cn) values('ERP类');
-insert into t_com_zone (label_cn) values('财务类');
-insert into t_com_zone (label_cn) values('研究院类');
-insert into t_com_zone (label_cn) values('数据类');
-insert into t_com_zone (label_cn) values('外部访问区-DMZ区域');
-insert into t_com_zone (label_cn) values('公有云');
-insert into t_com_zone (label_cn) values('一般业务区');
-insert into t_com_zone (label_cn) values('管理区');
-insert into t_com_zone (label_cn) values('海大大厦');
+
 

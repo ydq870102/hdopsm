@@ -53,10 +53,10 @@ class Enum(models.Model):
     """
     枚举表
     """
-    table_name = models.CharField(max_length=50, default='', verbose_name='表名')
-    table_column = models.CharField(max_length=50, default='', verbose_name='字段名称')
-    value = models.CharField(max_length=100, default='', verbose_name='字段值')
-    value_desc = models.CharField(max_length=100, default='', verbose_name='值描述')
+    table_name = models.CharField(max_length=50, default=None, verbose_name='表名')
+    table_column = models.CharField(max_length=50, default=None, verbose_name='字段名称')
+    value = models.CharField(max_length=100, default=None, verbose_name='字段值')
+    value_desc = models.CharField(max_length=100, default=None, verbose_name='值描述')
     '''自定义权限'''
 
     class Meta:

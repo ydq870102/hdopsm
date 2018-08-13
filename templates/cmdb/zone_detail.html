@@ -1,0 +1,187 @@
+{% load mytags %}
+<div class="slidebar-wrapper">
+    <div class="sideslider">
+        <h3 class="title"><span class="vm">网络区域属性</span></h3>
+        <div class="sideslider-content">
+            <div class="bk-tab2" style="border: none;">
+                <div class="alert alert-danger text-center  bk-tab2-head " id="edit-error" style="display: none;"></div>
+                <div class="bk-tab2-head">
+                    <ul class="bk-tab2-nav">
+                        <li class="tab2-nav-item actived"> 网络区域属性</li>
+                        <li class="tab2-nav-item "> 关联信息</li>
+                        <li class="tab2-nav-item "> 告警信息</li>
+                        <li class="tab2-nav-item "> 变更记录</li>
+                    </ul>
+                </div>
+                <div class="bk-tab2-content">
+                    <section class="attr-list active">
+                        <div class="attribute-wrapper">
+                            <div class="attribute-group">
+                                <h3 class="title">基础属性</h3>
+                                <ul class="clearfix attribute-list">
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">网络区域 :</span>
+                                        <span class="attribute-item-value" title="label_cn">{{ object.label_cn }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">vlan :</span>
+                                        <span class="attribute-item-value" title="vlan">{{ object.vlan }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="attribute-group">
+                                <h3 class="title">维护信息</h3>
+                                <ul class="clearfix attribute-list">
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">创建时间 :</span>
+                                        <span class="attribute-item-value" title="create_time">{{ object.create_time| date:"Y:m:d H:i:s" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">最后修改时间 :</span>
+                                        <span class="attribute-item-value" title="last_modify_time">{{ object.last_modify_time| date:"Y:m:d H:i:s" }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="attribute-group attr_more" style="display: none">
+                                <h3 class="title ">更多属性</h3>
+                                <ul class="clearfix attribute-list">
+                                </ul>
+                            </div>
+                            <div class="attribute-group-more">
+                                <a class="group-more-link" href="#">
+                                    更多属性
+                                    <i class="fa fa-angle-double-up fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="attribute-btn-group">
+                                <button class="bk-button bk-button main-btn bk-primary attr-edit">
+                                    <span>属性编辑</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="edit-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+                            <from class="edit-form">
+                                <div class="attribute-group">
+                                    <ul class="clearfix attribute-list edit">
+                                        <h3 class="title">基础属性</h3>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>网络区域</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="label_cn" >
+                                                <input type="text" class="bk-form-input" value="{{ object.label_cn }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>vlan</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="vlan">
+                                                <input type="text" class="bk-form-input"  value="{{ object.vlan }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>用途</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="use_for">
+                                                <input type="text" class="bk-form-input"  value="{{ object.use_for }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small" >
+                                                    <span>架构描述</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="system_framework" >
+                                                <input type="text" class="bk-form-input" value="{{ object.system_framework }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>使用人员</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="user_of_service">
+                                                <input type="text" class="bk-form-input"  value="{{ object.user_of_service }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>普通人员使用</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="is_untrained_person_use">
+                                                <input type="text" class="bk-form-input"  value="{{ object.is_untrained_person_use}}">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="attribute-group">
+                                    <ul class="clearfix attribute-list edit">
+                                        <h3 class="title">维护属性</h3>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>系统管理员</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="system_manager" >
+                                                <input type="text" class="bk-form-input" value="{{ object.system_manager }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>系统负责人</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="system_admin">
+                                                <input type="text" class="bk-form-input"  value="{{ object.system_admin }}">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="attribute-btn-group">
+                                    <button class="bk-button main-btn bk-primary form-save" value="{{ object.id}}">
+                                        <span>保存</span>
+                                    </button>
+                                    <button class="bk-button vice-btn bk-default form-cancel">
+                                        <span>取消</span>
+                                    </button>
+                                </div>
+                            </from>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

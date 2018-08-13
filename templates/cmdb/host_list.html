@@ -168,7 +168,7 @@
                             </th>
                             <th>所属信息系统</th>
                             <th>所属区域</th>
-                            <th>主机名称</th>
+                            <th>资产编号</th>
                             <th>IP地址</th>
                             <th>资产类型</th>
                             <th>操作系统类型</th>
@@ -182,7 +182,7 @@
                                 </td>
                                 <td>{{ object.itsystem|default_if_none:"" }}</td>
                                 <td>{{ object.zone|default_if_none:"" }}</td>
-                                <td>{{ object.hostname|default_if_none:"" }}</td>
+                                <td>{{ object.label_cn|default_if_none:"" }}</td>
                                 <td>{{ object.ip|default_if_none:"" }}</td>
                                 <td>{{ object.assets_type|default_if_none:"" }}</td>
                                 <td>{{ object.system|default_if_none:"" }}</td>

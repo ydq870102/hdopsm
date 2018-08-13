@@ -18,7 +18,7 @@ $('#del').click(function () {
             if (isConfirm.value === true) {
                 $.ajax({
                     type: 'POST',
-                    url: '/cmdb/host/delete/',
+                    url: '/cmdb/zone/delete/',
                     csrfmiddlewaretoken: "{% csrf_token %}",
                     data: {
                         "where": check_array,
@@ -66,7 +66,7 @@ $('#del').click(function () {
 $('#import-form').click(function () {
     $.ajax({
         type: "POST",
-        url: "/cmdb/host/import/",
+        url: "/cmdb/zone/import/",
         processData: false,
         contentType: false,
         data: new FormData($(".import-form")[0]),
@@ -97,7 +97,7 @@ $('tbody tr').live("click", function (event) {
         var id = $(this).find('input').val()
         $.ajax({
             type: "GET",
-            url: "/cmdb/host/detail/" + id + "/",
+            url: "/cmdb/zone/detail/" + id + "/",
             success: function (result) {
                 var detail_html = result['content_html']
                 $('#myimportModal').after(detail_html)
@@ -117,13 +117,13 @@ $('.form-save').live("click", function () {
     else {
         $.ajax({
             type: "POST",
-            url: "/cmdb/host/update/" + id + "/",
+            url: "/cmdb/zone/update/" + id + "/",
             data: {'result': JSON.stringify(form_dict)},
             success: function () {
                 $('.slidebar-wrapper').remove()
                 $.ajax({
                     type: "GET",
-                    url: "/cmdb/host/detail/" + id + "/",
+                    url: "/cmdb/zone/detail/" + id + "/",
                     success: function (result) {
                         var detail_html = result['content_html']
                         $('#myimportModal').after(detail_html)
@@ -152,7 +152,7 @@ $('.select_form').change(function () {
     }
     $.ajax({
         type: "POST",
-        url: "/cmdb/host/search/",
+        url: "/cmdb/zone/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
@@ -169,7 +169,7 @@ $('.set-select2').bind('input propertychange', function () {
     url_params['where'] = JSON.stringify(filter_params)
     $.ajax({
         type: "POST",
-        url: "/cmdb/host/search/",
+        url: "/cmdb/zone/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
@@ -189,7 +189,7 @@ function load_table_data(data, page) {
         html += "</td>"
         html += "<td>" + data[i].itsystem + "</td>"
         html += "<td>" + data[i].zone + "</td>"
-        html += "<td>" + data[i].label_cn + "</td>"
+        html += "<td>" + data[i].hostname + "</td>"
         html += "<td>" + data[i].ip + "</td>"
         html += "<td>" + data[i].assets_type + "</td>"
         html += "<td>" + data[i].system + "</td>"
@@ -215,7 +215,7 @@ $(".page").live("click", function () {
     url_params['current_page'] = current_page
     $.ajax({
         type: "POST",
-        url: "/cmdb/host/search/",
+        url: "/cmdb/zone/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
