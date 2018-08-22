@@ -76,7 +76,7 @@ def room_delete_view(request):
         sql_params = sql_delete_params(request)
         msg = api_action('room.delete', sql_params)
         if msg or msg is None:
-            return JsonResponse(data=msg, status=206, safe=False)
+            return JsonResponse(data=msg, status=500, safe=False)
         else:
             return JsonResponse(data=msg, status=200, safe=False)
 

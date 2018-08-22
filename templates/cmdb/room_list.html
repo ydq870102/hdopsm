@@ -75,6 +75,7 @@
                                 <td>{{ object.label_cn|default_if_none:"" }}</td>
                                 <td>{{ object.room_contact|default_if_none:"" }}</td>
                                 <td>{{ object.room_phone|default_if_none:"" }}</td>
+                                <td>{{ object.addr|default_if_none:"" }}</td>
                             </tr>
                             </tbody>
                         {% endfor %}

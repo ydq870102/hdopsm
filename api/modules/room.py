@@ -2,7 +2,6 @@
 #  encoding: utf-8
 
 from cmdb.models import *
-from utils.checkfun import *
 import logging
 import traceback
 from api.funnel import *
@@ -18,11 +17,8 @@ def create(**kwargs):
     :param kwargs:
     :return: Message
     """
-    result = kwargs.get('result', {})
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Room, result, filter_data).funnel_create()
+        result = Funnel(Room, kwargs).funnel_create()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -39,18 +35,14 @@ def get(**kwargs):
     :param kwargs:
     :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Room, {}, filter_data).funnel_get()
+        where, output, order_by, limit = Funnel(Room, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        # filter_data['where']['is_delete'] = 0
-        data = Room.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
-    except Exception, e:
+        data = Room.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
+    except Exception:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
     return data
@@ -62,16 +54,14 @@ def search(**kwargs):
     :param kwargs:
     :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
+
     try:
-        Funnel(Room, {}, filter_data).funnel_get()
+        where, output, order_by, limit = Funnel(Room, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        data = Room.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = Room.objects.filter(Q(**where)).values(*output).order_by(order_by)[0:limit]
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
@@ -85,7 +75,6 @@ def delete(**kwargs):
     :return: Message
     """
     where = kwargs.get("where", [])
-    check_where_id(where)
     if isinstance(where, dict):
         try:
             Room.objects.filter(**where).update(is_delete=1)
@@ -106,16 +95,13 @@ def update(**kwargs):
     :param kwargs:
     :return: Message
     """
-    result = json.loads(kwargs.get("result", {}))
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Room, result, filter_data).funnel_update()
+        where, result = Funnel(Room, kwargs).funnel_update()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        Room.objects.filter(**filter_data['where']).update(**result)
+        Room.objects.filter(**where).update(**result)
         return msg
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
@@ -128,12 +114,12 @@ def imp(**kwargs):
     :param kwargs:
     :return: Message
     """
+    result_dict ={}
     result_list = kwargs.get('result', {})
     for result in result_list:
-        covert_data = get_covert()
-        filter_data = get_filter(eargs=covert_data)
+        result_dict['result'] = result
         try:
-            result, filter_data = Funnel(Room, result, filter_data).funnel_imp()
+            result = Funnel(Room, result_dict).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
@@ -146,7 +132,6 @@ def imp(**kwargs):
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
-                print result
                 Room.objects.create(**result)
             except Exception, e:
                 logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
@@ -160,16 +145,13 @@ def exp(**kwargs):
     :param kwargs:
     :return:
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Room, {}, filter_data).funnel_exp()
+        where, output, order_by, limit = Funnel(Room, kwargs).funnel_exp()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        data = Room.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = Room.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
         return data
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))

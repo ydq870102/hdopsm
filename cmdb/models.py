@@ -13,7 +13,7 @@ class Room(models.Model):
     """
     # 基础属性
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='机房名称')
-    ADDR = models.CharField(max_length=255, verbose_name='机房地址', null=True)
+    addr = models.CharField(max_length=255, verbose_name='机房地址', null=True)
     room_contact = models.CharField(max_length=100, verbose_name='机房联系人', null=True)
     room_phone = models.CharField(max_length=20, verbose_name='联系人号码', null=True)
     # 维护属性
