@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 #  encoding: utf-8
 
-from cmdb.models import ItSystem, Zone
+from cmdb.models import ItSystem
 from utils.checkfun import *
 import logging
 import traceback
-from utils.funnel import *
+from api.funnel import *
 from django.db.models import Q
 
 logger = logging.getLogger('django')

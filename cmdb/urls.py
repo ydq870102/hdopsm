@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from views.host_view import *
+from views.sysdevice_view import *
 from views.itsystem_view import *
 from views.room_view import *
 from views.zone_view import *
@@ -28,15 +28,15 @@ urlpatterns = [
     url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
     url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
-    # host URL
-    url(r'^host/list/$', host_list_view, name='host_list'),
-    url(r'^host/import/$', host_import_view, name='host_import'),
-    url(r'^host/delete/$', host_delete_view, name='host_delete'),
-    url(r'^host/detail/(?P<id>[0-9]+)/$', host_detail_view, name='host_detail'),
-    url(r'^host/update/(?P<id>[0-9]+)/$', host_update_view, name='host_update'),
-    url(r'^host/template/$', host_template_view, name='host_template'),
-    url(r'^host/export/$', host_export_view, name='host_export'),
-    url(r'^host/search/$', host_search_view, name='host_search'),
+    # device URL
+    url(r'^device/list/$', device_list_view, name='device_list'),
+    url(r'^device/import/$', device_import_view, name='device_import'),
+    url(r'^device/delete/$', device_delete_view, name='device_delete'),
+    url(r'^device/detail/(?P<id>[0-9]+)/$', device_detail_view, name='device_detail'),
+    url(r'^device/update/(?P<id>[0-9]+)/$', device_update_view, name='device_update'),
+    url(r'^device/template/$', device_template_view, name='device_template'),
+    url(r'^device/export/$', device_export_view, name='device_export'),
+    url(r'^device/search/$', device_search_view, name='device_search'),
     # room URL
     url(r'^room/list/$', room_list_view, name='room_list'),
     url(r'^room/import/$', room_import_view, name='room_import'),

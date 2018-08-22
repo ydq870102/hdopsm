@@ -1,37 +1,25 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+import uuid
 
 
 # Create your models here.
 
 
-class Line(models.Model):
-    line_type_choices = (
-        ('0', u''),
-        ('1', u'电信'),
-        ('2', u'移动'),
-        ('3', u'内网联通'),
-        ('4', u'阿里云'),
-        ('5', u'腾讯云'),
-    )
-
-    class Meta:
-        db_table = 't_com_line'
-        verbose_name = '出口线路资产表'
-        verbose_name_plural = '出口线路资产表'
-
-
 class Room(models.Model):
     """
-    机房资产
+    @ 机房模型
     """
+    # 基础属性
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='机房名称')
-    room_contact = models.CharField(max_length=100, blank=True, null=True, verbose_name='机房联系人', default=None)
-    room_phone = models.CharField(max_length=20, blank=True, null=True, verbose_name='联系人号码', default=None)
+    ADDR = models.CharField(max_length=255, verbose_name='机房地址', null=True)
+    room_contact = models.CharField(max_length=100, verbose_name='机房联系人', null=True)
+    room_phone = models.CharField(max_length=20, verbose_name='联系人号码', null=True)
+    # 维护属性
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
     '''自定义权限'''
 
     class Meta:
@@ -45,57 +33,55 @@ class Room(models.Model):
         verbose_name = '机房资产表'
         verbose_name_plural = '机房资产表'
 
+    def __str__(self):
+        return str(self.label_cn)
+
 
 class Zone(models.Model):
     """
-    放置区域资产
+    @ 网络区域模型
     """
+    # 基础属性
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='网络区域')
-    vlan = models.CharField(max_length=100, null=True, verbose_name='vlan', default=None)
+    vlan = models.CharField(max_length=100, verbose_name='vlan', null=True)
+    # 维护属性
     is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
     '''自定义权限'''
 
     class Meta:
         db_table = 't_com_zone'
         permissions = (
-            ("can_read_zone_assets", "读取放置区域资产权限"),
-            ("can_change_zone_assetss", "更改放置区域资产权限"),
-            ("can_add_zone_assets", "添加放置区域资产权限"),
-            ("can_delete_zone_assets", "删除放置区域资产权限"),
+            ("can_read_zone_assets", "读取网络区域资产权限"),
+            ("can_change_zone_assetss", "更改网络区域资产权限"),
+            ("can_add_zone_assets", "添加网络区域资产权限"),
+            ("can_delete_zone_assets", "删除网络区域资产权限"),
         )
-        verbose_name = '放置区域资产表'
-        verbose_name_plural = '放置区域资产表'
+        verbose_name = '网络区域资产表'
+        verbose_name_plural = '网络区域资产表'
+
+    def __str__(self):
+        return str(self.label_cn)
 
 
 class ItSystem(models.Model):
     """
-    信息系统资产表
+    @ 信息系统模型
     """
-    bool_type_choices = (
-        ('0', u'否'),
-        ('1', u'是'),
-    )
-    related_zone_id = models.IntegerField(max_length=10, null=True, verbose_name='所属区域ID', default=None)
-    zone = models.CharField(max_length=100, null=True, verbose_name='所属区域', default=None)
-    label_cn = models.CharField(max_length=100, null=True, unique=True, verbose_name='信息系统名称')
-    use_for = models.CharField(max_length=255, null=True, verbose_name='用途', default=None)
-    system_framework = models.CharField(max_length=100, null=True, verbose_name='架构描述', default=None)
-    system_manager = models.CharField(max_length=100, null=True, verbose_name='业务系统管理员', default=None)
-    system_admin = models.CharField(max_length=100, null=True, verbose_name='业务系统负责人', default=None)
-    interface_system = models.CharField(max_length=200, null=True, verbose_name='交互系统', default=None)
-    user_of_service = models.CharField(max_length=200, null=True, verbose_name='使用人员', default=None)
-    is_untrained_person_use = models.CharField(choices=((u'否', u'否'), ('是', '是')), max_length=20, null=True,
-                                               verbose_name='是否普通用户使用', default=None)
-    line = models.IntegerField(choices=Line.line_type_choices, default=0, null=True, verbose_name='出口线路')
-    is_delete = models.IntegerField(choices=bool_type_choices, default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
-
-    @staticmethod
-    def get_enum_column():
-        return [{'ItSystem': 'is_untrained_person_use'}]
+    # 基础属性
+    label_cn = models.CharField(max_length=100, unique=True, verbose_name='信息系统名称')
+    related_zone_id = models.ForeignKey(Zone, db_column='related_zone_id', null=True)
+    use_for = models.CharField(max_length=255, verbose_name='用途', null=True)
+    system_framework = models.CharField(max_length=100, verbose_name='架构描述', null=True)
+    user_of_service = models.CharField(max_length=200, verbose_name='使用人员', null=True)
+    is_untrained_person_use = models.CharField(max_length=20, verbose_name='是否普通用户使用', default='否', null=True)
+    # 维护属性
+    is_delete = models.IntegerField(default=0, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
+    system_manager = models.CharField(max_length=100, verbose_name='业务系统管理员', null=True)
+    system_admin = models.CharField(max_length=100, verbose_name='业务系统负责人', null=True)
 
     class Meta:
         db_table = 't_com_itsystem'
@@ -108,76 +94,139 @@ class ItSystem(models.Model):
         verbose_name = '信息系统资产表'
         verbose_name_plural = '信息系统资产表'
 
+    def __str__(self):
+        return str(self.label_cn)
 
-class Host(models.Model):
+
+class SysDevice(models.Model):
+    """
+    @ 服务器模型
+    """
     assets_type_choices = (
         ('物理机', u'物理机'),
         ('虚拟机', u'虚拟机'),
     )
     # 基础属性
-    related_zone_id = models.CharField(max_length=20, null=True, verbose_name='所属区域ID', default=None)
-    related_itsystem_id = models.CharField(max_length=20, null=True, verbose_name='所属区域ID', default=None)
-    related_room_id = models.CharField(max_length=20, null=True, verbose_name='所属机房ID', default=None)
-    label_cn = models.CharField(max_length=100, verbose_name='资产编号', unique=True)
-    sn = models.CharField(max_length=100, verbose_name='设备序列号', null=True, default=None)
-    zone = models.CharField(max_length=20, null=True, verbose_name='所属区域', default=None)
-    itsystem = models.CharField(max_length=100, null=True, verbose_name='信息系统', default=None)
-    assets_type = models.CharField(choices=assets_type_choices, max_length=100, default='物理机', verbose_name='资产类型')
-    status = models.CharField(max_length=20, null=True, verbose_name='状态', default=None)
-    ip = models.CharField(max_length=100, unique=True, null=True, verbose_name='IP地址', default=None)
-    management_ip = models.GenericIPAddressField(u'管理IP', null=True, default=None)
-    use_for = models.CharField(max_length=100, null=True, verbose_name='用途', default=None)
-    room = models.CharField(max_length=50, null=True, verbose_name='所属机房', default=None)
-    department = models.CharField(max_length=50, null=True, verbose_name='所属部门', default=None)
-    host_admin = models.CharField(max_length=30, null=True, verbose_name='系统维护人', default=None)
-    backup_admin = models.CharField(max_length=30, null=True, verbose_name='备份维护人', default=None)
-    related_phy_host = models.GenericIPAddressField(u'所属物理机IP', null=True, default=None)
-
+    label_cn = models.CharField(max_length=100, verbose_name='集团编码', unique=True)
+    related_zone_id = models.ForeignKey(Zone, db_column='related_zone_id', verbose_name='所属区域ID')
+    related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
+    related_room_id = models.ForeignKey(Room, db_column='related_room_id', verbose_name='所属机房ID')
+    ipaddr = models.GenericIPAddressField(unique=True, verbose_name='IP地址')
+    system = models.CharField( max_length=20, default='Linux', verbose_name='资产类型')
+    management_ip = models.GenericIPAddressField(null=True, verbose_name='管理IP地址')
+    assets_type = models.CharField(choices=assets_type_choices, max_length=20, default='物理机', verbose_name='资产类型')
+    related_host_ip = models.GenericIPAddressField(null=True, verbose_name='所属物理机IP')
+    status = models.CharField(max_length=20, null=True, verbose_name='状态')
+    use_for = models.CharField(max_length=100, null=True, verbose_name='用途')
+    # 资产属性
+    sn = models.CharField(max_length=100, null=True, verbose_name='设备序列号')
+    model = models.CharField(max_length=20, null=True, verbose_name='资产型号')
+    provider = models.CharField(max_length=30, null=True, verbose_name='供货商')
+    buy_user = models.CharField(max_length=100, null=True, verbose_name='购买人')
+    manufacturer = models.CharField(max_length=30, null=True, verbose_name='制造商')
+    buy_time = models.DateTimeField(null=True, verbose_name='购买日期')
+    expire_date = models.DateTimeField(null=True, verbose_name='购买日期')
     # 配置属性
     hostname = models.CharField(max_length=100, null=True, verbose_name='主机名称', default=None)
-    username = models.CharField(max_length=100, null=True, verbose_name='用户名', default=None)
-    passwd = models.CharField(max_length=100, null=True, verbose_name='密码', default=None)
-    keyfile = models.CharField(max_length=30, null=True, verbose_name='SSH秘钥', default=None)
-    port = models.DecimalField(max_digits=6, decimal_places=0, null=True, verbose_name='SSH端口', default=None)
-    line = models.CharField(max_length=30, blank=True, null=True, verbose_name='出口线路', default=None)
     mac = models.CharField(max_length=3, null=True, verbose_name='MAC地址', default=None)
     cpu = models.CharField(max_length=100, null=True, verbose_name='CPU型号', default=None)
-    cpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='CPU个数', default=None)
-    vcpu_number = models.SmallIntegerField(blank=True, null=True, verbose_name='虚拟CPU个数', default=None)
     cpu_core = models.SmallIntegerField(blank=True, null=True, verbose_name='CPU核数', default=None)
-    disk_total = models.CharField(max_length=100, null=True, verbose_name='硬盘总量', default=None)
     ram_total = models.IntegerField(blank=True, null=True, verbose_name='内存总量', default=None)
-    kernel = models.CharField(max_length=100, null=True, verbose_name='内核版本', default=None)
-    selinux = models.CharField(max_length=100, null=True, verbose_name='是否开启selinux', default=None)
-    swap = models.CharField(max_length=100, null=True, verbose_name='swap空间', default=None)
-    system = models.CharField(max_length=100, null=True, verbose_name='操作系统类型', default=None)
+    disk_total = models.CharField(max_length=100, null=True, verbose_name='硬盘总量', default=None)
     system_version = models.CharField(max_length=100, null=True, verbose_name='操作系统版本', default=None)
-
-    # 资产属性
-    buy_time = models.DateTimeField(blank=True, null=True, verbose_name='购买时间')
-    expire_date = models.DateTimeField(u'过保修期', null=True, default=None)
-    buy_user = models.CharField(max_length=100, null=True, verbose_name='购买人', default=None)
-    manufacturer = models.CharField(max_length=30, null=True, verbose_name='制造商', default=None)
-    provider = models.CharField(max_length=30, null=True, verbose_name='供货商', default=None)
-    model = models.CharField(max_length=20, null=True, verbose_name='资产型号', default=None)
-
     # 维护属性
     agent_status = models.CharField(max_length=20, null=True, verbose_name='agent状态')
     is_delete = models.IntegerField(default=0, null=True)
     create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
+    system_admin = models.CharField(max_length=30, null=True, verbose_name='系统维护人', default=None)
+    backup_admin = models.CharField(max_length=30, null=True, verbose_name='备份维护人', default=None)
 
     class Meta:
-        db_table = 't_com_host'
+        db_table = 't_sys_device'
         permissions = (
-            ("can_read_host", "读取服务器资产权限"),
-            ("can_change_host", "更改服务器资产权限"),
-            ("can_add_host", "添加服务器资产权限"),
-            ("can_delete_host", "删除服务器资产权限"),
+            ("can_read_device", "读取服务器资产权限"),
+            ("can_change_device", "更改服务器资产权限"),
+            ("can_add_device", "添加服务器资产权限"),
+            ("can_delete_device", "删除服务器资产权限"),
         )
         verbose_name = '服务器表'
         verbose_name_plural = '服务器表'
 
-    @staticmethod
-    def get_enum_column():
-        return [{'Host': 'assets_type'}, {'Host': 'status'}]
+    def __str__(self):
+        return str(self.label_cn)
+
+
+class Process(models.Model):
+    """
+    @ 服务器模型
+    """
+    # 基础属性
+    label_cn = models.CharField(max_length=20, verbose_name='应用名称', unique=True)
+    cluster_name = models.CharField(max_length=20, null=True, verbose_name='集群名称')
+    cluster_role = models.CharField(max_length=20, null=True, verbose_name='集群角色')
+    related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
+    related_device_id = models.ForeignKey(SysDevice, db_column='related_device_id', verbose_name='所属服务器ID')
+    dev_language = models.CharField(max_length=20, null=True, verbose_name='开发语言')
+    middleware = models.CharField(max_length=100, null=True, verbose_name='中间件')
+    path = models.CharField(max_length=100, null=True, verbose_name='部署路径')
+    port = models.CharField(max_length=50, null=True, verbose_name='端口')
+    use_for = models.CharField(max_length=100, null=True, verbose_name='用途')
+    # 维护属性
+    is_delete = models.IntegerField(default=0, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
+    start_command = models.CharField(max_length=100, null=True, verbose_name='启动命令')
+    stop_command = models.CharField(max_length=100, null=True, verbose_name='停止命令')
+    status = models.CharField(max_length=20, null=True, verbose_name='状态')
+
+    class Meta:
+        db_table = 't_sys_process'
+        permissions = (
+            ("can_read_process", "读取服务器资产权限"),
+            ("can_change_process", "更改服务器资产权限"),
+            ("can_add_process", "添加服务器资产权限"),
+            ("can_delete_process", "删除服务器资产权限"),
+        )
+        verbose_name = '应用程序表'
+        verbose_name_plural = '应用程序表'
+
+    def __str__(self):
+        return str(self.label_cn)
+
+
+class Database(models.Model):
+    """
+    @ 服务器模型
+    """
+    # 基础属性
+    label_cn = models.CharField(max_length=20, verbose_name='数据库名称', unique=True)
+    cluster_name = models.CharField(max_length=20, null=True, verbose_name='集群名称')
+    cluster_role = models.CharField(max_length=20, null=True, verbose_name='集群角色')
+    related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
+    related_device_id = models.ForeignKey(SysDevice, db_column='related_device_id', verbose_name='所属服务器ID')
+    database_type = models.CharField(max_length=20, null=True, verbose_name='数据库类型')
+    path = models.CharField(max_length=100, null=True, verbose_name='部署路径')
+    port = models.CharField(max_length=50, null=True, verbose_name='端口')
+    use_for = models.CharField(max_length=100, null=True, verbose_name='用途')
+    # 维护属性
+    is_delete = models.IntegerField(default=0, null=True)
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    last_modify_time = models.DateTimeField(auto_now=True, null=True)
+    start_command = models.CharField(max_length=100, null=True, verbose_name='启动命令')
+    stop_command = models.CharField(max_length=100, null=True, verbose_name='停止命令')
+    status = models.CharField(max_length=20, null=True, verbose_name='状态')
+
+    class Meta:
+        db_table = 't_sys_database'
+        permissions = (
+            ("can_read_database", "读取数据库资产权限"),
+            ("can_change_database", "更改数据库资产权限"),
+            ("can_add_database", "添加数据库资产权限"),
+            ("can_delete_database", "删除数据库资产权限"),
+        )
+        verbose_name = '数据库表'
+        verbose_name_plural = '数据库表'
+
+    def __str__(self):
+        return str(self.label_cn)

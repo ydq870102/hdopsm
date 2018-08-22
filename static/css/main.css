@@ -59,12 +59,12 @@
 .slidebar-wrapper
 {
     position: fixed;
-    top: 50px;
+    top: 67px;
     left: 50px;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: 100;
 }
 
 .sideslider {

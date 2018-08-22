@@ -5,7 +5,7 @@ from cmdb.models import *
 from utils.checkfun import *
 import logging
 import traceback
-from utils.funnel import *
+from api.funnel import *
 from django.db.models import Q
 
 logger = logging.getLogger('django')
@@ -173,15 +173,3 @@ def exp(**kwargs):
         return data
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
-
-
-def get_covert():
-    """
-    @获取Room表枚举字段
-    :return: 返回字典
-    """
-    try:
-        enum = Room.get_enum_column()
-        return {'enum': enum}
-    except Exception:
-        return {'enum': {}}

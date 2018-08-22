@@ -7,196 +7,77 @@ from hdopsm.models import *
 from django.db.models import Count
 
 
-# itsystem下拉框变量获取入口
-def get_itsystem_params_list():
-    zones = get_itsystem_zone()
-    system_managers = get_itsystem_system_manager()
-    system_admins = get_itsystem_system_admin()
-    return {'zones': zones, 'system_managers': system_managers, 'system_admins': system_admins}
-
-
-def get_itsystem_zone():
+def get_object_column_count(model, column):
     """
-    信息系统界面所属区域项
+    @ 对象字段统计
+    :param model:
+    :param column:
     :return:
     """
-    zone_list = ItSystem.objects.all().filter(is_delete=0).values('zone').order_by('zone').annotate(
-        zone_count=Count('id'))
-    data = []
-    for item in zone_list:
-        temp = {}
-        temp['zone'] = item['zone']
-        temp['zone_count'] = item['zone_count']
-        data.append(temp)
-    return data
+    if hasattr(model, column):
+        column_list = model.objects.all().filter(is_delete=0).values(column).order_by(column).annotate(
+            column_count=Count('id'))
+        data = []
+        for item in column_list:
+            temp = {}
+            temp['column'] = item[column]
+            temp['column_count'] = item['column_count']
+            data.append(temp)
+        return data
 
 
-def get_itsystem_system_manager():
+def get_object_column_enum(model, column):
     """
-    信息系统界面系统管理员
+    @ 对象字段枚举
     :return:
     """
-    zone_list = ItSystem.objects.all().filter(is_delete=0).values('system_manager').order_by('system_manager').annotate(
-        system_manager_count=Count('id'))
-    data = []
-    for item in zone_list:
-        temp = {}
-        temp['system_manager'] = item['system_manager']
-        temp['system_manager_count'] = item['system_manager_count']
-        data.append(temp)
-    return data
+    if hasattr(model, column):
+        column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+        data = []
+        for item in column_list:
+            data.append(item['value_desc'])
+        return data
 
 
-def get_itsystem_system_admin():
-    """
-    信息系统界面系统负责人
-    :return:
-    """
-    zone_list = ItSystem.objects.all().filter(is_delete=0).values('system_admin').order_by('system_admin').annotate(
-        system_admin_count=Count('id'))
-    data = []
-    for item in zone_list:
-        temp = {}
-        temp['system_admin'] = item['system_admin']
-        temp['system_admin_count'] = item['system_admin_count']
-        data.append(temp)
-    return data
-
-
-# host编辑下拉框变量获取入口
-def get_host_params_detail():
-    host_status_enum_list = get_host_status_enum()
-    host_type_enum_list = get_host_type_enum()
-    host_system_enum_list = get_host_system_enum()
-    itsystem_name = get_itsystem_name()
-
-    return {'host_status_enum_list': host_status_enum_list, 'host_type_enum_list': host_type_enum_list,
-            'host_system_enum_list': host_system_enum_list, 'itsystem_name': itsystem_name}
-
-
-# host查询下拉框变量获取入口
-def get_host_params_list():
-    host_status_enum_list = get_host_status_enum()
-    host_type_enum_list = get_host_type_enum()
-    host_system_enum_list = get_host_system_enum()
-    host_zone_list = get_host_zone()
-    host_itsystem_list = get_host_itsystem()
-    host_system_list = get_host_system()
-    host_type_list = get_host_type()
-    print host_zone_list
-    return {'host_status_enum_list': host_status_enum_list, 'host_type_enum_list': host_type_enum_list,
-            'host_system_enum_list': host_system_enum_list, 'host_zone_list': host_zone_list,
-            'host_itsystem_list': host_itsystem_list, 'host_system_list': host_system_list,
-            'host_type_list': host_type_list}
-
-
-def get_host_status_enum():
-    """
-    下拉框主机状态枚举
-    :return:
-    """
-    host_status_list = Enum.objects.filter(table_name='Host', table_column='status').values('value_desc')
-    data = []
-    for item in host_status_list:
-        data.append(item['value_desc'])
-    return data
-
-
-def get_host_type_enum():
-    """
-    下拉框主机类型枚举
-    :return:
-    """
-    host_type_list = Enum.objects.filter(table_name='Host', table_column='assets_type').values('value_desc')
-    data = []
-    for item in host_type_list:
-        data.append(item['value_desc'])
-    return data
-
-
-def get_host_system_enum():
-    """
-    下拉框主机系统类型枚举
-    :return:
-    """
-    host_type_list = Enum.objects.filter(table_name='Host', table_column='system').values('value_desc')
-    data = []
-    for item in host_type_list:
-        data.append(item['value_desc'])
-    return data
-
-
-def get_itsystem_name():
+def get_object_attr(model, column):
     """
     下拉框主机信息系统类型
     :return:
     """
-    itsystem_name_list = ItSystem.objects.all().values('label_cn')
-    data = []
-    for item in itsystem_name_list:
-        data.append(item['label_cn'])
-    return data
+    if hasattr(model, column):
+        data_list = model.objects.all().values(column)
+        data = []
+        for item in data_list:
+            data.append(item[column])
+        return data
 
 
-def get_host_zone():
-    """
-    信息系统界面所属区域项
-    :return:
-    """
-    zone_list = Host.objects.all().filter(is_delete=0).values('zone').order_by('zone').annotate(
-        zone_count=Count('id'))
-    data = []
-    for item in zone_list:
-        temp = {}
-        temp['zone'] = item['zone']
-        temp['zone_count'] = item['zone_count']
-        data.append(temp)
-    return data
+# itsystem下拉框变量获取入口
+def get_itsystem_params_list():
+    return {
+        'host_zone_list': get_object_column_count(ItSystem, 'zone'),
+        'host_system_manager_list': get_object_column_count(ItSystem, 'system_manager'),
+        'host_system_admins_list': get_object_column_count(ItSystem, 'system_admin')
+    }
 
 
-def get_host_itsystem():
-    """
-    信息系统界面信息系统项
-    :return:
-    """
-    zone_list = Host.objects.all().filter(is_delete=0).values('itsystem').order_by('itsystem').annotate(
-        itsystem_count=Count('id'))
-    data = []
-    for item in zone_list:
-        temp = {}
-        temp['itsystem'] = item['itsystem']
-        temp['itsystem_count'] = item['itsystem_count']
-        data.append(temp)
-    return data
+# host编辑下拉框变量获取入口
+def get_sysdevice_params_detail():
+    return {'sysdevice_status_enum_list': get_object_column_enum(SysDevice, 'status'),
+            'sysdevice_assets_type_enum_list': get_object_column_enum(SysDevice, 'assets_type'),
+            'sysdevice_system_enum_list': get_object_column_enum(SysDevice, 'system'),
+            'itsystem_label_list': get_object_attr(ItSystem, 'label_cn')
+            }
 
 
-def get_host_system():
-    """
-    信息系统界面系统类型项
-    :return:
-    """
-    system_list = Host.objects.all().filter(is_delete=0).values('system').order_by('system').annotate(
-        system_count=Count('id'))
-    data = []
-    for item in system_list:
-        temp = {}
-        temp['system'] = item['system']
-        temp['system_count'] = item['system_count']
-        data.append(temp)
-    return data
-
-
-def get_host_type():
-    """
-    信息系统界面系统类型项
-    :return:
-    """
-    type_list = Host.objects.all().filter(is_delete=0).values('assets_type').order_by('assets_type').annotate(
-        assets_type_count=Count('id'))
-    data = []
-    for item in type_list:
-        temp = {}
-        temp['assets_type'] = item['assets_type']
-        temp['assets_type_count'] = item['assets_type_count']
-        data.append(temp)
-    return data
+# host查询下拉框变量获取入口
+def get_sysdevice_params_list():
+    return {
+        'sysdevice_status_enum_list': get_object_column_enum(SysDevice, 'status'),
+        'sysdevice_assets_type_enum_list': get_object_column_enum(SysDevice, 'assets_type'),
+        'sysdevice_system_enum_list': get_object_column_enum(SysDevice, 'system'),
+        'sysdevice_zone_list': get_object_column_count(SysDevice, 'zone'),
+        'sysdevice_itsystem_list': get_object_column_count(SysDevice, 'related_itsystem_id'),
+        'sysdevice_system_list': get_object_column_count(SysDevice, 'system'),
+        'sysdevice_assets_type_list': get_object_column_count(SysDevice, 'assets_type')
+    }

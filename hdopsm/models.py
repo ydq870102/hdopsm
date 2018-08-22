@@ -3,50 +3,51 @@
 
 from django.db import models
 
-
-class Department(models.Model):
-    """
-    部门资产表
-    """
-    department_name = models.CharField(max_length=100, unique=True, verbose_name='部门名称')
-    is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
-
-    class Meta:
-        db_table = 't_com_department'
-        permissions = (
-            ("can_read_department_assets", "读取部门权限"),
-            ("can_change_department_assets", "更改部门权限"),
-            ("can_add_department_assets", "添加部门权限"),
-            ("can_delete_department_assets", "删除部门权限"),
-        )
-        verbose_name = '部门资产表'
-        verbose_name_plural = '部门资产表'
-
-
-class Person(models.Model):
-    """
-    人员资产表
-    """
-    person_name = models.CharField(max_length=20, unique=True, verbose_name='人员名称')
-    phone = models.IntegerField(verbose_name='联系电话', null=True)
-    email = models.EmailField(verbose_name='邮箱', null=True)
-    department_name = models.CharField(max_length=20, verbose_name='所属部门', null=True)
-    is_delete = models.IntegerField(default=0, null=True)
-    create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
-
-    class Meta:
-        db_table = 't_com_person'
-        permissions = (
-            ("can_read_person_assets", "读取人员资产权限"),
-            ("can_change_person_assets", "更改人员资产权限"),
-            ("can_add_person_assets", "添加人员资产权限"),
-            ("can_delete_person_assets", "删除人员资产权限"),
-        )
-        verbose_name = '信息系统资产表'
-        verbose_name_plural = '信息系统资产表'
+#
+# class Department(models.Model):
+#     """
+#     部门资产表
+#     """
+#     department_name = models.CharField(max_length=100, unique=True, verbose_name='部门名称')
+#     is_delete = models.IntegerField(default=0, null=True)
+#     create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+#     last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
+#
+#     class Meta:
+#         db_table = 't_com_department'
+#         permissions = (
+#             ("can_read_department_assets", "读取部门权限"),
+#             ("can_change_department_assets", "更改部门权限"),
+#             ("can_add_department_assets", "添加部门权限"),
+#             ("can_delete_department_assets", "删除部门权限"),
+#         )
+#         verbose_name = '部门资产表'
+#         verbose_name_plural = '部门资产表'
+#
+#
+# class Person(models.Model):
+#     """
+#     人员资产表
+#     """
+#     person_name = models.CharField(max_length=20, unique=True, verbose_name='人员名称')
+#     phone = models.IntegerField(verbose_name='联系电话', null=True)
+#     email = models.EmailField(verbose_name='邮箱', null=True)
+#     department_name = models.CharField(max_length=20, verbose_name='所属部门', null=True)
+#     is_delete = models.IntegerField(default=0, null=True)
+#     create_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+#     last_modify_time = models.DateTimeField(auto_now=True, null=True, blank=True)
+#
+#     class Meta:
+#         db_table = 't_com_person'
+#         permissions = (
+#             ("can_read_person_assets", "读取人员资产权限"),
+#             ("can_change_person_assets", "更改人员资产权限"),
+#             ("can_add_person_assets", "添加人员资产权限"),
+#             ("can_delete_person_assets", "删除人员资产权限"),
+#         )
+#         verbose_name = '信息系统资产表'
+#         verbose_name_plural = '信息系统资产表'
+#
 
 
 class Enum(models.Model):
