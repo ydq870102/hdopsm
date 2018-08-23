@@ -4,7 +4,7 @@
 from utils.checkfun import *
 import logging
 import traceback
-from api.funnel import *
+from api.funnelin import *
 from django.db.models import Q
 
 logger = logging.getLogger('django')
@@ -21,7 +21,7 @@ def create(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Host, result, filter_data).funnel_create()
+        FunnelIn(Host, result, filter_data).funnel_create()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -41,7 +41,7 @@ def get(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Host, {}, filter_data).funnel_get()
+        FunnelIn(Host, {}, filter_data).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -64,7 +64,7 @@ def search(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Host, {}, filter_data).funnel_get()
+        FunnelIn(Host, {}, filter_data).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -109,7 +109,7 @@ def update(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Host, result, filter_data).funnel_update()
+        FunnelIn(Host, result, filter_data).funnel_update()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -132,7 +132,7 @@ def imp(**kwargs):
         covert_data = get_covert()
         filter_data = get_filter(eargs=covert_data)
         try:
-            result, filter_data = Funnel(Host, result, filter_data).funnel_imp()
+            result, filter_data = FunnelIn(Host, result, filter_data).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
@@ -161,7 +161,7 @@ def exp(**kwargs):
     covert_data = get_covert()
     filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(Host, {}, filter_data).funnel_exp()
+        FunnelIn(Host, {}, filter_data).funnel_exp()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg

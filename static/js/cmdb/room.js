@@ -190,6 +190,7 @@ function load_table_data(data, page) {
         html += "<td>" + data[i].label_cn + "</td>"
         html += "<td>" + data[i].room_contact + "</td>"
         html += "<td>" + data[i].room_phone + "</td>"
+        html += "<td>" + data[i].addr + "</td>"
         html += "</tr> "
         html += "</tbody> "
     }

@@ -76,6 +76,7 @@ class ItSystem(models.Model):
     system_framework = models.CharField(max_length=100, verbose_name='架构描述', null=True)
     user_of_service = models.CharField(max_length=200, verbose_name='使用人员', null=True)
     is_untrained_person_use = models.CharField(max_length=20, verbose_name='是否普通用户使用', default='否', null=True)
+    access_mode = models.CharField(max_length=200, verbose_name='访问方式', null=True)
     # 维护属性
     is_delete = models.IntegerField(default=0, null=True)
     create_time = models.DateTimeField(auto_now_add=True, null=True)
@@ -96,6 +97,10 @@ class ItSystem(models.Model):
 
     def __str__(self):
         return str(self.label_cn)
+
+    @staticmethod
+    def get_model_foreignkey():
+        return [{'related_zone_id': Zone}]
 
 
 class SysDevice(models.Model):

@@ -1,12 +1,12 @@
 #! /usr/bin/env python
 #  encoding: utf-8
 
-from cmdb.models import ItSystem
-from utils.checkfun import *
+from cmdb.models import *
 import logging
 import traceback
-from api.funnel import *
+from api.funnelin import *
 from django.db.models import Q
+from funnelout import *
 
 logger = logging.getLogger('django')
 msg = []
@@ -14,15 +14,12 @@ msg = []
 
 def create(**kwargs):
     """
-    @itsystem 创建方法
+    ItSystem 创建方法
     :param kwargs:
-    :return:
+    :return: Message
     """
-    result = kwargs.get('result', {})
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, result, filter_data).funnel_create()
+        result = FunnelIn(ItSystem, kwargs).funnel_create()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -35,42 +32,40 @@ def create(**kwargs):
 
 def get(**kwargs):
     """
-    itsystem 查询方法
+    ItSystem 查询方法
     :param kwargs:
-    :return:
+    :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_get()
+        where, output, order_by, limit = FunnelIn(ItSystem, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        # filter_data['where']['is_delete'] = 0
-        data = ItSystem.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
-    except Exception, e:
+        data = ItSystem.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
+        print data
+        data = FunnelOut(ItSystem, data).convert()
+        print data
+    except Exception:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
     return data
 
+
 def search(**kwargs):
     """
-    itsystem 查询方法
+    ItSystem 查询方法
     :param kwargs:
-    :return:
+    :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
+
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_get()
+        where, output, order_by, limit = FunnelIn(ItSystem, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        data = ItSystem.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = ItSystem.objects.filter(Q(**where)).values(*output).order_by(order_by)[0:limit]
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
@@ -78,8 +73,12 @@ def search(**kwargs):
 
 
 def delete(**kwargs):
+    """
+    ItSystem 删除方法
+    :param kwargs: 字典
+    :return: Message
+    """
     where = kwargs.get("where", [])
-    check_where_id(where)
     if isinstance(where, dict):
         try:
             ItSystem.objects.filter(**where).update(is_delete=1)
@@ -95,16 +94,18 @@ def delete(**kwargs):
 
 
 def update(**kwargs):
-    result = json.loads(kwargs.get("result", {}))
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
+    """
+    ItSystem 更新方法
+    :param kwargs:
+    :return: Message
+    """
     try:
-        Funnel(ItSystem, result, filter_data).funnel_update()
+        where, result = FunnelIn(ItSystem, kwargs).funnel_update()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        ItSystem.objects.filter(**filter_data['where']).update(**result)
+        ItSystem.objects.filter(**where).update(**result)
         return msg
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
@@ -112,12 +113,17 @@ def update(**kwargs):
 
 
 def imp(**kwargs):
+    """
+    ItSystem 导入方法
+    :param kwargs:
+    :return: Message
+    """
+    result_dict ={}
     result_list = kwargs.get('result', {})
     for result in result_list:
-        covert_data = get_covert()
-        filter_data = get_filter(eargs=covert_data)
+        result_dict['result'] = result
         try:
-            result, filter_data = Funnel(ItSystem, result, filter_data).funnel_imp()
+            result = FunnelIn(ItSystem, result_dict).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
@@ -126,37 +132,30 @@ def imp(**kwargs):
                 result['is_delete'] = 0
                 ItSystem.objects.filter(label_cn=result['label_cn']).update(**result)
             except Exception, e:
+                logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
         else:
             try:
                 ItSystem.objects.create(**result)
             except Exception, e:
+                logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
                 msg.append("sql 执行出错，错误原因: {}".format(e.message))
     return msg
 
 
 def exp(**kwargs):
     """
-    itsystem 导出方法
+    ItSystem 导出方法
     :param kwargs:
     :return:
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        Funnel(ItSystem, {}, filter_data).funnel_exp()
+        where, output, order_by, limit = FunnelIn(ItSystem, kwargs).funnel_exp()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
     try:
-        # filter_data['where']['is_delete'] = 0
-        data = ItSystem.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = ItSystem.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
         return data
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))
-
-
-def get_covert():
-    enum = ItSystem.get_enum_column()
-    return {'enum': enum}

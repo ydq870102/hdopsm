@@ -21,15 +21,19 @@
                                 <ul class="clearfix attribute-list">
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">机房名称 :</span>
-                                        <span class="attribute-item-value" title="label_cn">{{ object.label_cn }}</span>
+                                        <span class="attribute-item-value" title={{ object.label_cn }}>{{ object.label_cn }}</span>
                                     </li>
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">机房联系人 :</span>
-                                        <span class="attribute-item-value" title="room_contact">{{ object.room_contact }}</span>
+                                        <span class="attribute-item-value" title={{ object.room_contact }}>{{ object.room_contact }}</span>
                                     </li>
                                     <li class="attribute-item ">
                                         <span class="attribute-item-label">联系人号码 :</span>
-                                        <span class="attribute-item-value" title="room_phone">{{ object.room_phone }}</span>
+                                        <span class="attribute-item-value" title={{ object.room_phone }}>{{ object.room_phone }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">机房地址 :</span>
+                                        <span class="attribute-item-value" title={{ object.addr }}>{{ object.addr }}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -114,6 +118,16 @@
                                             </div>
                                             <div class="attribute-item-field" title="room_phone">
                                                 <input type="text" class="bk-form-input"  value="{{ object.room_phone }}">
+                                            </div>
+                                        </li>
+                                         <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>机房地址</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="addr">
+                                                <input type="text" class="bk-form-input"  value="{{ object.addr }}">
                                             </div>
                                         </li>
                                     </ul>

@@ -187,12 +187,8 @@ function load_table_data(data, page) {
         html += "<td class=\"text-center\">"
         html += '<input type="checkbox" name="checked" value="' + data[i].id + '">'
         html += "</td>"
-        html += "<td>" + data[i].itsystem + "</td>"
-        html += "<td>" + data[i].zone + "</td>"
-        html += "<td>" + data[i].hostname + "</td>"
-        html += "<td>" + data[i].ip + "</td>"
-        html += "<td>" + data[i].assets_type + "</td>"
-        html += "<td>" + data[i].system + "</td>"
+        html += "<td>" + data[i].label_cn + "</td>"
+        html += "<td>" + data[i].vlan + "</td>"
         html += "</tr> "
         html += "</tbody> "
     }

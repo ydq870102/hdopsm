@@ -4,7 +4,7 @@
 from cmdb.models import *
 import logging
 import traceback
-from api.funnel import *
+from api.funnelin import *
 from django.db.models import Q
 
 logger = logging.getLogger('django')
@@ -18,7 +18,7 @@ def create(**kwargs):
     :return: Message
     """
     try:
-        result = Funnel(Room, kwargs).funnel_create()
+        result = FunnelIn(Room, kwargs).funnel_create()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -36,7 +36,7 @@ def get(**kwargs):
     :return: 查询集
     """
     try:
-        where, output, order_by, limit = Funnel(Room, kwargs).funnel_get()
+        where, output, order_by, limit = FunnelIn(Room, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -56,7 +56,7 @@ def search(**kwargs):
     """
 
     try:
-        where, output, order_by, limit = Funnel(Room, kwargs).funnel_get()
+        where, output, order_by, limit = FunnelIn(Room, kwargs).funnel_get()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -96,7 +96,7 @@ def update(**kwargs):
     :return: Message
     """
     try:
-        where, result = Funnel(Room, kwargs).funnel_update()
+        where, result = FunnelIn(Room, kwargs).funnel_update()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg
@@ -119,7 +119,7 @@ def imp(**kwargs):
     for result in result_list:
         result_dict['result'] = result
         try:
-            result = Funnel(Room, result_dict).funnel_imp()
+            result = FunnelIn(Room, result_dict).funnel_imp()
         except Exception, e:
             msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
             continue
@@ -146,7 +146,7 @@ def exp(**kwargs):
     :return:
     """
     try:
-        where, output, order_by, limit = Funnel(Room, kwargs).funnel_exp()
+        where, output, order_by, limit = FunnelIn(Room, kwargs).funnel_exp()
     except Exception, e:
         msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
         return msg

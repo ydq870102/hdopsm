@@ -5,11 +5,11 @@ from hdopsm.models import Enum
 import json
 
 
-class Funnel(object):
+class FunnelIn(object):
 
     def __init__(self, model=None, kwargs={}):
         self.model = model
-        if isinstance(kwargs.get("result", {}),unicode):
+        if isinstance(kwargs.get("result", {}), unicode):
             self.result = json.loads(kwargs.get("result", {}))
         else:
             self.result = kwargs.get("result", {})
@@ -18,6 +18,7 @@ class Funnel(object):
         self.order_by = kwargs.get("order_by", "-id")
         self.where = kwargs.get("where", {})
         self.enum = []
+        self.foreignkey = []
 
     def is_exists_filed(self):
         for filed in self.result:
@@ -51,24 +52,34 @@ class Funnel(object):
 
     def check_column_enum(self):
 
-        for enum_dict in self.get_enum_column():
-            for table_name, column in enum_dict.items():
-                if not self.result.has_key(column):
-                    continue
-                enums = Enum.objects.filter(table_name=table_name, table_column=column).values('value_desc')
-                enum_list = [enum['value_desc'] for enum in enums]
-                if not isinstance(self.result, dict) or self.result[column] not in enum_list:
-                    raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format(self.model, column, enum_list))
+        for enum_tuple in self.enum:
+            if not self.result.has_key(enum_tuple[1]):
+                continue
+            enums = Enum.objects.filter(table_name=enum_tuple[0], table_column=enum_tuple[1]).values('value_desc')
+            enum_list = [enum['value_desc'] for enum in enums]
+            if not isinstance(self.result, dict) or self.result[enum_tuple[1]] not in enum_list:
+                raise Exception("{}字段{}的枚举填写不正确，枚举类型为{}".format
+                                (self.model.__name__, enum_tuple[1], enum_list))
+
+    def foreignkey_to_object(self):
+        for key in self.foreignkey:
+            for k, v in key.items():
+                self.result[k] = v.objects.get(label_cn=self.result[k])
+
 
     def change_date_filed(self):
         pass
 
     def get_enum_column(self):
+        self.enum = Enum.objects.filter(table_name=self.model.__name__).values_list('table_name',
+                                                                                    'table_column').distinct()
 
-        self.enum = Enum.objects.filter(table_name=self.model.__name__).values('table_name', 'table_column')
-        return self.enum
+    def get_foreignkey_column(self):
+        self.foreignkey = self.model.get_model_foreignkey()
 
     def funnel_get(self):
+        self.get_foreignkey_column()
+        self.get_enum_column()
         self.is_exists_filed()
         self.is_exists_output_filed()
         self.check_limit_type()
@@ -76,21 +87,31 @@ class Funnel(object):
         return self.where, self.output, self.order_by, self.limit
 
     def funnel_create(self):
+        self.get_foreignkey_column()
+        self.get_enum_column()
         self.is_exists_filed()
         self.check_column_enum()
         return self.result
 
     def funnel_update(self):
+        self.get_foreignkey_column()
+        self.get_enum_column()
         self.check_where_id()
         self.check_column_enum()
         return self.where, self.result
 
     def funnel_imp(self):
+        self.get_foreignkey_column()
+        self.get_enum_column()
         self.is_exists_filed()
         self.check_column_enum()
+        self.foreignkey_to_object()
+
         return self.result
 
     def funnel_exp(self):
+        self.get_foreignkey_column()
+        self.get_enum_column()
         self.is_exists_filed()
         self.is_exists_output_filed()
         self.check_limit_type()
