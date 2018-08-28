@@ -51,7 +51,6 @@ class FunnelIn(object):
                     raise CheckException("where条件ID必须为数字")
 
     def check_column_enum(self):
-
         for enum_tuple in self.enum:
             if not self.result.has_key(enum_tuple[1]):
                 continue
@@ -66,7 +65,6 @@ class FunnelIn(object):
             for k, v in key.items():
                 self.result[k] = v.objects.get(label_cn=self.result[k])
 
-
     def change_date_filed(self):
         pass
 
@@ -75,7 +73,8 @@ class FunnelIn(object):
                                                                                     'table_column').distinct()
 
     def get_foreignkey_column(self):
-        self.foreignkey = self.model.get_model_foreignkey()
+        if hasattr(self.model, 'get_model_foreignkey'):
+            self.foreignkey = self.model.get_model_foreignkey()
 
     def funnel_get(self):
         self.get_foreignkey_column()

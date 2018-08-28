@@ -6,7 +6,7 @@ import logging
 import traceback
 from api.funnelin import *
 from django.db.models import Q
-from funnelout import *
+from api.funnelout import *
 
 logger = logging.getLogger('django')
 msg = []
