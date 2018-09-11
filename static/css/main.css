@@ -31,8 +31,8 @@
 }
 
 .condition-item {
-    margin-right: 49px;
-    margin-bottom: 10px;
+    margin-right: 5%;
+    margin-bottom: 1%;
 }
 
 .pull-left {
@@ -60,7 +60,7 @@
 {
     position: fixed;
     top: 50px;
-    left: 50px;
+    /*left: 50px;*/
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.2);
@@ -72,7 +72,7 @@
     top: 1px;
     bottom: 0;
     right: 0;
-    width: 45%;
+    width: 55%;
     height: 100%;
     overflow-y: auto;
     background-color: #fff;
@@ -133,9 +133,9 @@
     float: left;
     height: 57px;
     line-height: 57px;
-    padding: 0 34px;
+    padding: 0 25px;
     color: #737987;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     transition: background-color .3s ease,color .3s ease;
 
@@ -158,7 +158,7 @@ body .bk-tab2-content, html .bk-tab2-content {
     overflow: auto;
 }
 .attribute-wrapper{
-    padding: 0 0 0 32px;
+    padding: 0 0 0 16px;
     overflow: visible;
 }
 .attribute-group{
@@ -186,7 +186,7 @@ body .bk-tab2-content, html .bk-tab2-content {
 
 .attribute-list .attribute-item {
     width: 50%;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 20px;
     margin: 11px 0 0;
     white-space: nowrap;
@@ -195,7 +195,7 @@ body .bk-tab2-content, html .bk-tab2-content {
 }
 
 .attribute-list .attribute-item .attribute-item-label {
-    width: 100px;
+    width: 40%;
     color: #6b7baa;
     text-align: right;
     display: inline-block;
@@ -204,14 +204,14 @@ body .bk-tab2-content, html .bk-tab2-content {
     margin-right: 10px;
 }
 .attribute-list .attribute-item .attribute-item-value{
-    max-width: 230px;
+    max-width: 55%;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #4d597d;
 }
 
-ul, menu, dir {
+menu, dir {
     display: block;
     list-style-type: disc;
     -webkit-margin-before: 1em;
@@ -316,7 +316,7 @@ body .main-btn, html .main-btn {
     box-sizing: border-box;
     border: 1px solid #c3cdd7;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     vertical-align: middle;
     outline: none;
@@ -411,4 +411,82 @@ body .main-btn, html .main-btn {
     font-size: 12px;
     font-weight: normal;
     cursor: pointer;
+}
+
+.list-icon {
+    padding: 0 10px 0 12px;
+    cursor:pointer;
+    color: #bdc3c7;
+    top: 10px;
+    font-size: 14px;
+    background: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+li, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.relevance-box{
+    height: 100%;
+}
+
+.tree-wrapper.list{
+    border: 1px solid #bec6de;
+    border-bottom: 0;
+    line-height: 1.5em;
+}
+
+.tree-wrapper.list .tree-item-wrapper{
+    color: #6b7baa;
+    padding: 0;
+    font-size: 12px;
+    position: relative;
+}
+
+.tree-wrapper.list .root .item {
+    height: 36px;
+    line-height: 36px;
+    paddint-top: 15px;
+}
+
+.tree-item-wrapper .item {
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+    height: 16px;
+    line-height: 16px;
+    font-size: 0;
+    border-bottom: 1px solid #bec6de;
+}
+
+.tree-item-wrapper .item .item-name{
+    font-size: 12px;
+    padding: 0 0 0 25px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 4px solid transparent;
+    border-right-width: 25px;
+    border-left-width: 0;
+    margin-top: -4px;
+}
+
+.tree-wrapper.list .root .item .item-name .count {
+    float: right;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-top: 11px;
+    margin-left: 10px;
+    color: #ffb80f;
+    background: #fff7e5;
+    border-radius: 7px;
+    height: 14px;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0 14px;
 }

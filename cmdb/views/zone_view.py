@@ -5,14 +5,13 @@
 from django.template.loader import render_to_string
 from django.shortcuts import render_to_response
 from hdopsm.common import pages
-from utils.importaction import ImportAction
-from utils.exportaction import ExportAction
-from utils.apiaction import api_action
-from utils.sql_params import *
+from utils.view.importaction import ImportAction
+from utils.view.exportaction import ExportAction
+from utils.api.apiaction import api_action
+from utils.sql.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
-from cmdb.sqldao import *
-from utils.content_params import format_content_dict
+from utils.view.content_params import format_content_dict
 
 
 

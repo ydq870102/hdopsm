@@ -101,6 +101,8 @@ $('tbody tr').live("click", function (event) {
             success: function (result) {
                 var detail_html = result['content_html']
                 $('#myimportModal').after(detail_html)
+                var left_width = $('.left-side').css('width')
+                $('.slidebar-wrapper').css("left",left_width).removeClass('hidden')
             }
         })
     }
@@ -127,6 +129,8 @@ $('.form-save').live("click", function () {
                     success: function (result) {
                         var detail_html = result['content_html']
                         $('#myimportModal').after(detail_html)
+                        var left_width = $('.left-side').css('width')
+                        $('.slidebar-wrapper').css("left",left_width).removeClass('hidden')
                     }
                 })
             },

@@ -1,11 +1,12 @@
 #! /usr/bin/env python
 #  encoding: utf-8
 
-from utils.checkfun import *
+from cmdb.models import *
 import logging
 import traceback
 from api.funnelin import *
 from django.db.models import Q
+from api.funnelout import *
 
 logger = logging.getLogger('django')
 msg = []
@@ -13,43 +14,37 @@ msg = []
 
 def create(**kwargs):
     """
-    Host 创建方法
+    SysDevice 创建方法
     :param kwargs:
     :return: Message
     """
-    result = kwargs.get('result', {})
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        FunnelIn(Host, result, filter_data).funnel_create()
+        result = FunnelIn(SysDevice, kwargs).funnel_create()
     except Exception, e:
-        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
         return msg
     try:
-        Host.objects.create(**result)
+        SysDevice.objects.create(**result)
         msg.append('创建成功')
     except Exception, e:
-        msg.append("sql 执行出错，错误原因: {}".format(e.message))
+        msg.append("sql 执行出错，错误原因: {}".format(e))
 
 
 def get(**kwargs):
     """
-    Host 查询方法
+    SysDevice 查询方法
     :param kwargs:
     :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        FunnelIn(Host, {}, filter_data).funnel_get()
+        where, output, order_by, limit = FunnelIn(SysDevice, kwargs).funnel_get()
     except Exception, e:
-        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
         return msg
     try:
-        # filter_data['where']['is_delete'] = 0
-        data = Host.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
-    except Exception, e:
+        data = SysDevice.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
+        data = FunnelOut(SysDevice, data).convert()
+    except Exception:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
     return data
@@ -57,20 +52,19 @@ def get(**kwargs):
 
 def search(**kwargs):
     """
-    Host 查询方法
+    SysDevice 查询方法
     :param kwargs:
     :return: 查询集
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
+
     try:
-        FunnelIn(Host, {}, filter_data).funnel_get()
+        where, output, order_by, limit = FunnelIn(SysDevice, kwargs).funnel_get()
     except Exception, e:
-        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
         return msg
     try:
-        data = Host.objects.filter(Q(**filter_data['where'])).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = SysDevice.objects.filter(Q(**where)).values(*output).order_by(order_by)[0:limit]
+        data = FunnelOut(SysDevice, data).convert()
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
@@ -79,107 +73,91 @@ def search(**kwargs):
 
 def delete(**kwargs):
     """
-    Host 删除方法
+    SysDevice 删除方法
     :param kwargs: 字典
     :return: Message
     """
     where = kwargs.get("where", [])
-    check_where_id(where)
     if isinstance(where, dict):
         try:
-            Host.objects.filter(**where).update(is_delete=1)
+            SysDevice.objects.filter(**where).update(is_delete=1)
         except Exception, e:
-            msg.append("ID{}删除执行出错，错误原因: {}".format(where, e.message))
+            msg.append("ID{}删除执行出错，错误原因: {}".format(where, e))
     if isinstance(where, list):
         for key in where:
             try:
-                Host.objects.filter(id=key).update(is_delete=1)
+                SysDevice.objects.filter(id=key).update(is_delete=1)
             except Exception, e:
-                msg.append("ID{}删除执行出错，错误原因: {}".format(key, e.message))
+                msg.append("ID{}删除执行出错，错误原因: {}".format(key, e))
     return msg
 
 
 def update(**kwargs):
     """
-    Host 更新方法
+    SysDevice
     :param kwargs:
     :return: Message
     """
-    result = json.loads(kwargs.get("result", {}))
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        FunnelIn(Host, result, filter_data).funnel_update()
+        where, result = FunnelIn(SysDevice, kwargs).funnel_update()
     except Exception, e:
-        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        logger.debug("数据检查或者转换出错，错误原因为: {}".format(traceback.format_exc()))
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
         return msg
     try:
-        Host.objects.filter(**filter_data['where']).update(**result)
+        SysDevice.objects.filter(**where).update(**result)
         return msg
     except Exception, e:
-        msg.append("sql 执行出错，错误原因: {}".format(e.message))
+        logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
+        msg.append("sql 执行出错，错误原因: {}".format(e))
         return msg
 
 
 def imp(**kwargs):
     """
-    Host 导入方法
+    SysDevice 导入方法
     :param kwargs:
     :return: Message
     """
+    result_dict ={}
     result_list = kwargs.get('result', {})
     for result in result_list:
-        covert_data = get_covert()
-        filter_data = get_filter(eargs=covert_data)
+        result_dict['result'] = result
         try:
-            result, filter_data = FunnelIn(Host, result, filter_data).funnel_imp()
+            result = FunnelIn(SysDevice, result_dict).funnel_imp()
         except Exception, e:
-            msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+            msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
             continue
-        if Host.objects.filter(label_cn=result['label_cn']).count() == 1:
+        if SysDevice.objects.filter(label_cn=result['label_cn']).count() == 1:
             try:
                 result['is_delete'] = 0
-                Host.objects.filter(label_cn=result['label_cn']).update(**result)
+                SysDevice.objects.filter(label_cn=result['label_cn']).update(**result)
             except Exception, e:
                 logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-                msg.append("sql 执行出错，错误原因: {}".format(e.message))
+                msg.append("sql 执行出错，错误原因: {}".format(e))
         else:
             try:
-                Host.objects.create(**result)
+                SysDevice.objects.create(**result)
             except Exception, e:
                 logger.debug("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
-                msg.append("sql 执行出错，错误原因: {}".format(e.message))
+                msg.append("sql 执行出错，错误原因: {}".format(e))
     return msg
 
 
 def exp(**kwargs):
     """
-    itsystem 导出方法
+    SysDevice 导出方法
     :param kwargs:
     :return:
     """
-    covert_data = get_covert()
-    filter_data = get_filter(kwargs, covert_data)
     try:
-        FunnelIn(Host, {}, filter_data).funnel_exp()
+        where, output, order_by, limit = FunnelIn(SysDevice, kwargs).funnel_exp()
     except Exception, e:
-        msg.append("数据检查或者转换出错，错误原因为: {}".format(e.message))
+        msg.append("数据检查或者转换出错，错误原因为: {}".format(e))
         return msg
     try:
-        data = Host.objects.filter(**filter_data['where']).values(*filter_data['output']).order_by(
-            filter_data['order_by'])[0:filter_data['limit']]
+        data = SysDevice.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
+        data = FunnelOut(SysDevice, data).convert()
         return data
     except Exception, e:
-        msg.append("sql 执行出错，错误原因: {}".format(e.message))
-
-
-def get_covert():
-    """
-    @获取Host表枚举字段
-    :return: 返回字典
-    """
-    try:
-        enum = Host.get_enum_column()
-        return {'enum': enum}
-    except Exception:
-        return {'enum': {}}
+        msg.append("sql 执行出错，错误原因: {}".format(e))

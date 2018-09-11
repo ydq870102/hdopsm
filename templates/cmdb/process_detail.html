@@ -1,0 +1,303 @@
+{% load mytags %}
+<div class="slidebar-wrapper">
+    <div class="sideslider">
+        <h3 class="title"><span class="vm">应用属性</span></h3>
+        <div class="sideslider-content">
+            <div class="bk-tab2" style="border: none;">
+                <div class="alert alert-danger text-center  bk-tab2-head " id="edit-error" style="display: none;"></div>
+                <div class="bk-tab2-head">
+                    <ul class="bk-tab2-nav">
+                        <li class="tab2-nav-item actived"> 应用属性</li>
+                        <li class="tab2-nav-item "> 关联信息</li>
+                        <li class="tab2-nav-item "> 告警信息</li>
+                        <li class="tab2-nav-item "> 变更记录</li>
+                    </ul>
+                </div>
+                <div class="bk-tab2-content">
+                    <section class="attr-list active">
+                        <div class="attribute-wrapper">
+                            <div class="attribute-group">
+                                <h3 class="title">基础属性</h3>
+                                <ul class="clearfix attribute-list">
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">所属信息系统 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.related_itsystem_id_id }} >{{ object.related_itsystem_id_id|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">所属服务器 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.related_device_id_id }} >{{ object.related_device_id_id|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">应用名称 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.label_cn }} >{{ object.label_cn|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">集群名称 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.cluster_name }} >{{ object.cluster_name|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">集群角色 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.cluster_role }} >{{ object.cluster_role|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">开发语言 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.dev_language }} >{{ object.dev_language|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">中间件 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.middleware }} >{{ object.middleware|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">部署路径 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.path }} }}>{{ object.path|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">端口 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.port }}>{{ object.port|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">用途 :</span>
+                                        <span class="attribute-item-value"
+                                              title={{ object.use_for }}>{{ object.use_for|default_if_none:"" }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="attribute-group " >
+                                <h3 class="title ">维护属性</h3>
+                                <ul class="clearfix attribute-list">
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">创建时间 :</span>
+                                        <span class="attribute-item-value"
+                                              title="create_time">{{ object.create_time| date:"Y-m-d H:i:s" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">最后修改时间 :</span>
+                                        <span class="attribute-item-value"
+                                              title="last_modify_time">{{ object.last_modify_time| date:"Y-m-d H:i:s" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">启动命令 :</span>
+                                        <span class="attribute-item-value"
+                                              title="use_for">{{ object.start_command|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">停止命令 :</span>
+                                        <span class="attribute-item-value"
+                                              title="use_for">{{ object.stop_command|default_if_none:"" }}</span>
+                                    </li>
+                                    <li class="attribute-item ">
+                                        <span class="attribute-item-label">状态 :</span>
+                                        <span class="attribute-item-value"
+                                              title="agent_status">{{ object.status|default_if_none:"" }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="attribute-group-more">
+                                <a class="group-more-link" href="#">
+                                    更多属性
+                                    <i class="fa fa-angle-double-up fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="attribute-btn-group">
+                                <button class="bk-button bk-button main-btn bk-primary attr-edit">
+                                    <span>属性编辑</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="related-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+
+                        </div>
+                    </section>
+                    <section class="edit-list bk-tab2-pane">
+                        <div class="attribute-wrapper">
+                            <from class="edit-form">
+                                <div class="attribute-group">
+                                    <ul class="clearfix attribute-list edit">
+                                        <h3 class="title">基础属性</h3>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>所属信息系统</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="related_itsystem_id">
+                                                <select class="bk-form-select">
+                                                    {% for name in itsystem_label_list %}
+                                                        {% ifequal name object.related_itsystem_id_id %}
+                                                            <option selected="selected">{{ object.related_itsystem_id_id|default_if_none:"" }}</option>
+                                                        {% else %}
+                                                            <option>{{ name }}</option>
+                                                        {% endifequal %}
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>所属服务器</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="related_device_id">
+                                                <select class="bk-form-select">
+                                                    {% for name in sysdevice_label_list %}
+                                                        {% ifequal name object.related_device_id_id %}
+                                                            <option selected="selected">{{ object.related_device_id_id|default_if_none:"" }}</option>
+                                                        {% else %}
+                                                            <option>{{ name }}</option>
+                                                        {% endifequal %}
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>集群名称</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="cluster_name">
+                                                <input type="text" class="bk-form-input ip-input"
+                                                       value="{{ object.cluster_name|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>集群角色</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="cluster_role">
+                                                <select class="bk-form-select">
+                                                    {% for name in process_crole_enum_list %}
+                                                        {% ifequal name object.cluster_role %}
+                                                            <option selected="selected">{{ object.cluster_role|default_if_none:"" }}</option>
+                                                        {% else %}
+                                                            <option>{{ name }}</option>
+                                                        {% endifequal %}
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>开发语言</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="dev_language">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.dev_language|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>中间件</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="middleware">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.middleware|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>端口</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="port">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.port|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>用途</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="use_for">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.use_for|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>部署路径</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="path">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.path|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <div class="attribute-group">
+                                    <ul class="clearfix attribute-list edit">
+                                        <h3 class="title">维护属性</h3>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>启动命令</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="start_command">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.start_command|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                        <li class="attribute-item fl">
+                                            <div>
+                                                <label class="bk-form-checkbox bk-checkbox-small">
+                                                    <span>停止命令</span>
+                                                </label>
+                                            </div>
+                                            <div class="attribute-item-field" title="stop_command">
+                                                <input type="text" class="bk-form-input"
+                                                       value="{{ object.stop_command|default_if_none:"" }}">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="attribute-btn-group">
+                                    <button class="bk-button main-btn bk-primary form-save" value="{{ object.id }}">
+                                        <span>保存</span>
+                                    </button>
+                                    <button class="bk-button vice-btn bk-default form-cancel">
+                                        <span>取消</span>
+                                    </button>
+                                </div>
+                            </from>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

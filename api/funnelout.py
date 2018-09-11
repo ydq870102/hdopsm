@@ -11,21 +11,30 @@ class FunnelOut(object):
         self.result = kwargs
         self.enum = []
         self.foreignkey = []
+        self.querysets = []
 
     def get_enum_column(self):
         self.enum = Enum.objects.filter(table_name=self.model.__name__).values_list('table_name',
                                                                                     'table_column').distinct()
 
     def get_foreignkey_column(self):
-        self.foreignkey = self.model.get_model_foreignkey()
+        if hasattr(self.model,'get_model_foreignkey'):
+            self.foreignkey = self.model.get_model_foreignkey()
 
     def object_to_foreignkey(self):
-        for key in self.foreignkey:
-            for k, v in key.items():
-                self.result[k] = v.objects.get(id=self.result[k]).__str__
+        for queryset in self.result:
+            for key in self.foreignkey:
+                for k, v in key.items():
+                    queryset[k + '_id'] = v.objects.get(id=queryset[k + '_id']).label_cn
+            self.querysets.append(queryset)
 
     def convert(self):
         self.get_enum_column()
         self.get_foreignkey_column()
         self.object_to_foreignkey()
-        return self.result
+        if self.querysets:
+            return self.querysets
+        else:
+            return self.result
+
+

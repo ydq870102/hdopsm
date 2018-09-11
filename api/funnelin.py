@@ -23,7 +23,7 @@ class FunnelIn(object):
     def is_exists_filed(self):
         for filed in self.result:
             if not hasattr(self.model, filed):
-                raise CheckException("参数错误,{} 不在{}这张表里".format(self.model, filed))
+                raise CheckException("参数错误:字段{} 不在{}这张表里".format(filed, self.model ))
 
     def is_exists_output_filed(self):
         if not isinstance(self.output, list):
@@ -62,8 +62,12 @@ class FunnelIn(object):
 
     def foreignkey_to_object(self):
         for key in self.foreignkey:
-            for k, v in key.items():
-                self.result[k] = v.objects.get(label_cn=self.result[k])
+                for k, v in key.items():
+                    try:
+                        if self.result.has_key(k):
+                            self.result[k] = v.objects.get(label_cn=self.result[k])
+                    except Exception:
+                        raise CovertException("{}字段填写的值{}在{}表不存在".format(k,self.result[k], v.__name__))
 
     def change_date_filed(self):
         pass
@@ -90,6 +94,7 @@ class FunnelIn(object):
         self.get_enum_column()
         self.is_exists_filed()
         self.check_column_enum()
+        self.foreignkey_to_object()
         return self.result
 
     def funnel_update(self):
@@ -97,6 +102,7 @@ class FunnelIn(object):
         self.get_enum_column()
         self.check_where_id()
         self.check_column_enum()
+        self.foreignkey_to_object()
         return self.where, self.result
 
     def funnel_imp(self):

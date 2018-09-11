@@ -1,0 +1,1265 @@
+2018-08-13 15:41:43,092 [Thread-4:242404] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-13 15:48:00,046 [Thread-21:104164] [django.request:152] [WARNING]- Not Found: /cmdb/room/list/
+2018-08-13 17:09:18,684 [Thread-10:244640] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-08-13 17:12:25,545 [Thread-61:245108] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-13 17:12:28,043 [Thread-86:244636] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-13 17:13:25,907 [Thread-106:245676] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-08-13 17:15:34,236 [Thread-113:245528] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-08-13 17:27:19,622 [Thread-114:246368] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-08-13 17:37:56,963 [Thread-149:243504] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-08-13 18:09:27,279 [Thread-2:173076] [django.request:135] [ERROR]- Internal Server Error: /cmdb/host/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\host_view.py", line 45, in host_list_view
+    return render_to_response('cmdb/host_list.html', content_params)
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 173, in render
+    len_values = len(values)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 232, in __len__
+    self._fetch_all()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 106, in __iter__
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 836, in results_iter
+    results = self.execute_sql(MULTI)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+OperationalError: (1054, "Unknown column 't_com_host.related_zone_id' in 'field list'")
+2018-08-13 18:10:05,892 [Thread-52:246776] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 15:49:46,012 [Thread-534:405260] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 15:49:51,148 [Thread-562:405932] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 15:50:44,584 [Thread-588:407176] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 15:50:46,338 [Thread-613:407320] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 15:51:39,538 [Thread-615:401484] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 16:38:33,476 [Thread-763:406960] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-20 17:20:26,089 [Thread-770:407716] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/fontawesome.html
+2018-08-20 17:43:47,500 [Thread-844:407984] [django.request:152] [WARNING]- Not Found: /index1
+2018-08-20 18:12:31,592 [Thread-1033:404204] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/list/fontawesome.html
+2018-08-21 17:38:18,743 [Thread-1174:403956] [django.request:152] [WARNING]- Not Found: /
+2018-08-21 17:38:19,076 [Thread-1173:405632] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-21 17:39:35,384 [Thread-1175:408348] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-21 17:39:36,846 [Thread-1202:428840] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-21 17:39:40,362 [Thread-1205:405352] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-22 14:11:25,822 [Thread-2:450744] [django.request:135] [ERROR]- Internal Server Error: /cmdb/host/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\host_view.py", line 40, in host_list_view
+    content_params = get_host_params_list()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 82, in get_host_params_list
+    host_zone_list = get_host_zone()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 146, in get_host_zone
+    zone_list = Host.objects.all().filter(is_delete=0).values('zone').order_by('zone').annotate(
+NameError: global name 'Host' is not defined
+2018-08-22 16:34:17,960 [Thread-2:454384] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:01:57,496 [Thread-5:469504] [django.request:152] [WARNING]- Not Found: /
+2018-08-23 09:01:57,875 [Thread-4:469500] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:02:00,252 [Thread-2:469164] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:02:03,460 [Thread-7:469204] [django.request:152] [WARNING]- Not Found: /cmdb/host/list/
+2018-08-23 09:02:03,720 [Thread-8:469248] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:02:17,398 [Thread-35:470104] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:06:09,459 [Thread-66:470336] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:16:05,542 [Thread-195:470552] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:19:42,766 [Thread-220:430804] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 09:40:19,334 [Thread-324:470492] [django.request:135] [ERROR]- Internal Server Error: /cmdb/zone/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\zone_view.py", line 42, in zone_list_view
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 93, in pages
+    page_range = page_list_return(len(paginator.page_range), current_page)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 102, in page_range
+    return six.moves.range(1, self.num_pages + 1)
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2018-08-23 09:58:31,033 [Thread-57:469160] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 10:07:54,127 [Thread-114:471320] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 10:08:35,533 [Thread-145:471124] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 41, in itsystem_list_view
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 93, in pages
+    page_range = page_list_return(len(paginator.page_range), current_page)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 102, in page_range
+    return six.moves.range(1, self.num_pages + 1)
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 84, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2018-08-23 17:39:46,357 [Thread-31:480340] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-23 17:46:08,023 [Thread-46:476992] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-24 09:07:32,665 [Thread-56:496492] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-24 09:08:14,128 [Thread-100:496292] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-24 09:08:27,267 [Thread-108:496624] [django.request:152] [WARNING]- Not Found: /cmdb/zone/detail//
+2018-08-24 09:08:27,818 [Thread-109:494608] [django.request:152] [WARNING]- Not Found: /cmdb/zone/detail//
+2018-08-24 09:10:11,573 [Thread-14:493132] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:03:03,252 [Thread-5:573304] [django.request:152] [WARNING]- Not Found: /
+2018-08-28 18:03:03,759 [Thread-4:585624] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:05,846 [Thread-2:598652] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:07,815 [Thread-8:599540] [django.request:152] [WARNING]- Not Found: /cmdb/host/list/
+2018-08-28 18:03:07,917 [Thread-7:599616] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:15,267 [Thread-34:599832] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:17,305 [Thread-59:459880] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:18,684 [Thread-60:600036] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:03:21,427 [Thread-109:594240] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:40,822 [Thread-146:599920] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:46,690 [Thread-149:595516] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:49,803 [Thread-174:599328] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:03:59,114 [Thread-202:599172] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 18:04:00,072 [Thread-203:599560] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:04:00,903 [Thread-204:597036] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:04:01,635 [Thread-205:595216] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:04:01,861 [Thread-206:599948] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 18:04:49,062 [Thread-217:595952] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:25:28,178 [Thread-7:70424] [django.request:152] [WARNING]- Not Found: /
+2018-08-28 21:25:28,562 [Thread-6:31908] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 21:25:30,400 [Thread-5:47032] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 21:25:32,069 [Thread-4:10800] [django.request:135] [ERROR]- Internal Server Error: /cmdb/room/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\room_view.py", line 42, in room_list_view
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
+  File "E:\PyHome\hdopsm\hdopsm\common.py", line 93, in pages
+    page_range = page_list_return(len(paginator.page_range), current_page)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 102, in page_range
+    return six.moves.range(1, self.num_pages + 1)
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 91, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Python27\lib\site-packages\django\utils\functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Python27\lib\site-packages\django\core\paginator.py", line 79, in count
+    return self.object_list.count()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 364, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 499, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 480, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 894, in execute_sql
+    raise original_exception
+ProgrammingError: (1146, "Table 'haid_cmdb.t_com_room' doesn't exist")
+2018-08-28 21:32:24,200 [Thread-16:63076] [django.request:152] [WARNING]- Not Found: /
+2018-08-28 21:32:24,513 [Thread-17:41828] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 21:32:26,963 [Thread-18:73036] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 21:37:16,743 [Thread-152:65368] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:37:17,380 [Thread-153:54048] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:37:17,746 [Thread-154:15572] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:37:35,467 [Thread-159:67304] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:43:35,131 [Thread-172:15212] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 21:45:25,020 [Thread-6:62856] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 42, in itsystem_list_view
+    print object_list
+IOError: [Errno 22] Invalid argument
+2018-08-28 21:45:43,463 [Thread-9:71384] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 42, in itsystem_list_view
+    print object_list
+IOError: [Errno 22] Invalid argument
+2018-08-28 21:45:44,474 [Thread-10:22764] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 42, in itsystem_list_view
+    print object_list
+IOError: [Errno 22] Invalid argument
+2018-08-28 21:45:45,278 [Thread-11:56316] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 42, in itsystem_list_view
+    print object_list
+IOError: [Errno 22] Invalid argument
+2018-08-28 22:06:13,345 [Thread-95:47068] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/detail//
+2018-08-28 22:38:11,861 [Thread-51:56516] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 22:38:57,979 [Thread-77:26272] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 22:44:20,584 [Thread-33:57604] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 22:50:08,578 [Thread-37:38624] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 22:57:44,598 [Thread-40:47904] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 23:19:55,200 [Thread-34:67180] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-28 23:26:09,259 [Thread-7:70856] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 39, in itsystem_list_view
+    content_params = get_itsystem_params_list()
+  File "E:\PyHome\hdopsm\cmdb\sqldao.py", line 75, in get_itsystem_params_list
+    'itsystem_zone_list': get_object_column_foreignkey_count(ItSystem, 'related_zone_id_id', Zone),
+  File "E:\PyHome\hdopsm\cmdb\sqldao.py", line 66, in get_object_column_foreignkey_count
+    temp['column'] = foreignkey.objects.get(id=item['column']).label_cn
+KeyError: 'column'
+2018-08-28 23:26:10,868 [Thread-8:51304] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 39, in itsystem_list_view
+    content_params = get_itsystem_params_list()
+  File "E:\PyHome\hdopsm\cmdb\sqldao.py", line 75, in get_itsystem_params_list
+    'itsystem_zone_list': get_object_column_foreignkey_count(ItSystem, 'related_zone_id_id', Zone),
+  File "E:\PyHome\hdopsm\cmdb\sqldao.py", line 66, in get_object_column_foreignkey_count
+    temp['column'] = foreignkey.objects.get(id=item['column']).label_cn
+KeyError: 'column'
+2018-08-29 09:07:02,798 [Thread-5:598164] [django.request:152] [WARNING]- Not Found: /
+2018-08-29 09:07:03,250 [Thread-4:612020] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:07:05,986 [Thread-2:596424] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:07:13,007 [Thread-31:587956] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:07:19,233 [Thread-58:608768] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:07:27,457 [Thread-89:593660] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:10:46,230 [Thread-158:611500] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:13:56,433 [Thread-55:469000] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:18:07,209 [Thread-81:466708] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 09:45:09,244 [Thread-135:597720] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 10:41:37,658 [Thread-4:613692] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 10:42:42,413 [Thread-3:614012] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 10:54:18,170 [Thread-4:615396] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 10:58:22,391 [Thread-7:616192] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 11:00:48,431 [Thread-7:614436] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 108, in itsystem_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_itsystem.xls').parse_data()
+TypeError: 'NoneType' object is not iterable
+2018-08-29 11:07:26,555 [Thread-23:469612] [django.request:152] [WARNING]- Not Found: /cmdb/host/list/
+2018-08-29 11:08:20,039 [Thread-48:561812] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 11:08:21,628 [Thread-49:496228] [django.request:152] [WARNING]- Not Found: /cmdb/sysdevice/list/
+2018-08-29 11:15:19,533 [Thread-8:598468] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 11:15:20,361 [Thread-9:468500] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/6/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:15:21,105 [Thread-10:467320] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/5/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:15:21,710 [Thread-11:469120] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:15:22,114 [Thread-12:607956] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/3/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:15:22,298 [Thread-13:616160] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/3/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:17:52,989 [Thread-14:616296] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:18:03,276 [Thread-17:614416] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/5/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:18:04,082 [Thread-18:589852] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/detail/5/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\itsystem_view.py", line 78, in itsystem_detail_view
+    content_params = get_itsystem_params_detail()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 86, in get_itsystem_params_detail
+    'itsystem_person_enum_list': get_object_column_enum(ItSystem, 'is_untrained_person_use'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 35, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:45:37,904 [Thread-4:470128] [django.request:152] [WARNING]- Not Found: /cmdb/room/detail//
+2018-08-29 11:45:38,786 [Thread-5:479224] [django.request:152] [WARNING]- Not Found: /cmdb/room/detail//
+2018-08-29 11:52:44,278 [Thread-37:598804] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 39, in sysdevice_list_view
+    content_params = get_sysdevice_params_list()
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 101, in get_sysdevice_params_list
+    'sysdevice_status_enum_list': get_object_column_enum(SysDevice, 'status'),
+  File "D:\Pyhome\hdopsm\cmdb\sqldao.py", line 34, in get_object_column_enum
+    column_list = Enum.objects.filter(table_name=model, table_column=column).values('value_desc')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1210, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1104, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django\db\models\lookups.py", line 72, in get_prep_lookup
+    return self.rhs._prepare(self.lhs.output_field)
+TypeError: _prepare() takes exactly 1 argument (2 given)
+2018-08-29 11:53:48,016 [Thread-2:467376] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 45, in sysdevice_list_view
+    return render_to_response('cmdb/sysdevice_list.html', content_params)
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: cmdb/sysdevice_list.html
+2018-08-29 11:54:58,667 [Thread-6:468292] [django.request:152] [WARNING]- Not Found: /cmdb/host/import/
+2018-08-29 15:55:31,174 [Thread-5:617560] [django.request:152] [WARNING]- Not Found: /cmdb/sysdevice/detail//
+2018-08-29 16:51:23,421 [Thread-47:616492] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 16:56:18,237 [Thread-83:618992] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 17:08:43,118 [Thread-33:613736] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 17:11:47,644 [Thread-46:574376] [django.request:152] [WARNING]- Not Found: /cmdb/host/export/
+2018-08-29 17:12:38,592 [Thread-47:619792] [django.request:152] [WARNING]- Not Found: /cmdb/host/export/
+2018-08-29 17:12:42,151 [Thread-50:619832] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/export/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 107, in sysdevice_export_view
+    export_file, export_file_name = ExportAction(object_list, 'template_sysdevice.xls').parse_data()
+  File "D:\Pyhome\hdopsm\utils\exportaction.py", line 29, in parse_data
+    bk = xlrd.open_workbook(self.template_file)
+  File "C:\Python27\lib\site-packages\xlrd\__init__.py", line 116, in open_workbook
+    with open(filename, "rb") as f:
+IOError: [Errno 2] No such file or directory: 'D:\\Pyhome\\hdopsm/static/excel\\template_sysdevice.xls'
+2018-08-29 17:12:47,836 [Thread-51:619892] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/template/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 97, in sysdevice_template_view
+    file = open('static/excel/template_sysdevice.xls', 'rb')
+IOError: [Errno 2] No such file or directory: 'static/excel/template_sysdevice.xls'
+2018-08-29 17:59:05,326 [Thread-45:616296] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 17:59:07,548 [Thread-70:620368] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 18:31:54,183 [Thread-132:620624] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-29 19:03:13,940 [Thread-97:620864] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/30/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:14,701 [Thread-98:618788] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:15,194 [Thread-99:621368] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:16,595 [Thread-100:615008] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/33/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:16,898 [Thread-101:619392] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/33/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:17,138 [Thread-102:620592] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/30/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:03:17,378 [Thread-103:620452] [django.request:135] [ERROR]- Internal Server Error: /cmdb/sysdevice/detail/30/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\sysdevice_view.py", line 77, in sysdevice_detail_view
+    print content_params
+IOError: [Errno 22] Invalid argument
+2018-08-29 19:18:31,058 [Thread-106:621652] [django.request:152] [WARNING]- Not Found: /cmdb/process/list/
+2018-08-29 19:29:20,448 [Thread-6:621032] [django.request:135] [ERROR]- Internal Server Error: /cmdb/process/list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Pyhome\hdopsm\cmdb\views\process_view.py", line 43, in process_list_view
+    return render_to_response('cmdb/process_list.html', content_params)
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: cmdb/process_list.html
+2018-08-29 19:33:46,555 [Thread-37:620980] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-30 15:18:52,348 [Thread-3:24724] [django.request:152] [WARNING]- Not Found: /
+2018-08-30 15:18:52,700 [Thread-2:25140] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-30 15:18:55,571 [Thread-4:10104] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-30 16:29:15,348 [Thread-86:15948] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-08-30 16:30:34,253 [Thread-87:26700] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 09:38:06,584 [Thread-5:639940] [django.request:152] [WARNING]- Not Found: /
+2018-09-03 09:38:07,028 [Thread-4:613756] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 09:38:49,490 [Thread-6:660800] [django.request:152] [WARNING]- Not Found: /
+2018-09-03 09:38:49,568 [Thread-7:658576] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 10:51:37,674 [Thread-52:598908] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 10:54:14,757 [Thread-31:657772] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 11:05:04,326 [Thread-76:657644] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 11:05:29,928 [Thread-106:660708] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 11:12:10,756 [Thread-120:636412] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-09-03 14:55:21,131 [Thread-38:660532] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:24:03,164 [Thread-114:595212] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-09-03 15:25:31,466 [Thread-136:661004] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:25:34,092 [Thread-139:659208] [django.request:152] [WARNING]- Not Found: /
+2018-09-03 15:25:34,424 [Thread-140:638020] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:25:47,917 [Thread-163:658992] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:25:52,382 [Thread-173:658788] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:25:57,588 [Thread-176:655188] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:05,164 [Thread-179:636268] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:09,845 [Thread-182:599480] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:12,628 [Thread-185:648308] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:14,457 [Thread-186:659628] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:25,160 [Thread-189:634676] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:26:28,776 [Thread-191:473360] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 15:46:14,892 [Thread-302:599164] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 16:45:00,723 [Thread-662:658208] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 17:04:52,098 [Thread-215:624024] [django.request:135] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Pyhome\hdopsm\hdopsm\views.py", line 27, in index2
+    object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, request)
+  File "D:\Pyhome\hdopsm\hdopsm\common.py", line 90, in pages
+    current_page = int(current_page)
+TypeError: int() argument must be a string or a number, not 'WSGIRequest'
+2018-09-03 17:30:00,354 [Thread-262:660628] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 17:30:52,260 [Thread-292:661264] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:13:25,750 [Thread-2:18452] [django.request:152] [WARNING]- Not Found: /
+2018-09-03 22:13:26,094 [Thread-3:9736] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:13:28,970 [Thread-4:18492] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:21:06,671 [Thread-295:30880] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:25:11,552 [Thread-371:23888] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:30:17,740 [Thread-514:12352] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:32:42,953 [Thread-583:18852] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:46:22,128 [Thread-630:28084] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:52:42,519 [Thread-676:28876] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-03 22:59:02,786 [Thread-758:17072] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 08:37:40,177 [Thread-2:10956] [django.request:152] [WARNING]- Not Found: /
+2018-09-04 08:37:40,726 [Thread-3:11168] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 08:37:44,980 [Thread-4:7116] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 11:55:05,325 [Thread-454:19896] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 15:58:02,602 [Thread-562:20376] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 16:05:01,158 [Thread-564:16496] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-04 17:28:31,704 [Thread-585:27476] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-10 14:43:39,407 [Thread-2:59016] [django.request:152] [WARNING]- Not Found: /
+2018-09-10 14:43:39,714 [Thread-3:64564] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-10 14:43:42,088 [Thread-4:64572] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-10 14:51:47,444 [Thread-68:59080] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-10 17:54:02,371 [Thread-41:69408] [django.request:152] [WARNING]- Not Found: /cmdb/itsystem/related/1/
+2018-09-10 17:58:14,131 [Thread-6:62948] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-10 18:01:52,674 [Thread-2:66192] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-10 18:03:03,168 [Thread-15:68660] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-10 18:03:09,983 [Thread-16:64112] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-10 18:03:10,404 [Thread-18:64432] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/alarm/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 95, in itsystem_alarm_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-10 18:03:10,822 [Thread-19:60992] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-11 08:49:36,924 [Thread-2:50580] [django.request:152] [WARNING]- Not Found: /
+2018-09-11 08:49:37,246 [Thread-3:67924] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-11 08:49:41,792 [Thread-4:55568] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-11 08:51:18,490 [Thread-44:57296] [django.request:135] [ERROR]- Internal Server Error: /cmdb/itsystem/related/1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\PyHome\hdopsm\cmdb\views\itsystem_view.py", line 87, in itsystem_related_view
+    content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1046, in render
+    return render_value_in_context(output, context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 1024, in render_value_in_context
+    value = force_text(value)
+  File "C:\Python27\lib\site-packages\django\utils\encoding.py", line 80, in force_text
+    s = six.text_type(bytes(s), encoding, errors)
+  File "E:\PyHome\hdopsm\cmdb\models.py", line 203, in __str__
+    return str(self.label_cn)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+2018-09-11 09:07:16,480 [Thread-87:38680] [django.request:152] [WARNING]- Not Found: /favicon.ico

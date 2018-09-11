@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-import uuid
 
 
 # Create your models here.
@@ -71,7 +70,7 @@ class ItSystem(models.Model):
     """
     # 基础属性
     label_cn = models.CharField(max_length=100, unique=True, verbose_name='信息系统名称')
-    related_zone_id = models.ForeignKey(Zone, db_column='related_zone_id', null=True)
+    related_zone_id = models.ForeignKey(Zone, db_column='related_zone_id', null=True, )
     use_for = models.CharField(max_length=255, verbose_name='用途', null=True)
     system_framework = models.CharField(max_length=100, verbose_name='架构描述', null=True)
     user_of_service = models.CharField(max_length=200, verbose_name='使用人员', null=True)
@@ -117,7 +116,7 @@ class SysDevice(models.Model):
     related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
     related_room_id = models.ForeignKey(Room, db_column='related_room_id', verbose_name='所属机房ID')
     ipaddr = models.GenericIPAddressField(unique=True, verbose_name='IP地址')
-    system = models.CharField( max_length=20, default='Linux', verbose_name='资产类型')
+    system = models.CharField(max_length=20, default='Linux', verbose_name='操作系统类型')
     management_ip = models.GenericIPAddressField(null=True, verbose_name='管理IP地址')
     assets_type = models.CharField(choices=assets_type_choices, max_length=20, default='物理机', verbose_name='资产类型')
     related_host_ip = models.GenericIPAddressField(null=True, verbose_name='所属物理机IP')
@@ -130,7 +129,7 @@ class SysDevice(models.Model):
     buy_user = models.CharField(max_length=100, null=True, verbose_name='购买人')
     manufacturer = models.CharField(max_length=30, null=True, verbose_name='制造商')
     buy_time = models.DateTimeField(null=True, verbose_name='购买日期')
-    expire_date = models.DateTimeField(null=True, verbose_name='购买日期')
+    expire_date = models.DateTimeField(null=True, verbose_name='过保日期')
     # 配置属性
     hostname = models.CharField(max_length=100, null=True, verbose_name='主机名称', default=None)
     mac = models.CharField(max_length=3, null=True, verbose_name='MAC地址', default=None)
@@ -158,8 +157,12 @@ class SysDevice(models.Model):
         verbose_name = '服务器表'
         verbose_name_plural = '服务器表'
 
-    def __str__(self):
-        return str(self.label_cn)
+    # def __str__(self):
+    #     return str(self.label_cn)
+
+    @staticmethod
+    def get_model_foreignkey():
+        return [{'related_zone_id': Zone}, {'related_itsystem_id': ItSystem}, {'related_room_id':Room}]
 
 
 class Process(models.Model):
@@ -167,11 +170,11 @@ class Process(models.Model):
     @ 服务器模型
     """
     # 基础属性
+    related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
+    related_device_id = models.ForeignKey(SysDevice, db_column='related_device_id', verbose_name='所属服务器ID')
     label_cn = models.CharField(max_length=20, verbose_name='应用名称', unique=True)
     cluster_name = models.CharField(max_length=20, null=True, verbose_name='集群名称')
     cluster_role = models.CharField(max_length=20, null=True, verbose_name='集群角色')
-    related_itsystem_id = models.ForeignKey(ItSystem, db_column='related_itsystem_id', verbose_name='所属信息系统ID')
-    related_device_id = models.ForeignKey(SysDevice, db_column='related_device_id', verbose_name='所属服务器ID')
     dev_language = models.CharField(max_length=20, null=True, verbose_name='开发语言')
     middleware = models.CharField(max_length=100, null=True, verbose_name='中间件')
     path = models.CharField(max_length=100, null=True, verbose_name='部署路径')
@@ -196,8 +199,12 @@ class Process(models.Model):
         verbose_name = '应用程序表'
         verbose_name_plural = '应用程序表'
 
-    def __str__(self):
-        return str(self.label_cn)
+    # def __str__(self):
+    #     return str(self.label_cn)
+
+    @staticmethod
+    def get_model_foreignkey():
+        return [{'related_itsystem_id': ItSystem}, {'related_device_id': SysDevice}]
 
 
 class Database(models.Model):
@@ -233,5 +240,9 @@ class Database(models.Model):
         verbose_name = '数据库表'
         verbose_name_plural = '数据库表'
 
-    def __str__(self):
-        return str(self.label_cn)
+    # def __str__(self):
+    #     return str(self.label_cn)
+
+    @staticmethod
+    def get_model_foreignkey():
+        return [{'related_itsystem_id': ItSystem}, {'related_device_id': SysDevice}]

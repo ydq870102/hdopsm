@@ -92,7 +92,7 @@ $('#import-form').click(function () {
 });
 
 //点击【数据行】触发弹出明细界面
-$('tbody tr').live("click", function (event){
+$('tbody tr').live("click", function (event) {
     if (event.target.name != 'checked') {
         var id = $(this).find('input').val()
         $.ajax({
@@ -101,6 +101,8 @@ $('tbody tr').live("click", function (event){
             success: function (result) {
                 var detail_html = result['content_html']
                 $('#myimportModal').after(detail_html)
+                var left_width = $('.left-side').css('width')
+                $('.slidebar-wrapper').css("left", left_width)
             }
         })
     }
@@ -122,6 +124,8 @@ $('.form-save').live("click", function () {
                 success: function (result) {
                     var detail_html = result['content_html']
                     $('#myimportModal').after(detail_html)
+                    var left_width = $('.left-side').css('width')
+                    $('.slidebar-wrapper').css("left", left_width)
                 }
             })
         },
@@ -181,7 +185,7 @@ function load_table_data(data, page) {
         html += "<td class=\"text-center\">"
         html += '<input type="checkbox" name="checked" value="' + data[i].id + '">'
         html += "</td>"
-        html += "<td>" + data[i].zone + "</td>"
+        html += "<td>" + data[i].related_zone_id_id + "</td>"
         html += "<td>" + data[i].label_cn + "</td>"
         html += "<td>" + data[i].use_for + "</td>"
         html += "<td>" + data[i].system_framework + "</td>"
@@ -197,15 +201,14 @@ function load_table_data(data, page) {
 }
 
 
-
 //分页点击切换
 $(".page").live("click", function () {
     var current_page = $(this).attr('title')
     var previous_page = $(".page-active").attr('title')
-    if (current_page == 'next'){
-        current_page =Number(previous_page)  + 1
+    if (current_page == 'next') {
+        current_page = Number(previous_page) + 1
     }
-    else if(current_page == 'previous'){
+    else if (current_page == 'previous') {
         current_page = Number(previous_page) - 1
     }
     url_params['current_page'] = current_page
@@ -219,3 +222,46 @@ $(".page").live("click", function () {
         }
     })
 })
+
+//点击明细tab触发切换界面
+$('.bk-tab2-head ul li').live("click", function () {
+    var tab_id = $(this).attr('id')
+    var id = $('.form-save').val()
+    var tab = $(this)
+    if (tab_id == 'base') {
+        var tab_url = ''
+    }
+    else if (tab_id == 'related') {
+        var tab_url = "/cmdb/itsystem/related/" + id + "/"
+    }
+    else if (tab_id == 'alarm') {
+        var tab_url = "/cmdb/itsystem/alarm/" + id + "/"
+    }
+    else if (tab_id == 'record') {
+        var tab_url = "/cmdb/itsystem/record/" + id + "/"
+    }
+    if (tab_url) {
+        $.ajax({
+            type: "POST",
+            url: tab_url,
+            success: function (result) {
+                var related_html = result['content_html']
+                $('.tab2-nav-item').removeClass('actived')
+                tab.addClass('actived')
+                var num = tab.index()
+                $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+                console.log(tab.children('.attribute-wrapper'))
+                $(".bk-tab2-content section").eq(num).children('.attribute-wrapper').remove()
+                $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active').prepend(related_html);
+            }
+        })
+    }
+    else {
+        $('.tab2-nav-item').removeClass('actived')
+        $(this).addClass('actived')
+        var num = $(this).index()
+        $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+        $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
+    }
+});
+

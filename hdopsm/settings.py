@@ -179,7 +179,7 @@ elif config.get('db','engine') == 'oracle':
     DB_PORT = config.get('db', 'port')
     DB_USER = config.get('db', 'user')
     DB_PASSWORD = config.get('db', 'password')
-    DB_DATABASE = config.get('db', 'database')
+    DB_DATABASE = config.get('db', 'related')
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
@@ -194,7 +194,7 @@ elif config.get('db', 'engine') == 'sqlite':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': config.get('db', 'database'),
+            'NAME': config.get('db', 'related'),
         }
     }
 else:

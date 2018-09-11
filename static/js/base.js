@@ -11,32 +11,20 @@ $(document).ready(function () {
     });
 });
 
+//table 勾选所有框
 $(function () {
     $("#check_all").click(function () {
         $("input[name='checked']").prop("checked", $(this).prop("checked"));
     });
 });
 
-$('tbody tr').click(function (event) {
-    if (event.target.name != 'checked') {
-        $('.slidebar-wrapper').removeClass('hidden')
-    }
-});
-
-$('.slidebar-wrapper').click(function (event) {
-    if (event.target.className == 'slidebar-wrapper') {
-        $('.slidebar-wrapper').addClass('hidden')
-    }
-});
-
-$('.bk-tab2-head ul li').click(function () {
-    $('.tab2-nav-item').removeClass('actived')
-    $(this).addClass('actived')
-    var num = $(this).index()
-    $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
-    $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
-});
-
+// //点击非勾选框弹出明细
+// $('tbody tr').click(function (event) {
+//     if (event.target.name != 'checked') {
+//         var left_width = $('.left-side').css('width')
+//         $('.slidebar-wrapper').css("left",left_width).removeClass('hidden')
+//     }
+// });
 
 //点击非主体部分触发关闭明细界面
 $('.slidebar-wrapper').live("click", function (event) {
@@ -46,13 +34,13 @@ $('.slidebar-wrapper').live("click", function (event) {
 });
 
 //点击明细tab触发切换界面
-$('.bk-tab2-head ul li').live("click", function () {
-    $('.tab2-nav-item').removeClass('actived')
-    $(this).addClass('actived')
-    var num = $(this).index()
-    $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
-    $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
-});
+// $('.bk-tab2-head ul li').live("click", function () {
+//     $('.tab2-nav-item').removeClass('actived')
+//     $(this).addClass('actived')
+//     var num = $(this).index()
+//     $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+//     $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
+// });
 
 // 属性界面点击【更多属性】弹出更多属性界面
 $('.group-more-link').live("click", function () {

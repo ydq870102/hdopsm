@@ -5,23 +5,22 @@
 from django.template.loader import render_to_string
 from django.shortcuts import render_to_response
 from hdopsm.common import pages
-from utils.importaction import ImportAction
-from utils.exportaction import ExportAction
-from utils.apiaction import api_action
-from utils.sql_params import *
+from utils.view.importaction import ImportAction
+from utils.view.exportaction import ExportAction
+from utils.api.apiaction import api_action
+from utils.sql.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
-from cmdb.sqldao import *
-from utils.content_params import format_content_dict
-
-
+from utils.related.sqldao import *
+from utils.view.content_params import format_content_dict
 
 
 @csrf_exempt
-def device_import_view(request):
+def sysdevice_import_view(request):
     data_list = ImportAction(request).parse_data()
     sql_params = sql_import_params(data_list)
     msg = api_action('sysdevice.imp', sql_params)
+    # msg = ",".join(msg)
     if msg or msg is None:
         return JsonResponse(data=msg, status=500, safe=False)
     else:
@@ -29,7 +28,7 @@ def device_import_view(request):
 
 
 @csrf_exempt
-def device_list_view(request):
+def sysdevice_list_view(request):
     """
     @ 信息系统页面
     :param request:
@@ -37,17 +36,15 @@ def device_list_view(request):
     """
     if request.method == 'GET':
         sql_params = sql_get_params(request)
-        content_params = get_device_params_list()
-        object_list = api_action('device.get', sql_params)
+        content_params = get_sysdevice_params_list()
+        object_list = api_action('sysdevice.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
-        content_params = format_content_dict(content_params, object_list, p, objects, page_range, current_page,
-                                             show_first, show_end)
-        return render_to_response('cmdb/device_list.html', content_params)
-
+        content_params = format_content_dict(content_params,object_list, p, objects, page_range, current_page, show_first, show_end)
+        return render_to_response('cmdb/sysdevice_list.html', content_params)
 
 
 @csrf_exempt
-def device_search_view(request):
+def sysdevice_search_view(request):
     """
     @ 信息系统页面
     :param request:
@@ -56,15 +53,14 @@ def device_search_view(request):
     if request.method == 'POST':
         sql_params = sql_search_params(request)
         object_list = api_action('sysdevice.search', sql_params)
-        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list,
-                                                                                        sql_params['current_page'])
+        object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list, sql_params['current_page'])
         result = list(objects)
         content_html = render_to_string('page.html', locals())
         return JsonResponse(data={'result': result, 'content_html': content_html}, status=200, safe=False)
 
 
 @csrf_exempt
-def device_delete_view(request):
+def sysdevice_delete_view(request):
     if request.method == 'POST':
         sql_params = sql_delete_params(request)
         msg = api_action('sysdevice.delete', sql_params)
@@ -74,19 +70,19 @@ def device_delete_view(request):
             return JsonResponse(data=msg, status=200, safe=False)
 
 
-def device_detail_view(request, id):
+def sysdevice_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
+        content_params = get_sysdevice_params_detail()
         object = api_action('sysdevice.get', sql_params)
-        params = get_device_params_detail()
-        params['object'] = object[0]
-        content_html = render_to_string('cmdb/device_detail.html', params)
+        content_params['object'] = object[0]
+        content_html = render_to_string('cmdb/sysdevice_detail.html', content_params)
         render_dict = {'content_html': content_html}
         return JsonResponse(data=render_dict, status=200, safe=False)
 
 
 @csrf_exempt
-def device_update_view(request, id):
+def sysdevice_update_view(request, id):
     if request.is_ajax():
         sql_params = sql_update_params(request, id)
         msg = api_action('sysdevice.update', sql_params)
@@ -96,7 +92,7 @@ def device_update_view(request, id):
             return JsonResponse(data=msg, status=200, safe=False)
 
 
-def device_template_view(request):
+def sysdevice_template_view(request):
     file = open('static/excel/template_sysdevice.xls', 'rb')
     response = FileResponse(file)
     response['Content-Type'] = 'application/octet-stream'
@@ -104,7 +100,7 @@ def device_template_view(request):
     return response
 
 
-def device_export_view(request):
+def sysdevice_export_view(request):
     sql_params = sql_get_params(request)
     object_list = api_action('sysdevice.exp', sql_params)
     export_file, export_file_name = ExportAction(object_list, 'template_sysdevice.xls').parse_data()

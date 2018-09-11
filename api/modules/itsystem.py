@@ -43,9 +43,7 @@ def get(**kwargs):
         return msg
     try:
         data = ItSystem.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
-        print data
         data = FunnelOut(ItSystem, data).convert()
-        print data
     except Exception:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
@@ -66,6 +64,7 @@ def search(**kwargs):
         return msg
     try:
         data = ItSystem.objects.filter(Q(**where)).values(*output).order_by(order_by)[0:limit]
+        data = FunnelOut(ItSystem, data).convert()
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(traceback.format_exc()))
         return msg
@@ -156,6 +155,7 @@ def exp(**kwargs):
         return msg
     try:
         data = ItSystem.objects.filter(**where).values(*output).order_by(order_by)[0:limit]
+        data = FunnelOut(ItSystem, data).convert()
         return data
     except Exception, e:
         msg.append("sql 执行出错，错误原因: {}".format(e.message))

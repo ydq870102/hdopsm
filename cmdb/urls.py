@@ -18,6 +18,10 @@ from views.sysdevice_view import *
 from views.itsystem_view import *
 from views.room_view import *
 from views.zone_view import *
+from views.process_view import *
+from views.database_view import *
+
+
 urlpatterns = [
     # itsystem URL
     url(r'^itsystem/import/$', itsystem_import_view, name='itsystem_import'),
@@ -25,18 +29,21 @@ urlpatterns = [
     url(r'^itsystem/search/$', itsystem_search_view, name='itsystem_search'),
     url(r'^itsystem/delete/$', itsystem_delete_view, name='itsystem_delete'),
     url(r'^itsystem/detail/(?P<id>[0-9]+)/$', itsystem_detail_view, name='itsystem_detail'),
+    url(r'^itsystem/related/(?P<id>[0-9]+)/$', itsystem_related_view, name='itsystem_related'),
+    url(r'^itsystem/record/(?P<id>[0-9]+)/$', itsystem_record_view, name='itsystem_record'),
+    url(r'^itsystem/alarm/(?P<id>[0-9]+)/$', itsystem_alarm_view, name='itsystem_alarm'),
     url(r'^itsystem/update/(?P<id>[0-9]+)/$', itsystem_update_view, name='itsystem_update'),
     url(r'^itsystem/template/$', itsystem_template_view, name='itsystem_template'),
     url(r'^itsystem/export/$', itsystem_export_view, name='itsystem_export'),
-    # device URL
-    url(r'^device/list/$', device_list_view, name='device_list'),
-    url(r'^device/import/$', device_import_view, name='device_import'),
-    url(r'^device/delete/$', device_delete_view, name='device_delete'),
-    url(r'^device/detail/(?P<id>[0-9]+)/$', device_detail_view, name='device_detail'),
-    url(r'^device/update/(?P<id>[0-9]+)/$', device_update_view, name='device_update'),
-    url(r'^device/template/$', device_template_view, name='device_template'),
-    url(r'^device/export/$', device_export_view, name='device_export'),
-    url(r'^device/search/$', device_search_view, name='device_search'),
+    # sysdevice URL
+    url(r'^sysdevice/list/$', sysdevice_list_view, name='sysdevice_list'),
+    url(r'^sysdevice/import/$', sysdevice_import_view, name='sysdevice_import'),
+    url(r'^sysdevice/delete/$', sysdevice_delete_view, name='sysdevice_delete'),
+    url(r'^sysdevice/detail/(?P<id>[0-9]+)/$', sysdevice_detail_view, name='sysdevice_detail'),
+    url(r'^sysdevice/update/(?P<id>[0-9]+)/$', sysdevice_update_view, name='sysdevice_update'),
+    url(r'^sysdevice/template/$', sysdevice_template_view, name='sysdevice_template'),
+    url(r'^sysdevice/export/$', sysdevice_export_view, name='sysdevice_export'),
+    url(r'^sysdevice/search/$', sysdevice_search_view, name='sysdevice_search'),
     # room URL
     url(r'^room/list/$', room_list_view, name='room_list'),
     url(r'^room/import/$', room_import_view, name='room_import'),
@@ -55,4 +62,22 @@ urlpatterns = [
     url(r'^zone/template/$', zone_template_view, name='zone_template'),
     url(r'^zone/export/$', zone_export_view, name='zone_export'),
     url(r'^zone/search/$', zone_search_view, name='zone_search'),
+    # process URL
+    url(r'^process/list/$', process_list_view, name='process_list'),
+    url(r'^process/import/$', process_import_view, name='process_import'),
+    url(r'^process/delete/$', process_delete_view, name='process_delete'),
+    url(r'^process/detail/(?P<id>[0-9]+)/$', process_detail_view, name='process_detail'),
+    url(r'^process/update/(?P<id>[0-9]+)/$', process_update_view, name='process_update'),
+    url(r'^process/template/$', process_template_view, name='process_template'),
+    url(r'^process/export/$', process_export_view, name='process_export'),
+    url(r'^process/search/$', process_search_view, name='process_search'),
+    # related URL
+    url(r'^related/list/$', database_list_view, name='database_list'),
+    url(r'^related/import/$', database_import_view, name='database_import'),
+    url(r'^related/delete/$', database_delete_view, name='database_delete'),
+    url(r'^related/detail/(?P<id>[0-9]+)/$', database_detail_view, name='database_detail'),
+    url(r'^related/update/(?P<id>[0-9]+)/$', database_update_view, name='database_update'),
+    url(r'^related/template/$', database_template_view, name='database_template'),
+    url(r'^related/export/$', database_export_view, name='database_export'),
+    url(r'^related/search/$', database_search_view, name='database_search'),
 ]

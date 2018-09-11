@@ -5,14 +5,15 @@
 from django.template.loader import render_to_string
 from django.shortcuts import render_to_response
 from hdopsm.common import pages
-from utils.importaction import ImportAction
-from utils.exportaction import ExportAction
-from utils.apiaction import api_action
-from utils.sql_params import *
+from utils.view.importaction import ImportAction
+from utils.view.exportaction import ExportAction
+from utils.api.apiaction import api_action
+from utils.sql.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
-from cmdb.sqldao import *
-from utils.content_params import format_content_dict
+from utils.related.sqldao import *
+from utils.related.itsystem import *
+from utils.view.content_params import format_content_dict
 
 
 @csrf_exempt
@@ -20,7 +21,6 @@ def itsystem_import_view(request):
     data_list = ImportAction(request).parse_data()
     sql_params = sql_import_params(data_list)
     msg = api_action('itsystem.imp', sql_params)
-    # msg = ",".join(msg)
     if msg or msg is None:
         return JsonResponse(data=msg, status=500, safe=False)
     else:
@@ -40,7 +40,7 @@ def itsystem_list_view(request):
         object_list = api_action('itsystem.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
         content_params = format_content_dict(content_params,object_list, p, objects, page_range, current_page, show_first, show_end)
-        return render_to_response('cmdb/itsystem_list.html', content_params)
+        return render_to_response('cmdb/itsystem/itsystem_list.html', content_params)
 
 
 @csrf_exempt
@@ -73,10 +73,30 @@ def itsystem_delete_view(request):
 def itsystem_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
+        content_params = get_itsystem_params_detail()
         object = api_action('itsystem.get', sql_params)
-        content_html = render_to_string('cmdb/itsystem_detail.html', {"object": object[0]})
+        content_params['object'] = object[0]
+        content_html = render_to_string('cmdb/itsystem/itsystem_detail.html', content_params)
         render_dict = {'content_html': content_html}
         return JsonResponse(data=render_dict, status=200, safe=False)
+
+@csrf_exempt
+def itsystem_related_view(request, id):
+    if request.is_ajax():
+        content_params =ItsystemRelated(id).get_related_related()
+        content_html = render_to_string('cmdb/itsystem/itsystem_related.html', content_params)
+        render_dict = {'content_html': content_html}
+        return JsonResponse(data=render_dict, status=200, safe=False)
+
+@csrf_exempt
+def itsystem_alarm_view(request, id):
+    if request.is_ajax():
+        return JsonResponse(data={}, status=200, safe=False)
+
+@csrf_exempt
+def itsystem_record_view(request, id):
+    if request.is_ajax():
+        return JsonResponse(data={}, status=200, safe=False)
 
 
 @csrf_exempt
