@@ -11,7 +11,7 @@ from utils.api.apiaction import api_action
 from utils.sql.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
-from utils.related.sqldao import *
+from cmdb.related.sysdevice import *
 from utils.view.content_params import format_content_dict
 
 
@@ -36,11 +36,11 @@ def sysdevice_list_view(request):
     """
     if request.method == 'GET':
         sql_params = sql_get_params(request)
-        content_params = get_sysdevice_params_list()
+        content_params = SysdeviceRelated().get_list_related()
         object_list = api_action('sysdevice.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
         content_params = format_content_dict(content_params,object_list, p, objects, page_range, current_page, show_first, show_end)
-        return render_to_response('cmdb/sysdevice_list.html', content_params)
+        return render_to_response('cmdb/sysdevice/sysdevice_list.html', content_params)
 
 
 @csrf_exempt
@@ -73,13 +73,29 @@ def sysdevice_delete_view(request):
 def sysdevice_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
-        content_params = get_sysdevice_params_detail()
+        content_params = SysdeviceRelated().get_detail_related()
         object = api_action('sysdevice.get', sql_params)
         content_params['object'] = object[0]
-        content_html = render_to_string('cmdb/sysdevice_detail.html', content_params)
+        content_html = render_to_string('cmdb/sysdevice/sysdevice_detail.html', content_params)
         render_dict = {'content_html': content_html}
         return JsonResponse(data=render_dict, status=200, safe=False)
 
+@csrf_exempt
+def sysdevice_related_view(request, id):
+    if request.is_ajax():
+        content_params =SysdeviceRelated(id).get_related_related()
+        content_html = render_to_string('cmdb/sysdevice/sysdevice_related.html', content_params)
+        render_dict = {'content_html': content_html}
+        return JsonResponse(data=render_dict, status=200, safe=False)
+
+@csrf_exempt
+def sysdevice_record_view(request, id):
+    if request.is_ajax():
+        return JsonResponse(data='', status=200, safe=False)
+
+@csrf_exempt
+def sysdevice_alarm_view(request, id):
+        return JsonResponse(data='', status=200, safe=False)
 
 @csrf_exempt
 def sysdevice_update_view(request, id):

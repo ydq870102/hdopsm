@@ -3,10 +3,10 @@
 
 
 from cmdb.models import *
-from baserelated import *
+import base
 
 
-class ItsystemRelated(BaseRelated):
+class ItsystemRelated(base.BaseRelated):
 
     def __init__(self, sql_id=''):
         super(ItsystemRelated, self).__init__(ItSystem, sql_id)
@@ -35,15 +35,15 @@ class ItsystemRelated(BaseRelated):
 
     def get_list_related(self):
         return {
-            'itsystem_zone_list': self.__get_related_foreignkey_count(ItSystem, 'related_zone_id_id', Zone),
-            'itsystem_system_manager_list': self.__get_related_column_count(ItSystem, 'system_manager'),
-            'itsystem_system_admins_list': self.__get_related_column_count(ItSystem, 'system_admin'),
+            'itsystem_zone_list': base.get_related_foreignkey_count(ItSystem, 'related_zone_id_id', Zone),
+            'itsystem_system_manager_list': base.get_related_column_count(ItSystem, 'system_manager'),
+            'itsystem_system_admins_list': base. get_related_column_count(ItSystem, 'system_admin'),
         }
 
     def get_detail_related(self):
         return {
-            'zone_label_list': self.__get_related_attr(Zone, 'label_cn'),
-            'itsystem_person_enum_list': self.__get_related_column_count('ItSystem', 'is_untrained_person_use'),
+            'zone_label_list': base.get_related_attr(Zone, 'label_cn'),
+            'itsystem_person_enum_list': base.get_related_column_enum('ItSystem', 'is_untrained_person_use'),
         }
 
     def get_related_related(self):

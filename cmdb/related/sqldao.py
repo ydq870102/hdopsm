@@ -3,7 +3,7 @@
 
 
 from cmdb.models import *
-from baserelated import *
+from base import *
 
 
 

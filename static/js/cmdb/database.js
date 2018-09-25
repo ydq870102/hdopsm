@@ -18,7 +18,7 @@ $('#del').click(function () {
             if (isConfirm.value === true) {
                 $.ajax({
                     type: 'POST',
-                    url: '/cmdb/related/delete/',
+                    url: '/cmdb/database/delete/',
                     csrfmiddlewaretoken: "{% csrf_token %}",
                     data: {
                         "where": check_array,
@@ -66,7 +66,7 @@ $('#del').click(function () {
 $('#import-form').click(function () {
     $.ajax({
         type: "POST",
-        url: "/cmdb/related/import/",
+        url: "/cmdb/database/import/",
         processData: false,
         contentType: false,
         data: new FormData($(".import-form")[0]),
@@ -97,7 +97,7 @@ $('tbody tr').live("click", function (event) {
         var id = $(this).find('input').val()
         $.ajax({
             type: "GET",
-            url: "/cmdb/related/detail/" + id + "/",
+            url: "/cmdb/database/detail/" + id + "/",
             success: function (result) {
                 var detail_html = result['content_html']
                 $('#myimportModal').after(detail_html)
@@ -119,13 +119,13 @@ $('.form-save').live("click", function () {
     else {
         $.ajax({
             type: "POST",
-            url: "/cmdb/related/update/" + id + "/",
+            url: "/cmdb/database/update/" + id + "/",
             data: {'result': JSON.stringify(form_dict)},
             success: function () {
                 $('.slidebar-wrapper').remove()
                 $.ajax({
                     type: "GET",
-                    url: "/cmdb/related/detail/" + id + "/",
+                    url: "/cmdb/database/detail/" + id + "/",
                     success: function (result) {
                         var detail_html = result['content_html']
                         $('#myimportModal').after(detail_html)
@@ -156,7 +156,7 @@ $('.select_form').change(function () {
     }
     $.ajax({
         type: "POST",
-        url: "/cmdb/related/search/",
+        url: "/cmdb/database/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
@@ -173,7 +173,7 @@ $('.set-select2').bind('input propertychange', function () {
     url_params['where'] = JSON.stringify(filter_params)
     $.ajax({
         type: "POST",
-        url: "/cmdb/related/search/",
+        url: "/cmdb/database/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
@@ -219,7 +219,7 @@ $(".page").live("click", function () {
     url_params['current_page'] = current_page
     $.ajax({
         type: "POST",
-        url: "/cmdb/related/search/",
+        url: "/cmdb/database/search/",
         data: url_params,
         success: function (result) {
             load_table_data(result['result'], result['content_html'])
@@ -227,3 +227,45 @@ $(".page").live("click", function () {
         }
     })
 })
+
+
+//点击明细tab触发切换界面
+$('.bk-tab2-head ul li').live("click", function () {
+    var tab_id = $(this).attr('id')
+    var id = $('.form-save').val()
+    var tab = $(this)
+    if (tab_id == 'base') {
+        var tab_url = ''
+    }
+    else if (tab_id == 'related') {
+        var tab_url = "/cmdb/database/related/" + id + "/"
+    }
+    else if (tab_id == 'alarm') {
+        var tab_url = "/cmdb/database/alarm/" + id + "/"
+    }
+    else if (tab_id == 'record') {
+        var tab_url = "/cmdb/database/record/" + id + "/"
+    }
+    if (tab_url) {
+        $.ajax({
+            type: "POST",
+            url: tab_url,
+            success: function (result) {
+                var related_html = result['content_html']
+                $('.tab2-nav-item').removeClass('actived')
+                tab.addClass('actived')
+                var num = tab.index()
+                $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+                $(".bk-tab2-content section").eq(num).children('.attribute-wrapper').remove()
+                $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active').prepend(related_html);
+            }
+        })
+    }
+    else {
+        $('.tab2-nav-item').removeClass('actived')
+        $(this).addClass('actived')
+        var num = $(this).index()
+        $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+        $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
+    }
+});

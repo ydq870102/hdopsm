@@ -250,7 +250,6 @@ $('.bk-tab2-head ul li').live("click", function () {
                 tab.addClass('actived')
                 var num = tab.index()
                 $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
-                console.log(tab.children('.attribute-wrapper'))
                 $(".bk-tab2-content section").eq(num).children('.attribute-wrapper').remove()
                 $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active').prepend(related_html);
             }

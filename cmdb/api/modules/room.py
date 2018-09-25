@@ -4,9 +4,9 @@
 from cmdb.models import *
 import logging
 import traceback
-from api.funnelin import *
+from cmdb.api.funnelin import *
 from django.db.models import Q
-from api.funnelout import *
+from cmdb.api.funnelout import *
 
 logger = logging.getLogger('django')
 msg = []

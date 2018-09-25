@@ -15,52 +15,19 @@
             <div class="panel-body panel-content clearfix" id="panelContent" style="display: none;">
                 <div class="condition-left pull-left">
                     <div class="clearfix condition-row" data-type="condition-row">
-                        <div class="pull-left condition-item" style="width: 20%;">
-                            <p class="title">信息系统名称</p>
+                        <div class="pull-left condition-item" style="width: 20%">
+                            <p class="title">机房名称</p>
                             <input class="set-select2" title="label_cn">
-                        </div>
-                        <div class="pull-left condition-item dropdown" style="width: 20%;">
-                            <p class="title">网络区域</p>
-                            <div class="select2-container">
-                                <select class="input-control select_form" title="related_zone_id_id">
-                                    <option selected="selected" value="all">全部[{{ p.count }}]</option>
-                                    {% for list in itsystem_zone_list %}
-                                        <option value={{ list.id }}>{{ list.column }}[{{ list.column_count }}]</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="pull-left condition-item" style="width: 20%;">
-                            <p class="title">系统管理员</p>
-                            <div class="select2-container">
-                                <select class="input-control select_form" title="system_manager">
-                                    <option selected="selected" value="all">全部[{{ p.count }}]</option>
-                                    {% for list in itsystem_system_manager_list %}
-                                        <option value={{ list.column }}>{{ list.column }}[{{ list.column_count }}]</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="pull-left condition-item" style="width: 20%;">
-                            <p class="title">系统负责人</p>
-                            <div class="select2-container">
-                                <select class="input-control select_form" title="system_admin">
-                                    <option selected="selected" value="all">全部[{{ p.count }}]</option>
-                                    {% for list in itsystem_system_admins_list %}
-                                        <option value={{ list.column }}>{{ list.column }}[{{ list.column_count }}]</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
                         </div>
                     </div>
                     <div class="filter-more" id="filterMore"><span>更多 <i
-                            class="fa fa-angle-double-right fa-lg"></i></span></div>
+                                    class="fa fa-angle-double-right fa-lg"></i></span></div>
                 </div>
             </div>
         </section>
         <section class="panel main-list">
             <header class="panel-heading">
-                <i class="fa fa-tasks "></i> 信息系统
+                <i class="fa fa-tasks "></i> 机房管理
                 <span class="tools pull-right">
                      </span>
             </header>
@@ -83,8 +50,8 @@
                                     class="fa fa-angle-down"></i>
                             </button>
                             <ul class="dropdown-menu pull-right">
-                                <li><a href="/cmdb/itsystem/template/">模板下载</a></li>
-                                <li><a href="/cmdb/itsystem/export/">数据导出</a></li>
+                                <li><a href="/cmdb/room/template/">模板下载</a></li>
+                                <li><a href="/cmdb/room/export/">数据导出</a></li>
                             </ul>
                         </div>
                     </div>
@@ -95,12 +62,10 @@
                             <th class="text-center" style="width:3.5%;">
                                 <input type="checkbox" id="check_all">
                             </th>
-                            <th>所属区域</th>
-                            <th>信息系统名称</th>
-                            <th>用途</th>
-                            <th>架构描述</th>
-                            <th>系统管理员</th>
-                            <th>系统负责人</th>
+                            <th>机房名称</th>
+                            <th>机房联系人</th>
+                            <th>联系人号码</th>
+                            <th>机房地址</th>
                         </tr>
                         </thead>
                         {% for object in objects.object_list %}
@@ -109,12 +74,10 @@
                                 <td class="text-center">
                                     <input type="checkbox" name="checked" value="{{ object.id }}">
                                 </td>
-                                <td>{{ object.related_zone_id_id }}</td>
-                                <td>{{ object.label_cn }}</td>
-                                <td>{{ object.use_for }}</td>
-                                <td>{{ object.system_framework }}</td>
-                                <td>{{ object.system_manager }}</td>
-                                <td>{{ object.system_admin }}</td>
+                                <td>{{ object.label_cn|default_if_none:"" }}</td>
+                                <td>{{ object.room_contact|default_if_none:"" }}</td>
+                                <td>{{ object.room_phone|default_if_none:"" }}</td>
+                                <td>{{ object.addr|default_if_none:"" }}</td>
                             </tr>
                             </tbody>
                         {% endfor %}
@@ -160,6 +123,6 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{% static 'js/cmdb/itsystem.js' %}"></script>
+    <script src="{% static 'js/cmdb/room.js' %}"></script>
 {% endblock %}
 

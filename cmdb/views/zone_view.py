@@ -12,7 +12,7 @@ from utils.sql.sql_params import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, FileResponse
 from utils.view.content_params import format_content_dict
-
+from cmdb.related.zone import *
 
 
 
@@ -36,12 +36,12 @@ def zone_list_view(request):
     """
     if request.method == 'GET':
         sql_params = sql_get_params(request)
-        content_params = {}
+        content_params = ZoneRelated().get_list_related()
         object_list = api_action('zone.get', sql_params)
         object_list, p, objects, page_range, current_page, show_first, show_end = pages(object_list)
         content_params = format_content_dict(content_params, object_list, p, objects, page_range, current_page,
                                              show_first, show_end)
-        return render_to_response('cmdb/zone_list.html', content_params)
+        return render_to_response('cmdb/zone/zone_list.html', content_params)
 
 
 @csrf_exempt
@@ -75,12 +75,29 @@ def zone_delete_view(request):
 def zone_detail_view(request, id):
     if request.is_ajax():
         sql_params = sql_detail_params(id)
+        content_params = ZoneRelated().get_detail_related()
         object = api_action('zone.get', sql_params)
-        params = {}
-        params['object'] = object[0]
-        content_html = render_to_string('cmdb/zone_detail.html', params)
+        content_params['object'] = object[0]
+        content_html = render_to_string('cmdb/zone/zone_detail.html', content_params)
         render_dict = {'content_html': content_html}
         return JsonResponse(data=render_dict, status=200, safe=False)
+
+@csrf_exempt
+def zone_related_view(request, id):
+    if request.is_ajax():
+        content_params =ZoneRelated(id).get_related_related()
+        content_html = render_to_string('cmdb/zone/zone_related.html', content_params)
+        render_dict = {'content_html': content_html}
+        return JsonResponse(data=render_dict, status=200, safe=False)
+
+@csrf_exempt
+def zone_record_view(request, id):
+    if request.is_ajax():
+        return JsonResponse(data='', status=200, safe=False)
+
+@csrf_exempt
+def zone_alarm_view(request, id):
+        return JsonResponse(data='', status=200, safe=False)
 
 
 @csrf_exempt

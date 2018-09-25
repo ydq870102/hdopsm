@@ -225,3 +225,44 @@ $(".page").live("click", function () {
         }
     })
 })
+
+//点击明细tab触发切换界面
+$('.bk-tab2-head ul li').live("click", function () {
+    var tab_id = $(this).attr('id')
+    var id = $('.form-save').val()
+    var tab = $(this)
+    if (tab_id == 'base') {
+        var tab_url = ''
+    }
+    else if (tab_id == 'related') {
+        var tab_url = "/cmdb/room/related/" + id + "/"
+    }
+    else if (tab_id == 'alarm') {
+        var tab_url = "/cmdb/room/alarm/" + id + "/"
+    }
+    else if (tab_id == 'record') {
+        var tab_url = "/cmdb/room/record/" + id + "/"
+    }
+    if (tab_url) {
+        $.ajax({
+            type: "POST",
+            url: tab_url,
+            success: function (result) {
+                var related_html = result['content_html']
+                $('.tab2-nav-item').removeClass('actived')
+                tab.addClass('actived')
+                var num = tab.index()
+                $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+                $(".bk-tab2-content section").eq(num).children('.attribute-wrapper').remove()
+                $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active').prepend(related_html);
+            }
+        })
+    }
+    else {
+        $('.tab2-nav-item').removeClass('actived')
+        $(this).addClass('actived')
+        var num = $(this).index()
+        $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
+        $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
+    }
+});

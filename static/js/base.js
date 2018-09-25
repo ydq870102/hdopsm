@@ -11,20 +11,13 @@ $(document).ready(function () {
     });
 });
 
+
 //table 勾选所有框
 $(function () {
     $("#check_all").click(function () {
         $("input[name='checked']").prop("checked", $(this).prop("checked"));
     });
 });
-
-// //点击非勾选框弹出明细
-// $('tbody tr').click(function (event) {
-//     if (event.target.name != 'checked') {
-//         var left_width = $('.left-side').css('width')
-//         $('.slidebar-wrapper').css("left",left_width).removeClass('hidden')
-//     }
-// });
 
 //点击非主体部分触发关闭明细界面
 $('.slidebar-wrapper').live("click", function (event) {
@@ -33,14 +26,20 @@ $('.slidebar-wrapper').live("click", function (event) {
     }
 });
 
-//点击明细tab触发切换界面
-// $('.bk-tab2-head ul li').live("click", function () {
-//     $('.tab2-nav-item').removeClass('actived')
-//     $(this).addClass('actived')
-//     var num = $(this).index()
-//     $(".bk-tab2-content section").addClass('bk-tab2-pane').removeClass('active');
-//     $(".bk-tab2-content section").eq(num).removeClass('bk-tab2-pane').addClass('active');
-// });
+//查询条件点击更多，弹出多余查询条件
+$('.filter-more').click(function () {
+    console.log($(this).find('i'))
+    if ($(this).find('i').is('.fa-angle-double-right')){
+        $(this).find('i').removeClass('fa-angle-double-right').addClass('fa-angle-double-down')
+        $(this).siblings('#clear-more').show()
+    }
+    else {
+        $(this).find('i').removeClass('fa-angle-double-down').addClass('fa-angle-double-right')
+        $(this).siblings('#clear-more').hide()
+    }
+
+})
+
 
 // 属性界面点击【更多属性】弹出更多属性界面
 $('.group-more-link').live("click", function () {
@@ -72,16 +71,16 @@ $('.attr-edit').live("click", function () {
 })
 
 // 日期选择样式
-    $('.datetimepicker').live('focus',function () {
-        $(this).datetimepicker({
-            format: 'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
-            autoclose: true,//选择后是否自动关闭
-            minView: 0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
-            language: 'zh-CN', //中文
-            todayBtn: true,  //在底部是否显示今天
-            initialDate: new Date()
-        });
-    })
+$('.datetimepicker').live('focus', function () {
+    $(this).datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
+        autoclose: true,//选择后是否自动关闭
+        minView: 0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
+        language: 'zh-CN', //中文
+        todayBtn: true,  //在底部是否显示今天
+        initialDate: new Date()
+    });
+})
 
 //获取form数据，返回字段函数
 function get_form_data() {
@@ -95,14 +94,45 @@ function get_form_data() {
 }
 
 // IP地址合法监测
-$(".ip-input").live('blur',function () {
+$(".ip-input").live('blur', function () {
     var ip = $(this).val()
-    var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+    var exp = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
     var reg = ip.match(exp);
-    if (reg == null){
-    $(this).addClass('error-ip-input')
+    if (reg == null) {
+        $(this).addClass('error-ip-input')
     }
     else {
         $(this).removeClass('error-ip-input')
     }
 })
+
+//关联明细中点击展开按钮
+$(".list-icon").live("click", function () {
+    $(this).removeClass('fa-caret-right')
+    $(this).addClass('fa-caret-down')
+    $(this).removeClass('list-icon')
+    $(this).addClass('open-icon')
+    $(this).parent().siblings("ul").show()
+})
+
+//关联明细中点击收缩按钮
+$(".open-icon").live("click", function () {
+    $(this).removeClass('fa-caret-down')
+    $(this).addClass('fa-caret-right')
+    $(this).removeClass('open-icon')
+    $(this).addClass('list-icon')
+    $(this).parent().siblings("ul").hide()
+})
+
+//鼠标移入变色
+// $(".relevance-box ul li").live("mouseover", function () {
+//     console.log($(this))
+//     $(this).css("background-color","#e8ffff")
+//
+// })
+// 鼠标移出变色
+// $(".relevance-box ul li").live("mouseout", function () {
+//     console.log($(this))
+//     $(this).css("background-color","#ffffff")
+//
+// })
