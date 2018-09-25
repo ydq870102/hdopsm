@@ -13,7 +13,7 @@ class AutoLoad(object):
         """
             初始化模块路径、模块名称、函数名称、模块对象
         """
-        self.module_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "", "modules"))
+        self.module_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "", "../../cmdb/api/modules"))
         self.module_name = ""
         self.method_name = ""
         self.module = None

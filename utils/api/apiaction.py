@@ -2,7 +2,7 @@
 #  encoding: utf-8
 
 
-from cmdb.api import AutoLoad
+from utils.api.autoload import AutoLoad
 import logging
 import traceback
 
