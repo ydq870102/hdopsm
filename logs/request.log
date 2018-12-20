@@ -1263,3 +1263,8 @@ Traceback (most recent call last):
     return str(self.label_cn)
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
 2018-09-11 09:07:16,480 [Thread-87:38680] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-25 11:39:32,387 [Thread-3:17096] [django.request:152] [WARNING]- Not Found: /
+2018-09-25 11:39:32,579 [Thread-2:10280] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-25 11:39:34,414 [Thread-4:52560] [django.request:152] [WARNING]- Not Found: /favicon.ico
+2018-09-25 11:39:37,739 [Thread-5:25640] [django.request:152] [WARNING]- Not Found: /itsystem
+2018-09-25 11:39:41,244 [Thread-6:54552] [django.request:152] [WARNING]- Not Found: /itsystem/

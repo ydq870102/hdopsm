@@ -5,34 +5,25 @@
       <configuration>
         <option name="rootFolder" value="$MODULE_DIR$" />
         <option name="settingsModule" value="hdopsm/settings.py" />
-        <option name="manageScript" value="manage.py" />
+        <option name="manageScript" value="$MODULE_DIR$/manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
         <option name="doNotUseTestRunner" value="false" />
-        <option name="trackFilePattern" value="" />
+        <option name="trackFilePattern" value="migrations" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 2.7" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="xm2cloud_webui" />
-    <orderEntry type="module" module-name="xm2cloud_webui" />
-    <orderEntry type="module" module-name="xm2cloud_webui" />
-    <orderEntry type="module" module-name="bk_monitor" />
-    <orderEntry type="module" module-name="bk_monitor" />
-    <orderEntry type="module" module-name="bk_monitor" />
-    <orderEntry type="module" module-name="adminex" />
-    <orderEntry type="module" module-name="bk_fta" />
-    <orderEntry type="module" module-name="osrm" />
-    <orderEntry type="module" module-name="OpsManage" />
-    <orderEntry type="module" module-name="xm2cloud_webui" />
-    <orderEntry type="module" module-name="osrm" />
-    <orderEntry type="module" module-name="bk_monitor" />
-    <orderEntry type="module" module-name="OpsManage" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/templates" />
+      </list>
+    </option>
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
